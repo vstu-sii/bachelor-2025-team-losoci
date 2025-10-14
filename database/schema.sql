@@ -9,7 +9,7 @@ CREATE TABLE IF NOT EXISTS users (
     gender VARCHAR(10),
     description TEXT,
     telegram_link VARCHAR(100),
-    email_confirmed BOOLEAN DEFAULT false
+    email_confirmed BOOLEAN DEFAULT false,
     telegram_link_confirmed BOOLEAN DEFAULT false
 );
 
