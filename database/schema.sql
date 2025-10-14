@@ -4,16 +4,20 @@ CREATE TABLE IF NOT EXISTS users (
     password VARCHAR(50) NOT NULL,
     name VARCHAR(50),
     surname VARCHAR(50),
+    username VARCHAR(50),
     birthdate DATE,
     gender VARCHAR(10),
     description TEXT,
-    telegram_link VARCHAR(100)
+    telegram_link VARCHAR(100),
+    email_confirmed BOOLEAN DEFAULT false
+    telegram_link_confirmed BOOLEAN DEFAULT false
 );
 
 CREATE TABLE IF NOT EXISTS chats (
     id SERIAL PRIMARY KEY,
     title VARCHAR(100) NOT NULL,
-    user_id INT NOT NULL REFERENCES users(id) ON DELETE CASCADE
+    sender_id INT NOT NULL REFERENCES users(id) ON DELETE CASCADE,
+    recipient_id INT NOT NULL REFERENCES users(id) ON DELETE CASCADE
 );
 
 CREATE TABLE IF NOT EXISTS messages (
@@ -41,7 +45,7 @@ CREATE TABLE IF NOT EXISTS events (
     description TEXT,
     date DATE NOT NULL,
     importance_id INT REFERENCES importance(id) ON DELETE SET NULL,
-    recipient VARCHAR(100),
+    recipient_id INT NOT NULL REFERENCES users(id) ON DELETE CASCADE,
     completed BOOLEAN DEFAULT false,
     user_id INT NOT NULL REFERENCES users(id) ON DELETE CASCADE
 );
@@ -51,7 +55,8 @@ CREATE UNIQUE INDEX idx_users_email ON users(email);
 CREATE INDEX idx_users_name ON users(name);
 CREATE INDEX idx_users_surname ON users(surname);
 
-CREATE INDEX idx_chats_user_id ON chats(user_id);
+CREATE INDEX idx_chats_sender_id ON chats(sender_id);
+CREATE INDEX idx_chats_recipient_id ON chats(recipient_id);
 CREATE INDEX idx_chats_title ON chats(title);
 
 CREATE INDEX idx_messages_chat_id ON messages(chat_id);
@@ -65,4 +70,4 @@ CREATE UNIQUE INDEX idx_importance_name ON importance(name);
 CREATE INDEX idx_events_date ON events(date);
 CREATE INDEX idx_events_user_id ON events(user_id);
 CREATE INDEX idx_events_importance_id ON events(importance_id);
-CREATE INDEX idx_events_recipient ON events(recipient);
+CREATE INDEX idx_events_recipient ON events(recipient_id);
