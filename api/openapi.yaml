@@ -105,10 +105,14 @@ paths:
                         schema:
                             type: object
                             required:
+                                - username
                                 - email
                                 - password
                                 - confirmPassword
                             properties:
+                                username:
+                                    type: string
+                                    example: John Doe
                                 email:
                                     type: string
                                     format: email
@@ -123,6 +127,7 @@ paths:
                                     minLength: 8
                                     pattern: '^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$'
                                     example: strongPassword123
+
             responses:
                 "201":
                     description: Пользователь успешно зарегистрирован, email отправлен
@@ -559,6 +564,12 @@ paths:
                                         title:
                                             type: string
                                             example: Новый чат
+                                        sender_id:
+                                            type: integer
+                                            example: 1
+                                        recipient_id:
+                                            type: integer
+                                            example: 2
                 "401":
                     description: Пользователь не авторизован
                 "429":
@@ -597,6 +608,9 @@ paths:
                                     minLength: 1
                                     maxLength: 100
                                     example: Обновленный чат
+                                recipient_id:
+                                    type: integer
+                                    example: 2
             responses:
                 "200":
                     description: Название чата успешно обновлено
@@ -1146,67 +1160,6 @@ paths:
                     description: Событие не найдено
                 "429":
                     $ref: "#/components/responses/TooManyRequests"
-    /tokens/refresh:
-        post:
-            tags:
-                - tokens
-            summary: Обновление access_token
-            description: >
-                Получает refresh_token из HttpOnly cookie и возвращает новый access_token.  
-                Если refresh_token отсутствует или недействителен, возвращает 401.
-            responses:
-                "200":
-                    description: Новый access_token успешно выдан
-                    headers:
-                        X-RateLimit-Limit:
-                            $ref: "#/components/headers/RateLimitLimit"
-                        X-RateLimit-Remaining:
-                            $ref: "#/components/headers/RateLimitRemaining"
-                        X-RateLimit-Reset:
-                            $ref: "#/components/headers/RateLimitReset"
-                    content:
-                        application/json:
-                            schema:
-                                type: object
-                                properties:
-                                    access_token:
-                                        type: string
-                                        example: newAccessToken123...
-                "401":
-                    description: Refresh token отсутствует или недействителен
-                "429":
-                    $ref: "#/components/responses/TooManyRequests"
-    /tokens/revoke_all:
-        post:
-            tags:
-                - tokens
-            summary: Сброс всех токенов пользователя
-            description: >
-                Удаляет все refresh_token пользователя, делая все access_token недействительными.  
-                Требуется передать access_token текущей сессии в заголовке Authorization: Bearer <token>.
-            security:
-                - bearerAuth: []
-            parameters:
-                - name: Authorization
-                  in: header
-                  required: true
-                  description: Access token формата Bearer <token>
-                  schema:
-                      type: string
-            responses:
-                "200":
-                    description: Все токены успешно удалены
-                    headers:
-                        X-RateLimit-Limit:
-                            $ref: "#/components/headers/RateLimitLimit"
-                        X-RateLimit-Remaining:
-                            $ref: "#/components/headers/RateLimitRemaining"
-                        X-RateLimit-Reset:
-                            $ref: "#/components/headers/RateLimitReset"
-                "401":
-                    description: Пользователь не авторизован
-                "429":
-                    $ref: "#/components/responses/TooManyRequests"
 
 components:
     schemas:
@@ -1237,6 +1190,9 @@ components:
                     type: string
                     format: uri
                     example: https://t.me/ivanpetrov
+                username:
+                    type: string
+                    example: username
         Event:
             type: object
             properties:
