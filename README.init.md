@@ -69,9 +69,31 @@ CMD ["npm", "run", "dev"]
 ```bash
 docker run --rm -it --gpus=all nvcr.io/nvidia/k8s/cuda-sample:nbody nbody -gpu -benchmark
 ```
-6. Запускc сборки докер контейнеров:
+6. Запуск сборки докер контейнеров:
 ```bash
+docker network create monitoring_net
 docker-compose up -d
+```
+7. [развёртывание Langfuse локально](https://langfuse.com/self-hosting/deployment/docker-compose) 
+```bash
+git clone https://github.com/langfuse/langfuse.git
+cd langfuse
+docker compose up
+```
+
+8. переменные для monitoriong/.env
+```bash
+# Кому отправлять уведомления
+ALERT_TO=example1@mail.com,example2@mail.com
+# С какого ящика отправлять
+ALERT_FROM=no-reply@example.com
+# SMTP сервер
+SMTP_HOST=smtp.example.com
+SMTP_PORT=587
+
+# Данные для авторизации SMTP
+SMTP_USER=no-reply@example.com
+SMTP_PASS=your_smtp_password_here
 ```
 
 ## структура-проекта

@@ -1,3 +1,6 @@
+networks:
+  monitoring_net:
+    external: true
 services:
   frontend:
     build:
@@ -11,6 +14,13 @@ services:
       - /app/node_modules
     env_file:
       - ./frontend/.env
+    networks:
+      - monitoring_net
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:5173/health"]
+      interval: 30s
+      timeout: 5s
+      retries: 3
 
   backend:
     build:
@@ -26,6 +36,13 @@ services:
       - ./backend/.env
     depends_on:
       - db
+    networks:
+      - monitoring_net
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:13000/health"]
+      interval: 30s
+      timeout: 5s
+      retries: 3
 
   db:
     image: postgres:16
@@ -38,6 +55,11 @@ services:
       POSTGRES_DB: ai_gift_assistant
     volumes:
       - postgres_data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U postgres"]
+      interval: 30s
+      timeout: 5s
+      retries: 3
 
   ollama:
     image: ollama/ollama:latest
@@ -64,6 +86,29 @@ services:
         ollama pull llama3.1 &&
         wait
       "
+  redis:
+    image: redis:7-alpine
+    container_name: ai_gift_assistant_redis
+    ports:
+      - "6378:6379"   
+    volumes:
+      - redis_data:/data
+    networks:
+      - monitoring_net
+    command: ["redis-server", "--appendonly", "yes"]  
+  redis-exporter:
+    image: oliver006/redis_exporter:latest
+    container_name: redis_exporter
+    environment:
+      - REDIS_ADDR=redis:6379
+    ports:
+      - "9121:9121"
+    networks:
+      - monitoring_net
+    depends_on:
+    - redis
+
 volumes:
   postgres_data:
   ollama_data:
+  redis_data:
