@@ -1,0 +1,8 @@
+# Получаем сообщение коммита
+commit_message=$(cat "$1")
+
+# Проверка на тип коммита (Conventional Commits)
+if ! echo "$commit_message" | grep -qE "^(feat|fix|chore|docs|style|refactor|test|perf)\:"; then
+  echo "Ошибка: сообщение коммита должно начинаться с типа коммита (feat|fix|chore|docs|style|refactor|test|perf)"
+  exit 1
+fi

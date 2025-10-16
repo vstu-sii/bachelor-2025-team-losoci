@@ -76,7 +76,7 @@ docker-compose up -d
 
 ## структура-проекта
 ```bash
-habit-tracker-ollama/
+ai_gift_assistant/
 ├─ frontend/
 │  ├─ Dockerfile
 │  ├─ package.json

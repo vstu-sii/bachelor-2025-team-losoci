@@ -1,0 +1,48 @@
+{
+  "name": "ai_gift",
+  "version": "1.0.0",
+  "description": "Документ описывает ключевые сегменты пользователей, их основные проблемы, сценарии использования, ценностное предложение продукта и главную метрику успеха. Продукт — **AI Gift Assistant**, который помогает не забывать о важных событиях и быстро подбирать персонализированные подарки.",
+  "main": "index.js",
+  "directories": {
+    "doc": "docs"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "prepare": "husky"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vstu-sii/bachelor-2025-team-losoci.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/vstu-sii/bachelor-2025-team-losoci/issues"
+  },
+  "homepage": "https://github.com/vstu-sii/bachelor-2025-team-losoci#readme",
+  "devDependencies": {
+    "@commitlint/cli": "^20.1.0",
+    "@commitlint/config-conventional": "^20.0.0",
+    "@eslint/js": "^9.36.0",
+    "eslint": "^9.36.0",
+    "eslint-config-prettier": "^10.1.8",
+    "eslint-plugin-prettier": "^5.5.4",
+    "eslint-plugin-vue": "^10.5.0",
+    "globals": "^16.4.0",
+    "prettier": "^3.6.2",
+    "typescript-eslint": "^8.44.1",
+    "husky": "^9.1.7",
+    "lint-staged": "^16.2.4"
+  },
+  "lint-staged": {
+    "frontend/**/*.{js,ts,jsx,tsx}": [
+      "npx eslint --config frontend/eslint.config.front.mjs --fix",
+      "npx prettier --config frontend/.prettierrc --write"
+    ],
+    "backend/**/*.{js,ts,jsx,tsx}": [
+      "npx eslint --config backend/eslint.config.back.mjs --fix",
+      "npx prettier --config backend/.prettierrc --write"
+    ]
+  }
+}
