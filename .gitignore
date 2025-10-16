@@ -1,5 +1,3 @@
 node_modules/
-package-lock.json
 monitoring/loki/data
-
 .env
