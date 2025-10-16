@@ -1,14 +1,15 @@
 networks:
   monitoring_net:
     external: true
+
 services:
   frontend:
     build:
       context: ./frontend
       dockerfile: Dockerfile
-    container_name:  ai_gift_assistant_frontend
+    container_name: ai_gift_assistant_frontend
     ports:
-      - "5173:5173"
+      - "${FRONTEND_PORT}:5173"
     volumes:
       - ./frontend:/app
       - /app/node_modules
@@ -17,7 +18,7 @@ services:
     networks:
       - monitoring_net
     healthcheck:
-      test: ["CMD", "curl", "-f", "http://localhost:5173/health"]
+      test: ["CMD", "curl", "-f", "http://localhost:${FRONTEND_PORT}/health"]
       interval: 30s
       timeout: 5s
       retries: 3
@@ -26,9 +27,9 @@ services:
     build:
       context: ./backend
       dockerfile: Dockerfile
-    container_name:  ai_gift_assistant_backend
+    container_name: ai_gift_assistant_backend
     ports:
-      - "13000:13000"
+      - "${BACKEND_PORT}:13000"
     volumes:
       - ./backend:/app
       - /app/node_modules
@@ -39,24 +40,24 @@ services:
     networks:
       - monitoring_net
     healthcheck:
-      test: ["CMD", "curl", "-f", "http://localhost:13000/health"]
+      test: ["CMD", "curl", "-f", "http://localhost:${BACKEND_PORT}/health"]
       interval: 30s
       timeout: 5s
       retries: 3
 
   db:
     image: postgres:16
-    container_name:  ai_gift_assistant_db
+    container_name: ai_gift_assistant_db
     ports:
-      - "15432:5432"
+      - "${DB_PORT}:5432"
     environment:
-      POSTGRES_USER: postgres
-      POSTGRES_PASSWORD: 1234
-      POSTGRES_DB: ai_gift_assistant
+      POSTGRES_USER: ${POSTGRES_USER}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
+      POSTGRES_DB: ${POSTGRES_DB}
     volumes:
       - postgres_data:/var/lib/postgresql/data
     healthcheck:
-      test: ["CMD-SHELL", "pg_isready -U postgres"]
+      test: ["CMD-SHELL", "pg_isready -U ${POSTGRES_USER}"]
       interval: 30s
       timeout: 5s
       retries: 3
@@ -86,27 +87,29 @@ services:
         ollama pull llama3.1 &&
         wait
       "
+
   redis:
     image: redis:7-alpine
     container_name: ai_gift_assistant_redis
     ports:
-      - "6378:6379"   
+      - "6378:${REDIS_PORT}"   
     volumes:
       - redis_data:/data
     networks:
       - monitoring_net
     command: ["redis-server", "--appendonly", "yes"]  
+
   redis-exporter:
     image: oliver006/redis_exporter:latest
     container_name: redis_exporter
     environment:
-      - REDIS_ADDR=redis:6379
+      - REDIS_ADDR=redis:${REDIS_PORT}
     ports:
-      - "9121:9121"
+      - "${REDIS_EXPORTER_PORT}:${REDIS_EXPORTER_PORT}"
     networks:
       - monitoring_net
     depends_on:
-    - redis
+      - redis
 
 volumes:
   postgres_data:
