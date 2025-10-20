@@ -13,11 +13,19 @@ CREATE TABLE IF NOT EXISTS users (
     telegram_link_confirmed BOOLEAN DEFAULT false
 );
 
+CREATE TABLE IF NOT EXISTS friends (
+    id SERIAL PRIMARY KEY,
+    user_id INT NOT NULL REFERENCES users(id) ON DELETE CASCADE,
+    friend_id INT NOT NULL REFERENCES users(id) ON DELETE CASCADE,
+    context VARCHAR(250)
+);
+
 CREATE TABLE IF NOT EXISTS chats (
     id SERIAL PRIMARY KEY,
     title VARCHAR(100) NOT NULL,
     sender_id INT NOT NULL REFERENCES users(id) ON DELETE CASCADE,
-    recipient_id INT NOT NULL REFERENCES users(id) ON DELETE CASCADE
+    recipient_id INT NOT NULL REFERENCES users(id) ON DELETE CASCADE,
+    context VARCHAR(250)
 );
 
 CREATE TABLE IF NOT EXISTS messages (
