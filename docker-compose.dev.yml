@@ -61,6 +61,24 @@ services:
       interval: 30s
       timeout: 5s
       retries: 3
+  
+  pgadmin:
+    image: dpage/pgadmin4:latest
+    container_name: ai_gift_assistant_pgadmin
+    restart: unless-stopped
+    environment:
+      PGADMIN_DEFAULT_EMAIL: ${PGADMIN_EMAIL:-admin@admin.com}
+      PGADMIN_DEFAULT_PASSWORD: ${PGADMIN_PASSWORD:-admin}
+    ports:
+      - "5050:80"
+    volumes:
+      - pgadmin_data:/var/lib/pgadmin
+    depends_on:
+      - db
+    networks:
+      - monitoring_net
+        
+
 
   ollama:
     image: ollama/ollama:latest
@@ -89,29 +107,47 @@ services:
       "
 
   redis:
-    image: redis:7-alpine
+    image: redis:latest
     container_name: ai_gift_assistant_redis
     ports:
-      - "6378:${REDIS_PORT}"   
+      - "${REDIS_PORT}:6378"
     volumes:
       - redis_data:/data
+      - ./redis_users.acl:/usr/local/etc/redis/users.acl:ro
     networks:
       - monitoring_net
-    command: ["redis-server", "--appendonly", "yes"]  
+    command: ["redis-server", "--bind", "0.0.0.0", "--port", "6378", "--appendonly", "yes", "--aclfile", "/usr/local/etc/redis/users.acl"]
+    restart: unless-stopped
 
   redis-exporter:
     image: oliver006/redis_exporter:latest
     container_name: redis_exporter
     environment:
-      - REDIS_ADDR=redis:${REDIS_PORT}
+      - REDIS_ADDR=redis:6378
+      - REDIS_USER=${REDIS_USER}
+      - REDIS_PASSWORD=${REDIS_PASSWORD}
     ports:
-      - "${REDIS_EXPORTER_PORT}:${REDIS_EXPORTER_PORT}"
+      - "${REDIS_EXPORTER_PORT}:9121"
     networks:
       - monitoring_net
     depends_on:
       - redis
+    restart: unless-stopped
+
+  redisinsight:
+    image: redis/redisinsight:latest
+    container_name: redisinsight
+    ports:
+      - "5540:5540"
+    volumes:
+      - redisinsight_data:/data
+    networks:
+      - monitoring_net
+    restart: unless-stopped
 
 volumes:
   postgres_data:
   ollama_data:
   redis_data:
+  pgadmin_data:
+  redisinsight_data:
