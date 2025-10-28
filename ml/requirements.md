@@ -2,7 +2,7 @@
 
 ## Выбор типов моделей (LLM, embeddings)
 LLM: LLama 3.1
-Embendings: ollama-embendings
+Embendings: ollama-embendings??
 
 ## Требования к производительности (latency, throughput)
 **Latency:** 1 запрос - 15 сек

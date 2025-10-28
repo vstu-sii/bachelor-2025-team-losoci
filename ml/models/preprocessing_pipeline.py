@@ -55,12 +55,12 @@ class DataPreprocessor:
     @classmethod
     def test_single_row_pipeline(cls, row_data):
         validation_result = cls.validate_single_row(row_data)
-        print(f"Valid: {validation_result['valid']}")
+        #print(f"Valid: {validation_result['valid']}")
         
         if not validation_result['valid']:
-            print("Errors:")
-            for error in validation_result['errors']:
-                print(f"  - {error}")
+            #print("Errors:")
+            #for error in validation_result['errors']:
+                #print(f"  - {error}")
             return False
         
         #print("\nData Quality")
