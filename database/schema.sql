@@ -4,13 +4,17 @@ CREATE TABLE IF NOT EXISTS users (
     password VARCHAR(50) NOT NULL,
     name VARCHAR(50),
     surname VARCHAR(50),
-    username VARCHAR(50),
+    username VARCHAR(50) UNIQUE NOT NULL,
     birthdate DATE,
     gender VARCHAR(10),
     description TEXT,
     telegram_link VARCHAR(100),
     email_confirmed BOOLEAN DEFAULT false,
-    telegram_link_confirmed BOOLEAN DEFAULT false
+    telegram_link_confirmed BOOLEAN DEFAULT false,
+    telegram_chat_id BIGINT,
+    telegram_username VARCHAR(100),
+    telegram_init_id VARCHAR(50),
+    created_at TIMESTAMP DEFAULT NOW()
 );
 
 CREATE TABLE IF NOT EXISTS friends (

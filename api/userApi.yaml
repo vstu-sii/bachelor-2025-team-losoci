@@ -1,0 +1,490 @@
+openapi: 3.0.3
+info:
+    title: User API
+    version: 1.0.0
+    description: API для управления пользователями с аутентификацией, регистрацией, обновлением профиля и интеграцией с Telegram.
+
+servers:
+    - url: https://api.example.com/v1
+      description: Production server
+    - url: http://localhost:3000/v1
+      description: Local development server
+
+components:
+    securitySchemes:
+        bearerAuth:
+            type: http
+            scheme: bearer
+            bearerFormat: JWT
+
+    schemas:
+        UserRequest:
+            type: object
+            required:
+                - email
+                - username
+            properties:
+                email:
+                    type: string
+                    format: email
+                    example: user@example.com
+                username:
+                    type: string
+                    minLength: 3
+                    example: johndoe
+                name:
+                    type: string
+                    nullable: true
+                    example: John
+                surname:
+                    type: string
+                    nullable: true
+                    example: Doe
+                birthdate:
+                    type: string
+                    format: date
+                    nullable: true
+                    example: 1990-01-01
+                gender:
+                    type: string
+                    enum: [male, female, other]
+                    nullable: true
+                description:
+                    type: string
+                    nullable: true
+                    example: Люблю кодить и путешествовать
+                telegram_link:
+                    type: string
+                    pattern: ^@[A-Za-z0-9_]{5,}$
+                    nullable: true
+                    example: "@mytelegram"
+                telegram_init_id:
+                    type: string
+                    nullable: true
+
+        UserRegisterRequest:
+            allOf:
+                - $ref: "#/components/schemas/UserRequest"
+                - type: object
+                  required:
+                      - password
+                  properties:
+                      password:
+                          type: string
+                          minLength: 6
+                          example: securePass123
+
+        UserLoginRequest:
+            type: object
+            required:
+                - password
+            properties:
+                email:
+                    type: string
+                    format: email
+                    example: user@example.com
+                username:
+                    type: string
+                    example: johndoe
+                password:
+                    type: string
+                    minLength: 6
+            oneOf:
+                - required: [email]
+                - required: [username]
+
+        UserUpdateRequest:
+            allOf:
+                - $ref: "#/components/schemas/UserRequest"
+                - type: object
+                  properties:
+                      id:
+                          type: integer
+                          readOnly: true
+
+        UserResponse:
+            type: object
+            properties:
+                id:
+                    type: integer
+                    example: 1
+                email:
+                    type: string
+                    format: email
+                username:
+                    type: string
+                name:
+                    type: string
+                    nullable: true
+                surname:
+                    type: string
+                    nullable: true
+                birthdate:
+                    type: string
+                    format: date
+                    nullable: true
+                gender:
+                    type: string
+                    enum: [male, female, other]
+                    nullable: true
+                description:
+                    type: string
+                    nullable: true
+                telegram_link:
+                    type: string
+                    nullable: true
+                telegram_link_confirmed:
+                    type: boolean
+                    example: false
+                telegram_init_id:
+                    type: string
+                    nullable: true
+                telegram_username:
+                    type: string
+                    nullable: true
+                created_at:
+                    type: string
+                    format: date-time
+
+        TokenResponse:
+            type: object
+            properties:
+                accessToken:
+                    type: string
+                    example: eyJhbGciOiJIUzI1NiIsInR5cCI6...
+
+        VerifyEmailResponse:
+            type: object
+            properties:
+                isVerified:
+                    type: boolean
+                accessToken:
+                    type: string
+
+        UpdateUserResponse:
+            type: object
+            properties:
+                user:
+                    $ref: "#/components/schemas/UserResponse"
+                deepLink:
+                    type: string
+                    nullable: true
+                    example: https://t.me/MyBot?start=verify_1_abc123
+
+        SearchUserResponse:
+            type: array
+            items:
+                $ref: "#/components/schemas/UserResponse"
+            nullable: true
+
+        ErrorResponse:
+            type: object
+            properties:
+                success:
+                    type: boolean
+                    example: false
+                message:
+                    type: string
+                data:
+                    type: object
+                    nullable: true
+                statusCode:
+                    type: integer
+
+    responses:
+        SuccessResponse:
+            description: Успешный ответ
+            content:
+                application/json:
+                    schema:
+                        type: object
+                        properties:
+                            success:
+                                type: boolean
+                                example: true
+                            message:
+                                type: string
+                            data:
+                                type: object
+                                nullable: true
+                            statusCode:
+                                type: integer
+
+        Unauthorized:
+            description: Неавторизован
+            content:
+                application/json:
+                    schema:
+                        $ref: "#/components/schemas/ErrorResponse"
+                    example:
+                        success: false
+                        message: Unauthorized
+                        statusCode: 401
+
+        BadRequest:
+            description: Неверный запрос
+            content:
+                application/json:
+                    schema:
+                        $ref: "#/components/schemas/ErrorResponse"
+
+        NotFound:
+            description: Не найдено
+            content:
+                application/json:
+                    schema:
+                        $ref: "#/components/schemas/ErrorResponse"
+
+security:
+    - bearerAuth: []
+
+paths:
+    /token/refresh:
+        get:
+            summary: Обновить access‑token
+            description: Использует refresh‑token из cookie для генерации нового access‑token
+            tags:
+                - Auth
+            responses:
+                "200":
+                    $ref: "#/components/responses/SuccessResponse"
+                "401":
+                    $ref: "#/components/responses/Unauthorized"
+
+    /user/me:
+        get:
+            summary: Получить текущего пользователя
+            tags:
+                - User
+            security:
+                - bearerAuth: []
+            responses:
+                "200":
+                    $ref: "#/components/responses/SuccessResponse"
+                "401":
+                    $ref: "#/components/responses/Unauthorized"
+
+    /user/{id}:
+        get:
+            summary: Получить пользователя по ID
+            tags:
+                - User
+            security:
+                - bearerAuth: []
+            parameters:
+                - name: id
+                  in: path
+                  required: true
+                  schema:
+                      type: integer
+            responses:
+                "200":
+                    $ref: "#/components/responses/SuccessResponse"
+                "404":
+                    $ref: "#/components/responses/NotFound"
+                "401":
+                    $ref: "#/components/responses/Unauthorized"
+
+    /user/search:
+        get:
+            summary: Поиск пользователей
+            description: Поиск по username или email (частичное совпадение, регистронезависимо)
+            tags:
+                - User
+            security:
+                - bearerAuth: []
+            parameters:
+                - name: username
+                  in: query
+                  schema:
+                      type: string
+                - name: email
+                  in: query
+                  schema:
+                      type: string
+                      format: email
+            responses:
+                "200":
+                    description: Массив найденных пользователей
+                    content:
+                        application/json:
+                            schema:
+                                $ref: "#/components/schemas/SearchUserResponse"
+                "400":
+                    $ref: "#/components/responses/BadRequest"
+                "401":
+                    $ref: "#/components/responses/Unauthorized"
+
+    /user/reset-password:
+        post:
+            summary: Отправить email для сброса пароля
+            tags:
+                - Auth
+            requestBody:
+                required: true
+                content:
+                    application/json:
+                        schema:
+                            type: object
+                            required:
+                                - email
+                            properties:
+                                email:
+                                    type: string
+                                    format: email
+            responses:
+                "200":
+                    $ref: "#/components/responses/SuccessResponse"
+                "400":
+                    $ref: "#/components/responses/BadRequest"
+
+    /user/login:
+        post:
+            summary: Вход пользователя
+            tags:
+                - Auth
+            requestBody:
+                required: true
+                content:
+                    application/json:
+                        schema:
+                            $ref: "#/components/schemas/UserLoginRequest"
+            responses:
+                "200":
+                    description: Успешный вход, возвращает accessToken и устанавливает refreshToken в cookie
+                    content:
+                        application/json:
+                            schema:
+                                type: object
+                                properties:
+                                    success:
+                                        type: boolean
+                                    message:
+                                        type: string
+                                    data:
+                                        type: object
+                                        properties:
+                                            accessToken:
+                                                type: string
+                                            user:
+                                                $ref: "#/components/schemas/UserResponse"
+                                    statusCode:
+                                        type: integer
+                "400":
+                    $ref: "#/components/responses/BadRequest"
+                "404":
+                    $ref: "#/components/responses/NotFound"
+
+    /user/logout:
+        post:
+            summary: Выход пользователя
+            description: Удаляет refresh‑token и очищает cookie
+            tags:
+                - Auth
+            security:
+                - bearerAuth: []
+            responses:
+                "200":
+                    $ref: "#/components/responses/SuccessResponse"
+                "401":
+                    $ref: "#/components/responses/Unauthorized"
+
+    /user/register:
+        post:
+            summary: Регистрация пользователя
+            description: Создаёт пользователя и отправляет письмо для верификации email
+            tags:
+                - Auth
+            requestBody:
+                required: true
+                content:
+                    application/json:
+                        schema:
+                            $ref: "#/components/schemas/UserRegisterRequest"
+            responses:
+                "201":
+                    $ref: "#/components/responses/SuccessResponse"
+                "400":
+                    $ref: "#/components/responses/BadRequest"
+
+    /user:
+        put:
+            summary: Обновить профиль пользователя
+            tags:
+                - User
+            security:
+                - bearerAuth: []
+            requestBody:
+                required: true
+                content:
+                    application/json:
+                        schema:
+                            $ref: "#/components/schemas/UserUpdateRequest"
+            responses:
+                "200":
+                    description: Пользователь обновлён, при необходимости возвращается deep‑link для подтверждения Telegram
+                    content:
+                        application/json:
+                            schema:
+                                $ref: "#/components/schemas/UpdateUserResponse"
+                "400":
+                    $ref: "#/components/responses/BadRequest"
+                "401":
+                    $ref: "#/components/responses/Unauthorized"
+
+        delete:
+            summary: Удалить аккаунт
+            tags:
+                - User
+            security:
+                - bearerAuth: []
+            responses:
+                "200":
+                    $ref: "#/components/responses/SuccessResponse"
+                "401":
+                    $ref: "#/components/responses/Unauthorized"
+
+    /user/verify-email:
+        patch:
+            summary: Подтвердить email
+            description: Вызывается по ссылке из письма, требует валидный JWT в Authorization
+            tags:
+                - Auth
+            security:
+                - bearerAuth: []
+            responses:
+                "200":
+                    description: Email подтверждён, возвращается accessToken
+                    content:
+                        application/json:
+                            schema:
+                                $ref: "#/components/schemas/VerifyEmailResponse"
+                "401":
+                    $ref: "#/components/responses/Unauthorized"
+
+    /user/password:
+        patch:
+            summary: Сменить пароль
+            tags:
+                - User
+            security:
+                - bearerAuth: []
+            requestBody:
+                required: true
+                content:
+                    application/json:
+                        schema:
+                            type: object
+                            required:
+                                - password
+                            properties:
+                                password:
+                                    type: string
+                                    minLength: 6
+            responses:
+                "200":
+                    $ref: "#/components/responses/SuccessResponse"
+                "400":
+                    $ref: "#/components/responses/BadRequest"
+                "401":
+                    $ref: "#/components/responses/Unauthorized"
