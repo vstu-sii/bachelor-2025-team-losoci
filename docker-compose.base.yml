@@ -1,0 +1,12 @@
+
+
+networks:
+  monitoring_net:
+    external: true
+
+volumes:
+  postgres_data:
+  ollama_data:
+  redis_data:
+  pgadmin_data:
+  redisinsight_data:

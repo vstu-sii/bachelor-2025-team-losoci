@@ -1,49 +1,29 @@
 groups:
-  - name: one-time-alert
-    rules:
-      - alert: TestOnce
-        expr: vector(1)      # всегда 1, чтобы alert сработал
-        for: 5s              # ждать 5 секунд перед срабатыванием
-        labels:
-          severity: critical
-          alert_once: "true" # можно использовать для фильтрации
-        annotations:
-          summary: "Тестовый alert один раз"
-          description: "Alert должен сработать только один раз"
   - name: service-alerts
     rules:
-      - alert: BackendDown
-        expr: up{job="backend"} == 0
+      - alert: InstanceDown
+        expr: up == 0
         for: 1m
         labels:
           severity: critical
         annotations:
-          summary: "Backend сервис не отвечает"
-          description: "Сервис backend недоступен более 1 минуты"
+          summary: "Instance {{ $labels.instance }} недоступен"
+          description: "{{ $labels.job }} не отвечает более 1 минуты"
 
-      - alert: FrontendDown
-        expr: up{job="frontend"} == 0
-        for: 1m
+      - alert: HighCPUUsage
+        expr: rate(node_cpu_seconds_total{mode!="idle"}[2m]) > 0.85
+        for: 2m
         labels:
-          severity: critical
+          severity: warning
         annotations:
-          summary: "Frontend сервис не отвечает"
-          description: "Сервис frontend недоступен более 1 минуты"
+          summary: "Высокая загрузка CPU"
+          description: "CPU на {{ $labels.instance }} превышает 85% уже 2 минуты"
 
-      - alert: DBDown
-        expr: up{job="db"} == 0
-        for: 1m
+      - alert: HighMemoryUsage
+        expr: (node_memory_MemTotal_bytes - node_memory_MemAvailable_bytes) / node_memory_MemTotal_bytes > 0.9
+        for: 2m
         labels:
-          severity: critical
+          severity: warning
         annotations:
-          summary: "Postgres недоступен"
-          description: "Postgres контейнер не отвечает более 1 минуты"
-
-      - alert: RedisDown
-        expr: up{job="redis"} == 0
-        for: 1m
-        labels:
-          severity: critical
-        annotations:
-          summary: "Redis недоступен"
-          description: "Redis контейнер не отвечает более 1 минуты"
+          summary: "Высокое использование памяти"
+          description: "RAM > 90% на {{ $labels.instance }}"

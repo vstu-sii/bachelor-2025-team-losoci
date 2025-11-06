@@ -1,28 +1,6 @@
-networks:
-  monitoring_net:
-    external: true
+
 
 services:
-  frontend:
-    build:
-      context: ./frontend
-      dockerfile: Dockerfile
-    container_name: ai_gift_assistant_frontend
-    ports:
-      - "${FRONTEND_PORT}:5173"
-    volumes:
-      - ./frontend:/app
-      - /app/node_modules
-    env_file:
-      - ./frontend/.env
-    networks:
-      - monitoring_net
-    healthcheck:
-      test: ["CMD", "curl", "-f", "http://localhost:${FRONTEND_PORT}/health"]
-      interval: 30s
-      timeout: 5s
-      retries: 3
-
   backend:
     build:
       context: ./backend
@@ -37,6 +15,7 @@ services:
       - ./backend/.env
     depends_on:
       - db
+      - redis
     networks:
       - monitoring_net
     healthcheck:
@@ -61,7 +40,9 @@ services:
       interval: 30s
       timeout: 5s
       retries: 3
-  
+    networks:
+      - monitoring_net
+
   pgadmin:
     image: dpage/pgadmin4:latest
     container_name: ai_gift_assistant_pgadmin
@@ -77,34 +58,6 @@ services:
       - db
     networks:
       - monitoring_net
-        
-
-
-  ollama:
-    image: ollama/ollama:latest
-    container_name: ollama
-    ports:
-      - "11434:11434"
-    volumes:
-      - ollama_data:/root/.ollama
-    restart: unless-stopped
-    deploy:
-      resources:
-        reservations:
-          devices:
-            - driver: nvidia
-              count: all
-              capabilities: [gpu]
-    entrypoint: >
-      sh -c "
-        ollama serve & 
-        until ollama list >/dev/null 2>&1; do
-          echo 'Waiting for Ollama to start...'
-          sleep 2
-        done &&
-        ollama pull llama3.1 &&
-        wait
-      "
 
   redis:
     image: redis:latest
@@ -113,10 +66,12 @@ services:
       - "${REDIS_PORT}:6378"
     volumes:
       - redis_data:/data
-      - ./redis_users.acl:/usr/local/etc/redis/users.acl:ro
     networks:
       - monitoring_net
-    command: ["redis-server", "--bind", "0.0.0.0", "--port", "6378", "--appendonly", "yes", "--aclfile", "/usr/local/etc/redis/users.acl"]
+    command: >
+      sh -c "echo 'user ${REDIS_USER} on >${REDIS_PASSWORD} ~* +@all
+      user default off' > /usr/local/etc/redis/users.acl &&
+      redis-server --bind 0.0.0.0 --port 6378 --appendonly yes --aclfile /usr/local/etc/redis/users.acl"
     restart: unless-stopped
 
 
@@ -131,9 +86,12 @@ services:
       - monitoring_net
     restart: unless-stopped
 
+networks:
+  monitoring_net:
+    external: true
+
 volumes:
   postgres_data:
-  ollama_data:
-  redis_data:
   pgadmin_data:
+  redis_data:
   redisinsight_data:
