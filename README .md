@@ -95,6 +95,11 @@ docker compose -f docker-compose.backend.yml restart backend
 docker compose -f docker-compose.backend.yml down
 ```
 
+5️⃣ запустить все :
+```bash
+docker compose build
+```
+
 ---
 
 ## 🧠 Проверка работы
