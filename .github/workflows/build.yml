@@ -16,7 +16,7 @@ jobs:
       PGADMIN_PASSWORD: ${{ secrets.PGADMIN_PASSWORD }}
       REDIS_USER: ${{ secrets.REDIS_USER }}
       REDIS_PASSWORD: ${{ secrets.REDIS_PASSWORD }}
-      
+
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
@@ -33,14 +33,12 @@ jobs:
           docker compose up -d
           docker ps
 
-      - name: Build all services
-        run: docker compose build
-          docker ps
-
-
       - name: Wait for containers to start
         run: sleep 15
 
+      - name: Container status
+        run: docker ps
+        
       - name: Show backend logs
         run: docker logs ai_gift_assistant_db || true
 
