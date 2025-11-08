@@ -28,7 +28,7 @@ services:
     image: postgres:16
     container_name: ai_gift_assistant_db
     ports:
-      - "${DB_PORT}:5432"
+      - "15432:5432"
     environment:
       POSTGRES_USER: ${POSTGRES_USER}
       POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
@@ -63,7 +63,7 @@ services:
     image: redis:latest
     container_name: ai_gift_assistant_redis
     ports:
-      - "${REDIS_PORT}:6378"
+      - "6378:6378"
     volumes:
       - redis_data:/data
     networks:
