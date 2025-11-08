@@ -1,23 +1,23 @@
 services:
-  frontend:
-    build:
-      context: ./frontend
-      dockerfile: Dockerfile
-    container_name: ai_gift_assistant_frontend
-    ports:
-      - "${FRONTEND_PORT}:5173"
-    volumes:
-      - ./frontend:/app
-      - /app/node_modules
-    env_file:
-      - ./frontend/.env
-    networks:
-      - monitoring_net
-    healthcheck:
-      test: ["CMD", "curl", "-f", "http://localhost:${FRONTEND_PORT}/health"]
-      interval: 30s
-      timeout: 5s
-      retries: 3
+  # frontend:
+  #   build:
+  #     context: ./frontend
+  #     dockerfile: Dockerfile
+  #   container_name: ai_gift_assistant_frontend
+  #   ports:
+  #     - "${FRONTEND_PORT}:5173"
+  #   volumes:
+  #     - ./frontend:/app
+  #     - /app/node_modules
+  #   env_file:
+  #     - ./frontend/.env
+  #   networks:
+  #     - monitoring_net
+  #   healthcheck:
+  #     test: ["CMD", "curl", "-f", "http://localhost:${FRONTEND_PORT}/health"]
+  #     interval: 30s
+  #     timeout: 5s
+  #     retries: 3
 
 networks:
   monitoring_net:

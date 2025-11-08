@@ -1,28 +1,28 @@
 
 
 services:
-  backend:
-    build:
-      context: ./backend
-      dockerfile: Dockerfile
-    container_name: ai_gift_assistant_backend
-    ports:
-      - "${BACKEND_PORT}:13000"
-    volumes:
-      - ./backend:/app
-      - /app/node_modules
-    env_file:
-      - ./backend/.env
-    depends_on:
-      - db
-      - redis
-    networks:
-      - monitoring_net
-    healthcheck:
-      test: ["CMD", "curl", "-f", "http://localhost:${BACKEND_PORT}/health"]
-      interval: 30s
-      timeout: 5s
-      retries: 3
+  # backend:
+  #   build:
+  #     context: ./backend
+  #     dockerfile: Dockerfile
+  #   container_name: ai_gift_assistant_backend
+  #   ports:
+  #     - "${BACKEND_PORT}:13000"
+  #   volumes:
+  #     - ./backend:/app
+  #     - /app/node_modules
+  #   env_file:
+  #     - ./backend/.env
+  #   depends_on:
+  #     - db
+  #     - redis
+  #   networks:
+  #     - monitoring_net
+  #   healthcheck:
+  #     test: ["CMD", "curl", "-f", "http://localhost:${BACKEND_PORT}/health"]
+  #     interval: 30s
+  #     timeout: 5s
+  #     retries: 3
 
   db:
     image: postgres:16
