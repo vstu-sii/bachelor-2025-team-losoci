@@ -1,0 +1,19 @@
+version: '3.9'
+
+networks:
+  monitoring_net:
+    external: true
+
+services:
+  ml_app:
+    build:
+      context: ./ml   # путь к Dockerfile внутри ml
+      dockerfile: Dockerfile
+    container_name: ml_app
+    restart: unless-stopped
+    networks:
+      - monitoring_net
+    ports:
+      - "8080:8080"
+    env_file:
+      - ./ml/.env
