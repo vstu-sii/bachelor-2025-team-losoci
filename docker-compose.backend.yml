@@ -1,28 +1,20 @@
 
 
 services:
-  # backend:
-  #   build:
-  #     context: ./backend
-  #     dockerfile: Dockerfile
-  #   container_name: ai_gift_assistant_backend
-  #   ports:
-  #     - "${BACKEND_PORT}:13000"
-  #   volumes:
-  #     - ./backend:/app
-  #     - /app/node_modules
-  #   env_file:
-  #     - ./backend/.env
-  #   depends_on:
-  #     - db
-  #     - redis
-  #   networks:
-  #     - monitoring_net
-  #   healthcheck:
-  #     test: ["CMD", "curl", "-f", "http://localhost:${BACKEND_PORT}/health"]
-  #     interval: 30s
-  #     timeout: 5s
-  #     retries: 3
+  backend:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    container_name: ai_gift_assistant_backend
+    ports:
+      - "13000:3000"
+    env_file:
+      - .env
+    depends_on:
+      - db
+      - redis
+    networks:
+      - monitoring_net
 
   db:
     image: postgres:16
@@ -43,21 +35,6 @@ services:
     networks:
       - monitoring_net
 
-  pgadmin:
-    image: dpage/pgadmin4:latest
-    container_name: ai_gift_assistant_pgadmin
-    restart: unless-stopped
-    environment:
-      PGADMIN_DEFAULT_EMAIL: ${PGADMIN_EMAIL:-admin@admin.com}
-      PGADMIN_DEFAULT_PASSWORD: ${PGADMIN_PASSWORD:-admin}
-    ports:
-      - "5050:80"
-    volumes:
-      - pgadmin_data:/var/lib/pgadmin
-    depends_on:
-      - db
-    networks:
-      - monitoring_net
 
   redis:
     image: redis:latest
@@ -66,31 +43,16 @@ services:
       - "6378:6378"
     volumes:
       - redis_data:/data
+      - ./backend/redis_users.acl:/usr/local/etc/redis/users.acl:ro
     networks:
       - monitoring_net
-    command: >
-      sh -c "echo 'user ${REDIS_USER} on >${REDIS_PASSWORD} ~* +@all
-      user default off' > /usr/local/etc/redis/users.acl &&
-      redis-server --bind 0.0.0.0 --port 6378 --appendonly yes --aclfile /usr/local/etc/redis/users.acl"
+    command: ["redis-server", "--bind", "0.0.0.0", "--port", "6378", "--appendonly", "yes", "--aclfile", "/usr/local/etc/redis/users.acl"]
     restart: unless-stopped
 
-
-  redisinsight:
-    image: redis/redisinsight:latest
-    container_name: redisinsight
-    ports:
-      - "5540:5540"
-    volumes:
-      - redisinsight_data:/data
-    networks:
-      - monitoring_net
-    restart: unless-stopped
 
 volumes:
   postgres_data:
-  pgadmin_data:
   redis_data:
-  redisinsight_data:
 
 networks:
   monitoring_net:
