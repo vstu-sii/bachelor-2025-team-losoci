@@ -4,8 +4,8 @@
 
   include:
     - docker-compose.backend.yml
-    # - docker-compose.frontend.yml
-    - docker-compose.ollama.yml
+    - docker-compose.frontend.yml
+    # - docker-compose.ollama.yml
     - docker-compose.base.yml
     - docker-compose.ai.yml
 
