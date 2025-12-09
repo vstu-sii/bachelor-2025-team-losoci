@@ -86,12 +86,12 @@ services:
       - monitoring_net
     restart: unless-stopped
 
-networks:
-  monitoring_net:
-    external: true
-
 volumes:
   postgres_data:
   pgadmin_data:
   redis_data:
   redisinsight_data:
+
+networks:
+  monitoring_net:
+    external: true

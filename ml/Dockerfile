@@ -1,14 +1,17 @@
-FROM python:3.11
+FROM python:3.13-slim
+
+# Ставим только то, что нужно для установки uv
+# With pip.
+RUN pip install uv
 
 WORKDIR /app
 
-COPY reqirements.txt .
-RUN pip install --no-cache-dir -r reqirements.txt
+COPY requirements.txt .
+
+# uv умеет читать requirements.txt напрямую
+RUN uv pip install --system --no-cache -r requirements.txt
 
 COPY . .
 
-ENV PYTHONPATH=/app/ml
 
-EXPOSE 8000
-
-CMD bash -c "python ml/api/main.py & python ml/api/run.py"
+CMD ["uv", "run", "python", "main_agent/run.py"]

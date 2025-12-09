@@ -1,0 +1,48 @@
+# see https://docs.searxng.org/admin/settings/settings.html#settings-use-default-settings
+use_default_settings: true
+
+server:
+  secret_key: "f28c78a668f7ed9cfacd016a593aaec3839434f4cf6fdeaec850da42dd827bde"
+  limiter: false # enable this when running the instance for a public usage on the internet
+  image_proxy: true
+  enable_http_api: true
+
+search:
+  formats:
+    - html
+    - json
+
+cache:
+  backend: "valkey"
+  valkey_url: "valkey://redis:6379/0"
+  
+engines:
+  - name: duckduckgo
+    disabled: false
+
+  - name: ahmia
+    disabled: true
+
+  - name: torch
+    disabled: true
+
+  - name: yacy images
+    disabled: true
+
+  - name: radio browser
+    disabled: true
+
+  - name: brave
+    disabled: true
+
+  - name: startpage
+    disabled: true
+
+  - name: youtube
+    disabled: true
+
+  - name: wikipedia
+    disabled: true
+
+botdetection:
+  enabled: false
