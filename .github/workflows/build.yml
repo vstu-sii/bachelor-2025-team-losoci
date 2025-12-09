@@ -1,47 +1,67 @@
-name: Docker Compose Build Check
+# .github/workflows/ci.yml
+name: CI – Docker Compose Test
 
 on:
   push:
-    branches: [mlops]
-
+    branches: [ main, master, mlops ]
+  pull_request:
+  workflow_dispatch:
 
 jobs:
-  compose-build:
+  test-compose:
     runs-on: ubuntu-latest
-    env:
-      POSTGRES_USER: ${{ secrets.POSTGRES_USER }}
-      POSTGRES_PASSWORD: ${{ secrets.POSTGRES_PASSWORD }}
-      POSTGRES_DB: ${{ secrets.POSTGRES_DB }}
-      PGADMIN_EMAIL: ${{ secrets.PGADMIN_EMAIL }}
-      PGADMIN_PASSWORD: ${{ secrets.PGADMIN_PASSWORD }}
-      REDIS_USER: ${{ secrets.REDIS_USER }}
-      REDIS_PASSWORD: ${{ secrets.REDIS_PASSWORD }}
+    timeout-minutes: 10
 
     steps:
-      - name: Checkout repository
+      - name: Checkout
         uses: actions/checkout@v4
 
       - name: Set up Docker Buildx
         uses: docker/setup-buildx-action@v3
 
-      - name: Validate Docker Compose file
+      # нужно для --build
+
+      - name: Validate compose file
         run: docker compose config
 
-      - name: Start services (test)
+      - name: Create your exact networks
         run: |
-          docker network create monitoring_net || true
-          docker compose up -d
-          docker ps
+          docker network create monitoring_net 2>/dev/null || true
+          docker network create searxng        2>/dev/null || true
 
-      - name: Wait for containers to start
-        run: sleep 15
+      - name: Start all services
+        run: docker compose up -d --build --force-recreate
 
-      - name: Container status
-        run: docker ps
-        
-      - name: Show backend logs
-        run: docker logs ai_gift_assistant_db || true
+      - name: Wait for healthy services (max 90 sec)
+        run: |
+          timeout 90 bash -c '
+            until docker compose ps | grep "(healthy)" >/dev/null; do
+              echo "Waiting for healthy containers..."
+              sleep 5
+            done
+            echo "All healthy services are up!"
+          ' || {
+            echo "Timeout or unhealthy services!"
+            docker compose ps
+            docker compose logs --tail=100
+            exit 1
+          }
 
-      - name: Stop and clean up
+      - name: Check backend is responding
+        run: |
+          sleep 8
+          curl -f http://localhost:13000/health && echo "Backend OK" || {
+            echo "Backend not responding!"
+            docker logs ai_gift_assistant_backend --tail=100
+            exit 1
+          }
+
+      - name: Final status
         if: always()
-        run: docker compose down -v
+        run: docker compose ps
+
+      - name: Cleanup
+        if: always()
+        run: |
+          docker compose down -v --remove-orphans --rmi local
+          docker network prune -f
