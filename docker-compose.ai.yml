@@ -72,40 +72,12 @@ services:
         max-size: "1m"
         max-file: "1"
 
-  ollama:
-    image: ollama/ollama:latest
-    container_name: ollama
-    ports:
-      - "11434:11434"
-    volumes:
-      - ollama_data:/root/.ollama
-    restart: unless-stopped
-    deploy:
-      resources:
-        reservations:
-          devices:
-            - driver: nvidia
-              count: all
-              capabilities: [gpu]
-    entrypoint: >
-      sh -c "
-        ollama serve & 
-        until ollama list >/dev/null 2>&1; do
-          echo 'Waiting for Ollama to start...'
-          sleep 2
-        done &&
-        ollama pull llama3.1 &&
-        wait
-      "
-    networks:
-      - searxng
 
 volumes:
   caddy-data:
   caddy-config:
   searxng-data:
   valkey-data2:
-  ollama_data:
 
 networks:
   monitoring_net:

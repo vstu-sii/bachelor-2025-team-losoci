@@ -26,10 +26,10 @@ services:
         wait
       "
     networks:
-      - monitoring_net
+      - searxng
 
 networks:
-  monitoring_net:
+  searxng:
     external: true
 
 volumes:

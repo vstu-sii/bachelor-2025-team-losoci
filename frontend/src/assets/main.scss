@@ -1,0 +1,24 @@
+@use "./styles/variables" as *;
+@use "./styles/mixins" as *;
+
+:root {
+    --white: #ffffff;
+    --black: #000000;
+    --grey: #8f8f8f;
+    --red: #e11b11;
+    --blue: #3074db;
+    --text-color: #ececec;
+    --placeholder-color: #adadad;
+    --pink: #fbe1e0e5;
+
+    --primary: #84c3ba;
+
+    --Inter: "Inter", sans-serif;
+    --Montserrat: "Montserrat Alternates", sans-serif;
+    --Roboto: "Roboto", sans-serif;
+
+    --btn-font-size: 16px;
+    --input-font-size: 16px;
+    --h2-font-size: 32px;
+    --undertext-font-size: 14px;
+}
