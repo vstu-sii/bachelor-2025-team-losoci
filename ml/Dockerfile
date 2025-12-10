@@ -2,14 +2,14 @@ FROM python:3.13-slim
 
 # Ставим только то, что нужно для установки uv
 # With pip.
-RUN pip install uv
+COPY --from=ghcr.io/astral-sh/uv:latest /uv /bin/uv
 
 WORKDIR /app
 
-COPY requirements.txt .
+COPY pyproject.toml uv.lock ./
 
 # uv умеет читать requirements.txt напрямую
-RUN uv pip install --system --no-cache -r requirements.txt
+RUN uv sync --no-dev --frozen --no-cache
 
 COPY . .
 
