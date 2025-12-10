@@ -83,4 +83,5 @@ networks:
   monitoring_net:
     external: true
   searxng:
+    external: true
 
