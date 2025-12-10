@@ -7,7 +7,9 @@
         "build": "tsc",
         "start": "node dist/app.js",
         "dev": "ts-node src/app.ts",
-        "dev:watch": "nodemon --exec ts-node src/app.ts"
+        "dev:watch": "nodemon --exec ts-node src/app.ts",
+        "lint": "eslint --config eslint.config.back.mjs \"src/**/*.{ts,js}\" --max-warnings=50 --fix",
+        "format:check": "prettier --check \"src/**/*.{ts,js,json,md,yml,yaml}\""
     },
     "devDependencies": {
         "@types/bcrypt": "^6.0.0",
