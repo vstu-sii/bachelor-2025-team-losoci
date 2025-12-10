@@ -24,11 +24,6 @@ jobs:
       - name: Validate compose file
         run: docker compose config
 
-      - name: Create your exact networks
-        run: |
-          docker network create monitoring_net 2>/dev/null || true
-          docker network create searxng        2>/dev/null || true
-
       - name: Start all services
         run: docker compose up -d --build --force-recreate
 
