@@ -54,6 +54,3 @@ volumes:
   postgres_data:
   redis_data:
 
-networks:
-  monitoring_net:
-    external: true

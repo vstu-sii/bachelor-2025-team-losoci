@@ -28,9 +28,5 @@ services:
     networks:
       - searxng
 
-networks:
-  searxng:
-    external: true
-
 volumes:
   ollama_data:

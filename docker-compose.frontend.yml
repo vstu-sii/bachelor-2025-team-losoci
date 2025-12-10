@@ -12,6 +12,3 @@ services:
       - monitoring_net
     restart: unless-stopped
 
-networks:
-  monitoring_net:
-    external: true

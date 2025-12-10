@@ -79,9 +79,3 @@ volumes:
   searxng-data:
   valkey-data2:
 
-networks:
-  monitoring_net:
-    external: true
-  searxng:
-    external: true
-
