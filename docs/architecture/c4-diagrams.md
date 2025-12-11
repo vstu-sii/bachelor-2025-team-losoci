@@ -2,11 +2,11 @@
 
 ## 1. Context диаграмма
 
-![Context диаграмма](/docs/context_diagram.png)
+![Context диаграмма](/docs/generated/context_diagram.png)
 
 ## 2. Container диаграмма
 
-![Container диаграмма](/docs/container_diagram.png)
+![Container диаграмма](/docs/generated/container_diagram.png)
 
 ## 3. Выбор и обоснование технологий
 
