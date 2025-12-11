@@ -1,0 +1,65 @@
+@use "variables" as *;
+
+@mixin mobile {
+    @media (max-width: $mobile) {
+        @content;
+    }
+}
+
+@mixin tablet {
+    @media (max-width: $tablet) {
+        @content;
+    }
+}
+
+@mixin laptop {
+    @media (max-width: $laptop) {
+        @content;
+    }
+}
+
+@mixin desktop {
+    @media (max-width: $desktop) {
+        @content;
+    }
+}
+
+@mixin wide {
+    @media (max-width: $wide) {
+        @content;
+    }
+}
+
+html {
+    font-size: 100%;
+}
+
+@include wide {
+    html {
+        font-size: 87.5%;
+    }
+}
+
+@include desktop {
+    html {
+        font-size: 81.25%;
+    }
+}
+
+@include laptop {
+    html {
+        font-size: 75%;
+    }
+}
+
+@include tablet {
+    html {
+        font-size: 62.5%;
+    }
+}
+
+@include mobile {
+    html {
+        font-size: 50%;
+    }
+}
