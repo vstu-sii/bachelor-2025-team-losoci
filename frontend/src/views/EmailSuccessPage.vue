@@ -1,12 +1,12 @@
 <script setup>
 import EmailConfirmationSuccess from "@/components/Auth/EmailConfirmationSuccess.vue"
-import EmailConfirmationLayout from "@/layouts/AuthorizationLayout.vue"
+import CentralMirrorLayout from "@/layouts/CentralMirrorLayout.vue"
 </script>
 
 <template>
-    <EmailConfirmationLayout>
+    <CentralMirrorLayout>
         <EmailConfirmationSuccess />
-    </EmailConfirmationLayout>
+    </CentralMirrorLayout>
 </template>
 
 <style lang="scss" scoped></style>

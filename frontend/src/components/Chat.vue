@@ -12,12 +12,15 @@ import UserService from "@/services/UserService"
 import { parseMarkdown } from "@/utils/markdown"
 import { buildPromptFromForm } from "@/utils/messageUtils"
 import { useChatStore } from "@/stores/chatStore"
+import { formatMessage } from "@/utils/useNewLine"
 
 import SendMessage from "@/assets/svg/SendMessage.svg"
 import IForm from "@/assets/svg/IForm.svg"
 import ICopy from "@/assets/icons/ICopy.vue"
 import ILike from "@/assets/icons/ILike.vue"
 import IDislike from "@/assets/icons/IDislike.vue"
+
+const isAuthorized = localStorage.getItem("accessToken") !== null
 
 const route = useRoute()
 const chatId = ref(route.params.chatId)
@@ -35,6 +38,9 @@ const recipient = ref({})
 
 const clipBoard = useClipboard()
 const chatStore = useChatStore()
+
+const recipientId = Date.now()
+const senderId = Date.now() + 1
 
 const formData = reactive({
     recipient: "",
@@ -183,30 +189,31 @@ async function sendPrompt() {
             throw new Error(result.error || "No answer from AI")
         }
 
-        const fullAnswer = result.answer
+        const fullAnswer = formatMessage(result.answer)
+        console.log(fullAnswer)
         let index = 0
         const chunkSize = 2
         const delay = 25
 
-        const assistantMsg = {
+        const assistantMsg = ref({
             id: Date.now() + 1,
             text: "",
             role: "assistant",
             isPending: true,
-        }
-        messages.value.push(assistantMsg)
+        })
+        messages.value.push(assistantMsg.value)
         scrollToBottom()
 
         const typeNextChunk = () => {
             if (index < fullAnswer.length && !controller.signal.aborted) {
                 const nextChunk = fullAnswer.slice(index, index + chunkSize)
-                assistantMsg.text += nextChunk
+                assistantMsg.value.text += nextChunk
                 index += chunkSize
                 scrollToBottom()
                 typingInterval.value = setTimeout(typeNextChunk, delay)
             } else {
-                assistantMsg.text = fullAnswer
-                assistantMsg.isPending = false
+                assistantMsg.value.text = fullAnswer
+                assistantMsg.value.isPending = false
                 scrollToBottom()
             }
         }
@@ -219,6 +226,103 @@ async function sendPrompt() {
                 text: `[ERROR: ${err.message || "AI недоступен"}]`,
                 role: "assistant",
             })
+        }
+    } finally {
+        clearTimeout(timeout)
+    }
+}
+
+async function sendPromptForGuest() {
+    if (!promptValue.value?.trim()) return
+
+    if (typingInterval.value !== null) {
+        clearTimeout(typingInterval.value)
+        typingInterval.value = null
+    }
+
+    const controller = new AbortController()
+    const timeout = setTimeout(() => controller.abort(), 60_000)
+
+    try {
+        const userMessage = promptValue.value.trim()
+
+        messages.value.push({
+            id: Date.now(),
+            text: userMessage,
+            role: "user",
+        })
+
+        promptValue.value = ""
+        botAnser.value = ""
+        scrollToBottom()
+
+        const response = await fetch(
+            `${import.meta.env.VITE_AI_SERVER_URL}/chat`,
+            {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json",
+                },
+                body: JSON.stringify({
+                    message: userMessage,
+                    recipient_id: recipientId,
+                    sender_id: senderId,
+                }),
+                signal: controller.signal,
+            }
+        )
+
+        if (!response.ok) {
+            const errorText = await response.text()
+            throw new Error(
+                `Сервер ответил ошибкой: ${response.status} ${errorText}`
+            )
+        }
+
+        const data = await response.json()
+        console.log(data)
+
+        if (!data.response) {
+            throw new Error("Пустой ответ от сервера")
+        }
+
+        const fullAnswer = formatMessage(data.response.trim())
+        let index = 0
+        const chunkSize = 2
+        const delay = 25
+
+        const assistantMsg = ref({
+            id: Date.now() + 1,
+            text: "",
+            role: "assistant",
+            isPending: true,
+        })
+        messages.value.push(assistantMsg.value)
+        scrollToBottom()
+
+        const typeNextChunk = () => {
+            if (index < fullAnswer.length && !controller.signal.aborted) {
+                const nextChunk = fullAnswer.slice(index, index + chunkSize)
+                assistantMsg.value.text += nextChunk
+                index += chunkSize
+                scrollToBottom()
+                typingInterval.value = setTimeout(typeNextChunk, delay)
+            } else {
+                assistantMsg.value.text = fullAnswer
+                assistantMsg.value.isPending = false
+                scrollToBottom()
+            }
+        }
+        typeNextChunk()
+    } catch (err) {
+        if (err.name !== "AbortError") {
+            console.error("Guest chat error:", err)
+            messages.value.push({
+                id: Date.now(),
+                text: `[ОШИБКА: ${err.message || "AI временно недоступен"}]`,
+                role: "assistant",
+            })
+            scrollToBottom()
         }
     } finally {
         clearTimeout(timeout)
@@ -361,7 +465,7 @@ watch(
                                     ? 'chat__messages__text--user'
                                     : 'chat__messages__text--assistant',
                             ]"
-                            v-html="parseMarkdown(message.text)"
+                            v-html="parseMarkdown(formatMessage(message.text))"
                         ></div>
                         <div
                             class="chat__messages__container__buttons"
@@ -387,19 +491,23 @@ watch(
             <div
                 :class="[
                     'chat__input__container',
-                    { 'chat__input__container--start': !chatId },
+                    { 'chat__input__container--start': messages.length === 0 },
                 ]"
             >
                 <div class="chat__fade"></div>
                 <BaseInput
                     v-model="promptValue"
                     :image="SendMessage"
-                    :image2="recipientImage"
+                    :image2="isAuthorized ? recipientImage : null"
                     id="sendPrompt"
                     placeholder="Введите запрос"
-                    @image-click="sendPrompt"
-                    @image2-click="toggleForm"
-                    @keydown.enter="sendPrompt"
+                    @image-click="
+                        isAuthorized ? sendPrompt() : sendPromptForGuest()
+                    "
+                    @image2-click="isAuthorized ? toggleForm() : null"
+                    @keydown.enter="
+                        isAuthorized ? sendPrompt() : sendPromptForGuest()
+                    "
                     class="chat__input"
                 />
                 <div
@@ -409,12 +517,6 @@ watch(
                 >
                     <div class="chat__user__form__inputs">
                         <div class="chat__user__form__recipient">
-                            <img
-                                v-if="recipient.avatar"
-                                class="chat__user__form__recipient__img"
-                                :src="recipient.avatar"
-                                alt="avatar"
-                            />
                             <div
                                 class="chat__user__form__recipient__input-wrapper"
                             >
@@ -716,6 +818,18 @@ watch(
         z-index: 20;
         transform-origin: bottom;
 
+        @include laptop {
+            padding: 32px;
+        }
+
+        @include tablet {
+            padding: 24px;
+        }
+
+        @include mobile {
+            padding: 16px;
+        }
+
         .chat__input__container--start &,
         .chat__input__container:not(.chat__input__container--start) & {
             opacity: 1;
@@ -848,11 +962,26 @@ watch(
         left: 50%;
         transform: translateX(-50%);
         width: 100%;
-        max-width: 1072px;
+        max-width: clamp(320px, calc(100% - 32px), 1072px);
         background: rgba(26, 26, 26, 0.6);
         backdrop-filter: blur(10px);
         z-index: 10;
         border-radius: 24px;
+
+        @include desktop {
+            margin-left: 56px;
+            max-width: clamp(320px, calc(100% - 160px), 1072px);;
+        }
+
+        @include tablet {
+            margin-left: 48px;
+            max-width: clamp(320px, calc(100% - 140px), 1072px);;
+        }
+
+        @include mobile {
+            margin-left: 44px;
+            max-width: clamp(320px, calc(100% - 120px), 1072px);;
+        }
 
         &--start {
             background: none;
@@ -871,7 +1000,6 @@ watch(
         z-index: 5;
     }
 
-    // === Input ===
     &__input {
         width: 100%;
         border-radius: 24px;

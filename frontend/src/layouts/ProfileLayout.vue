@@ -60,8 +60,8 @@
     }
 
     &__sidepanel {
+        position: fixed;
         padding: 24px 0px;
-        max-width: 368px;
         z-index: 2;
         height: calc(100vh - 80px);
         background-color: #1a1a1a;

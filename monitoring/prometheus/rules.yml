@@ -1,29 +1,21 @@
 groups:
-  - name: service-alerts
+  - name: service-availability
     rules:
-      - alert: InstanceDown
-        expr: up == 0
+
+      - alert: ServiceDown
+        expr: probe_success == 0
         for: 1m
         labels:
           severity: critical
         annotations:
-          summary: "Instance {{ $labels.instance }} недоступен"
-          description: "{{ $labels.job }} не отвечает более 1 минуты"
+          summary: "Service {{ $labels.instance }} is DOWN"
+          description: "Blackbox probe failed for {{ $labels.instance }}"
 
-      - alert: HighCPUUsage
-        expr: rate(node_cpu_seconds_total{mode!="idle"}[2m]) > 0.85
+      - alert: ServiceHighLatency
+        expr: probe_duration_seconds > 1
         for: 2m
         labels:
           severity: warning
         annotations:
-          summary: "Высокая загрузка CPU"
-          description: "CPU на {{ $labels.instance }} превышает 85% уже 2 минуты"
-
-      - alert: HighMemoryUsage
-        expr: (node_memory_MemTotal_bytes - node_memory_MemAvailable_bytes) / node_memory_MemTotal_bytes > 0.9
-        for: 2m
-        labels:
-          severity: warning
-        annotations:
-          summary: "Высокое использование памяти"
-          description: "RAM > 90% на {{ $labels.instance }}"
+          summary: "High latency on {{ $labels.instance }}"
+          description: "Probe duration is {{ $value }}s"

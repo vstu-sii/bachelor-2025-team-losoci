@@ -41,22 +41,21 @@ onMounted(async () => {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 12px;
-    padding: 28px;
+    gap: 20px;
+    padding: 1.75em;
     width: 100%;
-    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.15);
-    border-radius: 24px;
 
     &__text {
-        font-size: 20px;
+        font-size: 24px;
         font-weight: 600;
         font-family: var(--Inter);
         line-height: 1.4;
+        color: var(--text-color);
         text-align: center;
     }
 
     &__text_email {
-        color: var(--blue);
+        color: #b32ee7;
     }
 
     &__loading {

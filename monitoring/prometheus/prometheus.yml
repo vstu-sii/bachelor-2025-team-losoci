@@ -21,3 +21,37 @@ scrape_configs:
     static_configs:
       - targets: ['host.docker.internal:9323']
     
+  - job_name: "blackbox_http"
+    metrics_path: /probe
+    params:
+      module: [http_2xx]
+    static_configs:
+      - targets:
+        # - http://ai_app:8081
+        - http://ai_searxng:8080/health
+        - http://ai_ollama:11434/api/tags
+        - http://backend:1300/server
+    relabel_configs:
+      - source_labels: [__address__]
+        target_label: __param_target
+      - target_label: __address__
+        replacement: blackbox:9115
+      - source_labels: [__param_target]
+        target_label: instance
+
+  - job_name: "blackbox_tcp"
+    metrics_path: /probe
+    params:
+      module: [tcp_connect]
+    static_configs:
+      - targets:
+        - ai_redis:6379
+        - redis-2:6378
+        - db:15432
+    relabel_configs:
+      - source_labels: [__address__]
+        target_label: __param_target
+      - target_label: __address__
+        replacement: blackbox:9115
+      - source_labels: [__param_target]
+        target_label: instance

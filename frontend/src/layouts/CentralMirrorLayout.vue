@@ -22,35 +22,35 @@
     z-index: 0;
 
     &::before {
-        content: '';
+        content: "";
         position: absolute;
         inset: 0;
-        background: rgba(255, 255, 255, 0.04);
         pointer-events: none;
+        background: rgba(255, 255, 255, 0.04);
         z-index: 0;
         mix-blend-mode: overlay;
     }
 
     &__ellipse {
-        position: absolute;
-        top: 0px;
+        background: rgba(23, 24, 26, 1);
+        position: fixed;
+        bottom: 0px;
         left: 0px;
         width: 100%;
         height: 100%;
-        background-image: url('/ellipse.svg');
+        max-height: 100dvh;
+        background-image: url("/ellipse2.svg");
         background-repeat: no-repeat;
-        background-position: top left;
+        background-position: bottom left;
         background-attachment: scroll;
         background-origin: padding-box;
         background-clip: border-box;
+        background-size: contain;
         z-index: 0;
-
-        background: rgba(255, 255, 255, 0.04);
     }
 
     &__main {
         z-index: 1;
-        width: 100%;
         max-width: 575px;
 
         padding: 1em;
@@ -62,12 +62,12 @@
         background: rgba(255, 255, 255, 0.04);
         backdrop-filter: blur(3px) saturate(130%);
         border: 1px solid rgba(255, 255, 255, 0.4);
-        box-shadow: 0 8px 32px rgba(31, 38, 135, 0.3),
+        box-shadow: 0 8px 32px rgba(67, 68, 75, 0.3),
             inset 0 4px 20px rgba(255, 255, 255, 0.2);
         border-radius: 24px;
 
         &::after {
-            content: '';
+            content: "";
             position: absolute;
             top: 0;
             left: 0;

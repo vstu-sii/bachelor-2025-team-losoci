@@ -2,25 +2,33 @@ auth_enabled: false
 
 server:
   http_listen_port: 3100
+  grpc_listen_port: 9095  # Добавил, чтобы gRPC работал корректно
 
 common:
+  instance_addr: 127.0.0.1
+  path_prefix: /loki  # Важно: здесь будут все данные (чанки, индексы)
+  storage:
+    filesystem:
+      chunks_directory: /loki/chunks  # Директория для чанков
+      rules_directory: /loki/rules    # Директория для правил (если ruler не нужен, пустая)
+  replication_factor: 1
   ring:
-    instance_addr: 127.0.0.1
     kvstore:
       store: inmemory
-  replication_factor: 1
-  path_prefix: /loki
 
 schema_config:
   configs:
-  - from: 2025-01-01
-    store: tsdb
-    object_store: filesystem
-    schema: v13
-    index:
-      prefix: index_
-      period: 24h
+    - from: 2025-01-01
+      store: tsdb
+      object_store: filesystem
+      schema: v13
+      index:
+        prefix: index_
+        period: 24h
 
-storage_config:
-  filesystem:
-    directory: /loki/chunks
+# ←←← БЛОК COMPactor УДАЛЁН ПОЛНОСТЬЮ ←←←
+# Если Loki всё равно потребует директории, добавь ниже:
+# compactor:
+#   working_directory: /loki/compactor
+#   shared_store: filesystem
+#   retention_enabled: false

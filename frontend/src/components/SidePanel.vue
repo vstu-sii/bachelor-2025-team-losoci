@@ -13,6 +13,7 @@ import SidePanelBtn from "@/components/SidePanelBtn.vue"
 import UserDefault from "@/assets/svg/UserDefault.svg"
 import IProfile from "@/assets/icons/IProfile.vue"
 import ILogout from "@/assets/icons/ILogout.vue"
+import IBurger from "@/assets/icons/IBurger.vue"
 
 import ChatService from "@/services/ChatService"
 import UserService from "@/services/UserService"
@@ -41,6 +42,8 @@ const chatStore = useChatStore()
 const router = useRouter()
 const target = ref(null)
 const route = useRoute()
+
+const isOpen = ref(false)
 
 function createChat() {
     router.push("/")
@@ -158,21 +161,32 @@ watch(
 </script>
 
 <template>
-    <div :class="['sidepanel', 'sidepanel--closed']">
+    <div :class="['sidepanel', { 'sidepanel--closed': !isOpen }]">
+        <IBurger class="sidepanel__burger" @click="isOpen = !isOpen" />
         <div class="sidepanel__info">
             <IGiftIcon
                 class="sidepanel__info__icon"
                 @click="router.push('/')"
             />
-            <h2 class="sidepanel__info__title">Ai Gift Assistant</h2>
+            <h2 class="sidepanel__info__title" v-if="isOpen">
+                Ai Gift Assistant
+            </h2>
         </div>
         <section class="sidepanel__btns">
-            <SidePanelBtn :image="Chat" text="Новый чат" @click="createChat" />
+            <SidePanelBtn
+                :image="Chat"
+                :text="isOpen ? 'Новый чат' : ''"
+                @click="createChat"
+            />
             <SearchBtn v-model:query="searchQuery" />
-            <SidePanelBtn :image="Schedule" text="Открыть календарь" @click="router.push('/events')"/>
+            <SidePanelBtn
+                :image="Schedule"
+                :text="isOpen ? 'Открыть календарь' : ''"
+                @click="router.push('/events')"
+            />
         </section>
 
-        <section class="sidepanel__chats">
+        <section class="sidepanel__chats" v-if="isOpen">
             <h3 class="sidepanel__chats__title">Чаты</h3>
             <ul class="sidepanel__chats__list">
                 <li
@@ -240,7 +254,11 @@ watch(
                 </li>
             </ul>
         </section>
-        <section class="sidepanel__user_info" ref="target" v-if="!isProfile">
+        <section
+            class="sidepanel__user_info"
+            ref="target"
+            v-if="!props.isProfile"
+        >
             <div class="sidepanel__user_info__wrapper" v-if="userProfileOpen">
                 <button
                     type="button"
@@ -268,7 +286,7 @@ watch(
                     :src="user.avatar ? user.avatar : UserDefault"
                     alt="avatar"
                 />
-                <div class="sidepanel__user_info__name">
+                <div class="sidepanel__user_info__name" v-if="isOpen">
                     <span>{{ user.username }}</span>
                     <p>{{ user.email }}</p>
                 </div>
@@ -294,11 +312,28 @@ watch(
     display: flex;
     flex-direction: column;
     gap: 32px;
-    width: 368px;
+    width: 100%;
     height: 100%;
+
+    &--closed {
+        padding: 0px 8px;
+        max-width: 80px;
+    }
+
+    &__burger {
+        position: absolute;
+        top: 8px;
+        right: 18px;
+        cursor: pointer;
+    }
+
+    @include wide {
+        gap: 20px;
+    }
 
     &__info {
         padding: 10px;
+        padding-top: 28px;
         display: flex;
         gap: 24px;
         align-items: center;
@@ -394,6 +429,10 @@ watch(
                 background: rgba(0, 0, 0, 0.2);
                 border-radius: 3px;
             }
+
+            @include wide {
+                max-height: 300px;
+            }
         }
 
         &__item {
@@ -477,8 +516,10 @@ watch(
     }
 
     &__user_info {
-        margin: 0px -8px;
-        position: relative;
+        position: absolute;
+        bottom: 16px;
+        left: 8px;
+        width: calc(100% - 16px);
 
         &__container {
             width: 100%;
@@ -495,8 +536,8 @@ watch(
         }
 
         &__avatar {
-            width: 76px;
-            height: 76px;
+            width: 64px;
+            height: 64px;
             border-radius: 50%;
         }
 
@@ -516,7 +557,7 @@ watch(
             padding: 8px;
             position: absolute;
             bottom: 110%;
-            width: 100%;
+            width: 352px;
             left: 0px;
             display: flex;
             flex-direction: column;

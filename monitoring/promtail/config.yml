@@ -1,0 +1,32 @@
+server:
+  http_listen_port: 9080
+  grpc_listen_port: 0
+
+clients:
+  - url: http://loki:3100/loki/api/v1/push
+
+positions:
+  filename: /tmp/positions.yaml  # файл для хранения текущей позиции tailer
+
+scrape_configs:
+  - job_name: backend-logs
+    pipeline_stages:
+      - docker: {}  # разбирает stdout контейнеров как docker logs
+
+    docker_sd_configs:
+      - host: unix:///var/run/docker.sock  # путь к Docker API
+        refresh_interval: 10s
+
+    relabel_configs:
+      # собираем только контейнеры с label promtail=true
+      - source_labels: [__meta_docker_container_label_promtail]
+        action: keep
+        regex: "true"
+
+      # добавляем имя контейнера как label
+      - source_labels: [__meta_docker_container_name]
+        target_label: container
+
+      # добавляем имя образа как label
+      - source_labels: [__meta_docker_container_image]
+        target_label: image

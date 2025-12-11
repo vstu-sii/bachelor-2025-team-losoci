@@ -96,7 +96,7 @@ onMounted(async () => {
         <main class="events__main">
             <div class="events__main__list" ref="containerRef">
                 <h2 class="events__main__list__title">
-                    Сегодня — {{ today }}, {{ todayFullDate }}
+                    Сегодня — {{ today }}, <span>{{ todayFullDate }}</span>
                 </h2>
                 <EventDay
                     v-for="day in events"
@@ -122,6 +122,18 @@ onMounted(async () => {
     position: relative;
     z-index: 0;
 
+    @include laptop {
+        padding: 32px;
+    }
+
+    @include tablet {
+        padding: 24px;
+    }
+
+    @include mobile {
+        padding: 16px;
+    }
+
     &::before {
         content: "";
         position: absolute;
@@ -140,9 +152,9 @@ onMounted(async () => {
         width: 100%;
         height: 100%;
         max-height: 100dvh;
-        background-image: url("/ellipse4.svg");
+        background-image: url("/ellipse3.svg");
         background-repeat: no-repeat;
-        background-position: bottom left;
+        background-position: bottom right;
         background-attachment: scroll;
         background-origin: padding-box;
         background-clip: border-box;
@@ -151,22 +163,32 @@ onMounted(async () => {
     }
 
     &__main {
-        padding: 100px 180px;
+        padding: 100px 0px;
+        margin-left: 120px;
         z-index: 1;
         width: 100%;
         display: flex;
         justify-content: center;
         align-items: center;
 
+        @include wide {
+            padding: 60px 0px;
+        }
+
         &__list {
             display: flex;
             flex-direction: column;
             align-items: center;
             gap: 32px;
-            max-width: 1360px;
+            width: 100%;
             width: 100%;
             max-height: 880px;
             overflow-y: auto;
+
+            @include wide {
+                max-height: 660px;
+                gap: 20px;
+            }
 
             &::-webkit-scrollbar {
                 width: 0px;
@@ -178,6 +200,17 @@ onMounted(async () => {
                 background: rgba(0, 0, 0, 0.2);
                 border-radius: 3px;
             }
+
+            &__title {
+                font-weight: 700;
+                font-size: 3rem;
+                font-family: var(--Montserrat);
+                color: var(--white);
+
+                & span {
+                    text-decoration: underline;
+                }
+            }
         }
     }
 
@@ -185,10 +218,30 @@ onMounted(async () => {
         position: fixed;
         padding: 24px 0px;
         max-width: 368px;
+        min-height: calc(100dvh - 80px);
         z-index: 2;
         height: calc(100vh - 80px);
         background-color: #1a1a1a;
         border-radius: 24px;
+
+        @include desktop {
+            background: none;
+        }
+
+        @include laptop {
+            height: calc(100vh - 64px);
+            background: none;
+        }
+
+        @include tablet {
+            height: calc(100vh - 48px);
+            background: none;
+        }
+
+        @include mobile {
+            height: calc(100vh - 32px);
+            background: none;
+        }
     }
 }
 </style>

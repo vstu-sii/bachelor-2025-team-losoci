@@ -32,29 +32,31 @@ services:
     restart: unless-stopped
 
   loki:
-    image: grafana/loki:latest
+    image: grafana/loki:2.9.0
     container_name: loki
     ports:
       - "3100:3100"
-    volumes:
-      - ./loki/config.yaml:/etc/loki/local-config.yaml
-      - ./loki/data:/loki
-    command: -config.file=/etc/loki/local-config.yaml
     networks:
       - monitoring_net
+    volumes:
+      - loki_data:/loki
+      - ./loki/config.yaml:/etc/loki/local-config.yaml
+    command: -config.file=/etc/loki/local-config.yaml
     restart: unless-stopped
-
 
   promtail:
     image: grafana/promtail:2.9.0
     container_name: promtail
+    depends_on:
+      - loki
     volumes:
+      # Docker сокет для чтения логов всех контейнеров
       - /var/run/docker.sock:/var/run/docker.sock:ro
-      - ./promtail/config.yaml:/etc/promtail/config.yaml
+      # Конфиг Promtail
+      - ./monitoring/promtail/config.yml:/etc/promtail/config.yml:ro
     networks:
       - monitoring_net
     restart: unless-stopped
-
 
   alertmanager:
     image: prom/alertmanager
@@ -72,6 +74,8 @@ services:
       - monitoring_net
     restart: unless-stopped
 
-  
+
+
 volumes:
   grafana_data:
+  loki_data:

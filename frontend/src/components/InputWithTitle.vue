@@ -1,12 +1,12 @@
 <script setup>
-const modelValue = defineModel();
+const modelValue = defineModel()
 
-const emit = defineEmits(['image-click']);
+const emit = defineEmits(["image-click"])
 
 const props = defineProps({
     type: {
         type: String,
-        default: 'text',
+        default: "text",
     },
     placeholder: {
         type: String,
@@ -22,13 +22,13 @@ const props = defineProps({
     },
     image: {
         type: String,
-        default: '',
+        default: "",
     },
     id: {
         type: String,
-        default: '',
+        default: "",
     },
-});
+})
 </script>
 
 <template>

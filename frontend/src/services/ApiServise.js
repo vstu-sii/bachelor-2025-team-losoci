@@ -85,9 +85,9 @@ class ApiService {
     }
 
     logout() {
-        console.log("logout")
         localStorage.removeItem("accessToken")
         delete this.api.defaults.headers.common.Authorization
+        if (router.currentRoute.value.path === "/") return
         router.push("/authorization")
     }
 

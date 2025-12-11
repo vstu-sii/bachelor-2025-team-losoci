@@ -121,16 +121,15 @@ async function updatePassword() {
     flex-direction: column;
     align-items: center;
     gap: 20px;
-    padding: 28px;
+    padding: 1.75em;
     width: 100%;
-    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.15);
-    border-radius: 24px;
 
     &__text {
-        font-size: 20px;
+        font-size: 2rem;
         font-weight: 600;
         font-family: var(--Inter);
         line-height: 1.4;
+        color: var(--text-color);
         text-align: center;
     }
 
@@ -139,6 +138,13 @@ async function updatePassword() {
         display: flex;
         flex-direction: column;
         gap: 20px;
+    }
+
+    &__error {
+        color: #f50101;
+        font-size: 1.5rem;
+        font-weight: 600;
+        font-family: var(--Inter);
     }
 }
 </style>

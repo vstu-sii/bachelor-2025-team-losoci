@@ -156,12 +156,12 @@ async function updateEvent() {
 
 <template>
     <div class="event_day">
-        <div class="event_day__header" @click="openCreateForm">
-            <span class="event_day__date">{{ date }}</span>
-            <button class="event_day__add-btn">＋</button>
+        <div class="event_day__header">
+            <span class="event_day__date" @dblclick="openCreateForm">{{
+                date.split("T")[0]
+            }}</span>
         </div>
-
-        <div class="event_day__list">
+        <div class="event_day__list" v-if="events[0].id || isEditing">
             <div class="event_day__list__edit" v-if="isEditing">
                 <BaseInput
                     v-model="eventData.title"
@@ -240,81 +240,100 @@ async function updateEvent() {
                 class="event_day__list__item"
                 v-for="event in events"
                 :key="event.id"
-                @click="openEditForm(event)"
+                @dblclick="openEditForm(event)"
             >
                 <span class="event_day__list__item__title">{{
                     event.title
                 }}</span>
             </div>
         </div>
+        <div class="event_day__delimiter"></div>
     </div>
 </template>
 
 <style scoped lang="scss">
 .event_day {
-    border: 1px solid #ddd;
     border-radius: 10px;
     padding: 10px;
     margin-bottom: 16px;
-    background: #fff;
     transition: 0.3s;
+    width: 100%;
+    max-width: 800px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+
+    &__delimiter {
+        width: 100%;
+        height: 2px;
+        background: var(--placeholder-color);
+    }
 
     &__header {
         display: flex;
         justify-content: space-between;
         align-items: center;
+        font-size: 2rem;
+        color: var(--white);
+        font-weight: 700;
+        font-family: var(--Montserrat);
+    }
+
+    &__date {
+        user-select: none;
         cursor: pointer;
-
-        .event_day__add-btn {
-            background: #007bff;
-            color: white;
-            border: none;
-            border-radius: 6px;
-            padding: 2px 8px;
-            font-size: 18px;
-            cursor: pointer;
-            transition: 0.2s;
-
-            &:hover {
-                background: #0056b3;
-            }
-        }
+        text-decoration: underline;
     }
 
     &__list__edit {
-        margin-top: 10px;
+        margin: 10px 10px 20px 10px;
         display: flex;
         flex-direction: column;
         gap: 8px;
-        background: #f9f9f9;
+        background-color: rgb(59, 59, 59);
         padding: 12px;
-        border-radius: 8px;
+        border-radius: 24px;
     }
 
     &__actions {
         display: flex;
-        gap: 8px;
-        margin-top: 6px;
+        justify-content: flex-end;
+        gap: 16px;
+        margin: 10px 0px 0px 0px;
 
         .btn {
-            padding: 6px 12px;
-            border-radius: 6px;
+            padding: 12px 24px;
+            border-radius: 12px;
             cursor: pointer;
             border: none;
-            font-size: 14px;
+            font-size: 20px;
+            font-family: var(--Inter);
 
             &--create {
-                background: #28a745;
-                color: white;
+                background: linear-gradient(135deg, #a855f7, #7c3aed);
+                color: var(--white);
+
+                &:hover {
+                    background: linear-gradient(135deg, #7c3aed, #a855f7);
+                }
             }
 
             &--edit {
-                background: #ffc107;
-                color: #222;
+                background: linear-gradient(135deg, #a855f7, #7c3aed);
+                color: var(--white);
+
+                &:hover {
+                    background: linear-gradient(135deg, #7c3aed, #a855f7);
+                }
             }
 
             &--cancel {
-                background: #ccc;
+                background: var(--red);
+                color: var(--white);
+
+                &:hover {
+                    background: rgb(216, 10, 10);
+                }
             }
         }
     }
@@ -323,12 +342,17 @@ async function updateEvent() {
         margin-top: 6px;
         padding: 6px;
         border-radius: 6px;
-        background: #f2f2f2;
+        background: var(--purple);
         cursor: pointer;
         transition: 0.2s;
+        font-size: 20px;
+        font-family: var(--Inter);
+        font-weight: 600;
+        user-select: none;
+        color: var(--white);
 
         &:hover {
-            background: #e9e9e9;
+            background: var(--grey);
         }
     }
 }

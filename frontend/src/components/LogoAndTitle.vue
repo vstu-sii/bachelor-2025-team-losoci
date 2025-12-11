@@ -15,8 +15,19 @@ import IGiftIcon from '@/assets/icons/IGiftIcon.vue';
     align-items: center;
     gap: 24px;
 
+    &__icon {
+        @include tablet {
+            width: 50px;
+            height: 50px;
+        }
+    }
+
     &__icon:hover {
         animation: rotateGift 0.8s linear;
+
+        @include tablet {
+            animation: none;
+        }
     }
 
     @keyframes rotateGift {

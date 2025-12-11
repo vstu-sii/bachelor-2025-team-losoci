@@ -1,13 +1,344 @@
+services:
+  ########################################
+  # STACK: AI App
+  ########################################
+  ai_app:
+    build:
+      context: ./ml   # путь к Dockerfile внутри ml
+      dockerfile: Dockerfile
+    container_name: ai_app
+    restart: unless-stopped
+    networks:
+      - monitoring_net
+      - searxng
+      - monbridge
+    ports:
+      - "8081:8081"
+    env_file:
+      - .env
+    depends_on:
+      - ai_caddy
+      - ai_searxng
+      - ai_ollama
+      - ai_redis
+    labels:
+      - "promtail=true"
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8081"]
+      interval: 30s
+      timeout: 10s
+      retries: 5
+      start_period: 20s
 
-  # Главный compose объединяет все окружения
-  # Запускает общую сеть, чтобы контейнеры видели друг друга
 
-  include:
-    - docker-compose.backend.yml
-    - docker-compose.frontend.yml
-    # - docker-compose.ollama.yml
-    - docker-compose.ai.yml
+  ai_caddy:
+    container_name: ai_caddy
+    image: docker.io/library/caddy:2-alpine
+    network_mode: host
+    restart: unless-stopped
+    volumes:
+      - ./ml/docker_settings/Caddyfile:/etc/caddy/Caddyfile:ro
+      - caddy-data:/data:rw
+      - caddy-config:/config:rw
+    environment:
+      - SEARXNG_HOSTNAME=${SEARXNG_HOSTNAME:-http://localhost}
+      - SEARXNG_TLS=${LETSENCRYPT_EMAIL:-internal}
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "1m"
+        max-file: "1"
+    labels:
+      - "promtail=true"
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost"]
+      interval: 30s
+      timeout: 5s
+      retries: 5
 
-  networks:
-    monitoring_net:
-    searxng:
+
+  ai_searxng:
+    container_name: ai_searxng
+    image: docker.io/searxng/searxng:latest
+    restart: unless-stopped
+    networks:
+      - searxng
+      - monitoring_net
+      - monbridge
+    ports:
+      - "8080:8080"
+    volumes:
+      - ./ml/docker_settings/searxng:/etc/searxng:rw
+      - searxng-data:/var/cache/searxng:rw
+    environment:
+      - SEARXNG_BASE_URL=https://${SEARXNG_HOSTNAME:-localhost}/
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "1m"
+        max-file: "1"
+    labels:
+      - "promtail=true"
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8080/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 5
+
+  ai_redis:
+    container_name: ai_redis
+    image: docker.io/valkey/valkey:8-alpine
+    command: valkey-server --save 30 1 --loglevel warning
+    restart: unless-stopped
+    ports:
+      - "6380:6379"
+    networks:
+      - searxng
+      - monitoring_net
+      - monbridge
+    volumes:
+      - valkey-data2:/data
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "1m"
+        max-file: "1"
+    healthcheck:
+      test: ["CMD", "valkey-cli", "ping"]
+      interval: 20s
+      timeout: 5s
+      retries: 3
+    labels:
+      - "promtail=true"
+  ai_ollama:
+    image: ollama/ollama:latest
+    container_name: ai_ollama
+    ports:
+      - "11434:11434"
+    volumes:
+      - ollama_data:/root/.ollama
+    restart: unless-stopped
+    environment:
+      - NVIDIA_VISIBLE_DEVICES=all
+    runtime: nvidia
+    entrypoint: >
+      sh -c "
+        ollama serve & 
+        until ollama list >/dev/null 2>&1; do
+          echo 'Waiting for Ollama to start...'
+          sleep 2
+        done &&
+        ollama pull llama3.1 &&
+        wait
+      "
+    networks:
+      - searxng
+      - monitoring_net
+      - monbridge 
+    labels:
+      - "promtail=true"
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:11434/api/tags"]
+      interval: 30s
+      timeout: 10s
+      retries: 5
+      start_period: 20s
+
+  ########################################
+  # STACK: Monitoring
+  ########################################
+
+  blackbox:
+    image: prom/blackbox-exporter:latest
+    container_name: blackbox
+    restart: unless-stopped
+    ports:
+      - "9115:9115"
+    networks:
+      monbridge:
+        aliases:
+          - blackbox
+          
+
+
+  prometheus:
+    image: prom/prometheus:latest
+    container_name: prometheus
+    volumes:
+      - ./monitoring/prometheus/prometheus.yml:/etc/prometheus/prometheus.yml
+      - ./monitoring/prometheus/rules.yml:/etc/prometheus/rules.yml
+    ports:
+      - "9092:9090"
+    networks:
+      monbridge:
+        aliases:
+          - prometheus
+
+    restart: unless-stopped
+
+  grafana:
+    image: grafana/grafana:latest
+    container_name: grafana
+    environment:
+      - GF_SECURITY_ADMIN_USER=${GF_ADMIN_USER}
+      - GF_SECURITY_ADMIN_PASSWORD=${GF_ADMIN_PASSWORD}
+    ports:
+      - "23000:3000"
+    depends_on:
+      - prometheus
+      - loki
+    networks:
+      - monitoring_net
+    volumes:
+      - grafana_data:/var/lib/grafana
+    restart: unless-stopped
+
+  loki:
+    image: grafana/loki:2.9.0
+    container_name: loki
+    ports:
+      - "3100:3100"
+    networks:
+      - monitoring_net
+    volumes:
+      - loki_data:/loki
+      - ./monitoring/loki/config.yaml:/etc/loki/local-config.yaml
+    command: -config.file=/etc/loki/local-config.yaml
+    restart: unless-stopped
+
+  promtail:
+    image: grafana/promtail:2.9.0
+    container_name: promtail
+    depends_on:
+      - loki
+    volumes:
+      # Docker сокет для чтения логов всех контейнеров
+      - /var/run/docker.sock:/var/run/docker.sock:ro
+      # Конфиг Promtail
+      - ./monitoring/promtail/config.yml:/etc/promtail/config.yml:ro
+    networks:
+      - monitoring_net
+    restart: unless-stopped
+
+  alertmanager:
+    image: prom/alertmanager
+    container_name: alertmanager
+    volumes:
+      - ./monitoring/alertmanager/alertmanager.yml:/etc/alertmanager/alertmanager.yml
+    command:
+      - '--config.file=/etc/alertmanager/alertmanager.yml'
+      - '--log.level=debug'
+    env_file:
+      - .env
+    ports:
+      - "9093:9093"
+    networks:
+      - monitoring_net
+    restart: unless-stopped
+
+  ########################################
+  # STACK: Backend
+  ########################################
+
+  backend:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    container_name: ai_gift_assistant_backend
+    ports:
+      - "13000:3000"
+    env_file:
+      - ./backend/.env
+    depends_on:
+      - db
+      - redis-2
+    networks:
+      - monitoring_net
+      - monbridge
+    volumes:
+      - backend_picture:/app/uploads
+    labels:
+    - "promtail=true"  
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:13000/server"]
+      interval: 30s
+      timeout: 10s
+      retries: 5
+      start_period: 20s
+
+  db:
+    image: postgres:16
+    container_name: ai_gift_assistant_db
+    ports:
+      - "15432:5432"
+    environment:
+      POSTGRES_USER: ${POSTGRES_USER}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
+      POSTGRES_DB: ${POSTGRES_DB}
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+      # - ./backend/mydb_dump.sql:/docker-entrypoint-initdb.d/mydb_dump.sql    расскоментировать при первом запуске 
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U ${POSTGRES_USER}"]
+      interval: 30s
+      timeout: 5s
+      retries: 3
+    networks:
+      - monitoring_net
+      - monbridge
+    labels:
+      - "promtail=true"
+
+
+  redis-2:
+    image: redis:latest
+    container_name: back_redis
+    ports:
+      - "6378:6378"
+    volumes:
+      - redis_data:/data
+      - ./backend/redis_users.acl:/usr/local/etc/redis/users.acl:ro
+    networks:
+      - monitoring_net
+      - monbridge
+    command: ["redis-server", "--bind", "0.0.0.0", "--port", "6378", "--appendonly", "yes", "--aclfile", "/usr/local/etc/redis/users.acl"]
+    restart: unless-stopped
+    labels:
+      - "promtail=true"
+
+  ########################################
+  # STACK: Frontend
+  ########################################
+
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    container_name: ai_gift_assistant_frontend
+    ports:
+      - "5986:80"
+    env_file:
+      - ./frontend/.env
+    networks:
+      - monitoring_net
+    restart: unless-stopped
+    labels:
+      - "promtail=true"
+
+volumes:
+  caddy-data:
+  caddy-config:
+  searxng-data:
+  valkey-data2:
+  ollama_data:
+  grafana_data:
+  loki_data:
+  postgres_data:
+  redis_data:
+  backend_picture:
+
+networks:
+  monitoring_net:
+  searxng:
+  monbridge:
+    driver: bridge

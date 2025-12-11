@@ -91,5 +91,12 @@ async function resetPassword() {
         flex-direction: column;
         gap: 20px;
     }
+
+    &__error {
+        color: #f50101;
+        font-size: 1.5rem;
+        font-weight: 600;
+        font-family: var(--Inter);
+    }
 }
 </style>
