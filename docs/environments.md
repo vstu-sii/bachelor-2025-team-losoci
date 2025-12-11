@@ -173,7 +173,6 @@ CLIENT_URL=
    - Backend
    - Redis
    - PostgreSQL
-   - Nginx
    - Chroma
 4. Проверка состояния API.
 5. Выполнение smoke-теста:
