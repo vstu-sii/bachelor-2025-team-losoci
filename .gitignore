@@ -2,6 +2,7 @@
 
 node_modules/
 monitoring/loki/data
+monitoring/alertmanager/alertmanager.yml
 #--------------AI-engineer----------------------
 **/__pycache__/
 /ml/models/experiment.ipynb
