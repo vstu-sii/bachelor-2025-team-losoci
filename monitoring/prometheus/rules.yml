@@ -2,20 +2,48 @@ groups:
   - name: service-availability
     rules:
 
+      # ------------------------------
+      # HTTP сервисы
+      # ------------------------------
       - alert: ServiceDown
-        expr: probe_success == 0
+        expr: probe_success{job="blackbox_http"} == 0
         for: 1m
         labels:
           severity: critical
+          type: http
         annotations:
           summary: "Service {{ $labels.instance }} is DOWN"
-          description: "Blackbox probe failed for {{ $labels.instance }}"
+          description: "HTTP probe failed for {{ $labels.instance }}"
 
       - alert: ServiceHighLatency
-        expr: probe_duration_seconds > 1
+        expr: probe_duration_seconds{job="blackbox_http"} > 1
         for: 2m
         labels:
           severity: warning
+          type: http
         annotations:
           summary: "High latency on {{ $labels.instance }}"
-          description: "Probe duration is {{ $value }}s"
+          description: "HTTP probe duration is {{ $value }}s"
+
+      # ------------------------------
+      # TCP сервисы
+      # ------------------------------
+      - alert: TcpServiceDown
+        expr: probe_success{job="blackbox_tcp"} == 0
+        for: 1m
+        labels:
+          severity: critical
+          type: tcp
+        annotations:
+          summary: "TCP service {{ $labels.instance }} is DOWN"
+          description: "TCP probe failed for {{ $labels.instance }}"
+
+      - alert: TcpServiceHighLatency
+        expr: probe_duration_seconds{job="blackbox_tcp"} > 1
+        for: 2m
+        labels:
+          severity: warning
+          type: tcp
+        annotations:
+          summary: "High TCP latency on {{ $labels.instance }}"
+          description: "TCP probe duration is {{ $value }}s"

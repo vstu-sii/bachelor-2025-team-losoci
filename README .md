@@ -1,24 +1,27 @@
 # 📘 README — Инструкция по запуску проекта
 
 ## 🧭 Описание проекта
-Этот проект состоит из следующих компонентов:
-- **Backend** — серверная часть приложения  
-- **PostgreSQL** — основная база данных  
-- **PgAdmin** — веб-интерфейс для управления БД  
-- **Redis** — кеш и in-memory хранилище  
-- **Redis Exporter** — метрики Redis для Prometheus  
-- **RedisInsight** — визуальный интерфейс Redis  
 
-Все контейнеры связаны через общую сеть `monitoring_net`, чтобы видеть друг друга.
+Проект состоит из следующих компонентов:
+
+* **Backend** — серверная часть приложения
+* **PostgreSQL** — основная база данных
+* **PgAdmin** — веб-интерфейс для управления БД
+* **Redis** — кеш и in-memory хранилище
+* **Redis Exporter** — метрики Redis для Prometheus
+* **RedisInsight** — визуальный интерфейс Redis
+
+Все контейнеры объединены в сеть `monitoring_net` для взаимодействия между ними.
 
 ---
 
 ## ⚙️ Требования
 
 Перед запуском убедись, что установлено:
-- Docker Desktop  
-- Docker Compose  
-- (для Windows) Radmin VPN — для сетевого доступа между машинами
+
+* Docker Desktop
+* Docker Compose
+* (для Windows) Radmin VPN — для сетевого доступа между машинами
 
 ---
 
@@ -28,129 +31,108 @@
 project-root/
 │
 ├─ .env
-├─ docker-compose.<...>.yml
+├─ docker-compose.<env>.yml
 └─ README.md
 ```
 
 ---
 
-## 🔑 Настройки окружения (.env)
+## 🌐 Настройка Alertmanager и Langfuse
 
-```env
-# Postgres
-POSTGRES_USER=dev_user
-POSTGRES_PASSWORD=dev_password
-POSTGRES_DB=example_db
+Перед первым запуском создайте конфигурацию Alertmanager:
 
-PGADMIN_EMAIL=admin@example.com
-PGADMIN_PASSWORD=example_pass
+```yaml
+global:
+  resolve_timeout: 5m
 
-# Redis
-REDIS_PORT=6379
-REDIS_EXPORTER_PORT=9121
-REDIS_USER=test_user
-REDIS_PASSWORD=test_password_123
+route:
+  receiver: 'yandex-email'
+  group_by: ['alertname']
+  group_wait: 10s
+  group_interval: 30s
+  repeat_interval: 1h
 
-# Frontend/Backend
-FRONTEND_PORT=5173
-BACKEND_PORT=13000
-DB_PORT=15432
+receivers:
+  - name: 'yandex-email'
+    email_configs:
+      - to: '${ALERT_TO}'
+        from: '${ALERT_FROM}'
+        smarthost: '${SMTP_HOST}:${SMTP_PORT}'
+        auth_username: '${SMTP_USER}'
+        auth_identity: '${SMTP_USER}'
+        auth_password: '${SMTP_PASS}'
+        require_tls: true
 ```
 
----
-
-## 🌐 Создание общей сети Docker
-
-Перед первым запуском:
-```bash
-docker network create monitoring_net
-```
+Установите Langfuse по инструкции: [https://langfuse.com/self-hosting/deployment/docker-compose](https://langfuse.com/self-hosting/deployment/docker-compose) и сгенерируйте ключи для подключения.
 
 ---
 
 ## 🚀 Запуск окружения
 
-1️⃣ Запустить что-то отдельное (backend):
+1️⃣ Запустить все сервисы:
+
 ```bash
-docker compose --env-file .env -f docker-compose.backend.yml up -d
+docker compose -f docker-compose.yml up -d
 ```
 
-2️⃣ Проверить запущенные контейнеры:
+2️⃣ Проверить состояние контейнеров:
+
 ```bash
 docker ps
 ```
 
-3️⃣ Посмотреть логи:
-```bash
-docker compose -f docker-compose.backend.yml logs -f
-```
-
-4️⃣ Перезапустить сервис (например, backend):
-```bash
-docker compose -f docker-compose.backend.yml restart backend
-```
-
-5️⃣ Остановить всё:
-```bash
-docker compose -f docker-compose.backend.yml down
-```
-
-5️⃣ запустить все :
-```bash
-docker compose build
-```
+3️⃣ (Опционально) Создать файл уведомлений для Alertmanager.
 
 ---
 
 ## 🧠 Проверка работы
 
-| Сервис | Описание | URL |
-|--------|-----------|------|
-| Backend API | Основной API-сервер | http://localhost:13000 |
-| PostgreSQL | Подключение к БД | http://localhost:15432 |
-| PgAdmin | Веб-интерфейс БД | http://localhost:5050 |
-| RedisInsight | Веб-интерфейс Redis | http://localhost:5540 |
-| Redis Exporter | Метрики Redis | http://localhost:9121/metrics |
+| Сервис         | Описание            | URL                                                            |
+| -------------- | ------------------- | -------------------------------------------------------------- |
+| Backend API    | Основной API-сервер | [http://localhost:13000](http://localhost:13000)               |
+| PostgreSQL     | Подключение к БД    | [http://localhost:15432](http://localhost:15432)               |
+| PgAdmin        | Веб-интерфейс БД    | [http://localhost:5050](http://localhost:5050)                 |
+| RedisInsight   | Веб-интерфейс Redis | [http://localhost:5540](http://localhost:5540)                 |
+| Redis Exporter | Метрики Redis       | [http://localhost:9121/metrics](http://localhost:9121/metrics) |
 
 ---
 
 ## 🧩 Подключение коллег через Radmin VPN
 
-Если ты и другие разработчики находитесь в одной Radmin VPN-сети,  
-то твои контейнеры будут доступны по твоему Radmin IP.
+Если вы и другие разработчики находитесь в одной Radmin VPN-сети, контейнеры будут доступны по вашему Radmin IP.
 
-Например, если у тебя в Radmin IP `26.81.6.105`,  
-то коллеги смогут подключиться к:
+Пример для IP `26.81.6.105`:
 
-| Сервис | Пример URL |
-|--------|-------------|
-| Backend | http://26.81.6.105:13000 |
-| PgAdmin | http://26.81.6.105:5050 |
-| RedisInsight | http://26.81.6.105:5540 |
+| Сервис       | URL                                                  |
+| ------------ | ---------------------------------------------------- |
+| Backend      | [http://26.81.6.105:13000](http://26.81.6.105:13000) |
+| PgAdmin      | [http://26.81.6.105:5050](http://26.81.6.105:5050)   |
+| RedisInsight | [http://26.81.6.105:5540](http://26.81.6.105:5540)   |
 
-> Убедись, что Docker Desktop и Firewall разрешают входящие подключения.
+> Убедитесь, что Docker Desktop и Firewall разрешают входящие подключения.
 
 ---
 
 ## 🧹 Полезные команды
 
-| Команда | Назначение |
-|----------|-------------|
-| docker ps | Показать запущенные контейнеры |
-| docker logs <container> | Логи контейнера |
-| docker compose down -v | Остановить и удалить volume |
-| docker exec -it <container> bash | Войти в контейнер |
-| docker network inspect monitoring_net | Проверить контейнеры в сети |
+| Команда                               | Назначение                              |
+| ------------------------------------- | --------------------------------------- |
+| docker ps                             | Показать запущенные контейнеры          |
+| docker logs <container>               | Просмотр логов контейнера               |
+| docker compose down -v                | Остановить контейнеры и удалить volumes |
+| docker exec -it <container> bash      | Войти в контейнер                       |
+| docker network inspect monitoring_net | Проверить контейнеры в сети             |
 
 ---
 
 ## 💡 Рекомендации
 
-- Для Windows с Docker Desktop: включи **Use WSL 2 based engine**.  
-- При изменении `.env` делай `docker compose down` и потом `up -d`.  
-- Redis запускается без отдельного ACL-файла, пароль задаётся через `.env`.  
+* Для Windows с Docker Desktop включите **Use WSL 2 based engine**.
+* При изменении `.env` выполняйте `docker compose down`, затем `docker compose up -d`.
+* Redis запускается без отдельного ACL-файла, пароль задаётся через `.env`.
 
 ---
 
-👨‍💻 **Автор:**  
-Инфраструктура подготовлена под совместную разработку через Docker + Radmin VPN.
+👨‍💻 **Автор:**
+Инфраструктура подготовлена для совместной разработки через Docker + Radmin VPN.

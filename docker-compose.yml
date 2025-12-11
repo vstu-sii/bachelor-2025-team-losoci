@@ -229,11 +229,12 @@ services:
       - '--config.file=/etc/alertmanager/alertmanager.yml'
       - '--log.level=debug'
     env_file:
-      - .env
+      - ./monitoring/.env
     ports:
       - "9093:9093"
     networks:
       - monitoring_net
+      - monbridge
     restart: unless-stopped
 
   ########################################

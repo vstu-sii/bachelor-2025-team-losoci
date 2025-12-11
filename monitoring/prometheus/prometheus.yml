@@ -28,9 +28,9 @@ scrape_configs:
     static_configs:
       - targets:
         # - http://ai_app:8081
-        - http://ai_searxng:8080/health
+        # - http://ai_searxng:8080/health
         - http://ai_ollama:11434/api/tags
-        - http://backend:1300/server
+        - http://backend:3000/server
     relabel_configs:
       - source_labels: [__address__]
         target_label: __param_target
@@ -47,7 +47,7 @@ scrape_configs:
       - targets:
         - ai_redis:6379
         - redis-2:6378
-        - db:15432
+        - db:5432
     relabel_configs:
       - source_labels: [__address__]
         target_label: __param_target
