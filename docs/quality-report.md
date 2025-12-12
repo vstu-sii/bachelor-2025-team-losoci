@@ -1,4 +1,4 @@
-# 📊 Quality Report — Smart Gift Assistant
+# 📊 Quality Report — AI Gift Assistant
 
 ## 1. Валидация Use-cases
 
