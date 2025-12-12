@@ -10,7 +10,9 @@
 
 ### План запуска
 
-1. Запустить
+1. **Раскоментить в docker-compose.yml строку: ` - ./backend/mydb_dump.sql:/docker-entrypoint-initdb.d/mydb_dump.sql`**
+
+2. Запустить
    ```
    Прописать в консоли: docker-compose -f docker-compose.yml up --build
    ```
