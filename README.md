@@ -31,9 +31,7 @@
 - **Frontend:**
 
   - Vue.js
-  - TypeScript
   - Pinia
-  - TailwindCSS
 
 - **Backend:**
 
