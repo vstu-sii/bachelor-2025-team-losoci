@@ -12,7 +12,7 @@
 
 1. Запустить
    ```
-   Прописать в консоли: docker-compose.yml up
+   Прописать в консоли: docker-compose -f docker-compose.yml up --build
    ```
 
 ---

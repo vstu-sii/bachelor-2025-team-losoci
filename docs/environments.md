@@ -48,7 +48,7 @@
 
 Ниже перечислены ключевые переменные окружения, используемые в проекте.
 
-### Пример `.env` (структура):
+### Пример `.env` (back-end):
 
 ```env
 # JWT
@@ -92,6 +92,55 @@ AI_CHAT_AGENT_HOST=
 
 # Frontend
 CLIENT_URL=
+```
+
+### Пример `.env` (front-end):
+
+```
+VITE_SERVER_URL=
+VITE_AI_SERVER_URL=
+```
+
+### Пример `.env` (AI)
+
+```
+LANGFUSE_SK =
+LANGFUSE_PK =
+LANGFUSE_HOST =
+MODEL_NAME =
+SEARX_URL =
+```
+
+### Пример `.env` (мониторинг)
+
+```
+GF_ADMIN_USER=
+GF_ADMIN_PASSWORD=
+```
+
+### Пример файла `alertmanager.yml` (уведомления)
+
+```
+global:
+  resolve_timeout: 5m
+
+route:
+  group_by: ['alertname']
+  group_wait: 30s
+  group_interval: 5m
+  repeat_interval: 1h
+  receiver: 'yandex-email'
+
+receivers:
+  - name: 'yandex-email'
+    email_configs:
+      - to: '${ALERT_TO}'
+        from: '${ALERT_FROM}'
+        smarthost: '${SMTP_HOST}:${SMTP_PORT}'
+        auth_username: '${SMTP_USER}'
+        auth_identity: '${SMTP_USER}'
+        auth_password: '${SMTP_PASS}'
+        require_tls: true
 ```
 
 ## 🧩 Политика окружений
