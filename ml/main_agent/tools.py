@@ -2,7 +2,6 @@
 
 from typing import Optional
 import re
-from urllib.parse import urlparse
 
 import httpx
 import orjson
@@ -12,11 +11,9 @@ from langchain_core.tools import tool
 _http_client: Optional[httpx.AsyncClient] = None
 
 # Адрес локального SearXNG
-SEARX_URL = "http://searxng:8080/search"
+SEARX_URL = "http://26.37.34.81:8080/search"
 
 # Разрешённые домены (сейчас только Яндекс Маркет)
-ALLOWED_DOMAINS = {"market.yandex.ru"}
-
 # Заголовки для запросов к Маркету
 HEADERS = {
     "User-Agent": (
@@ -25,6 +22,10 @@ HEADERS = {
         "Chrome/120.0 Safari/537.36"
     ),
     "Accept-Language": "ru-RU,ru;q=0.9,en;q=0.8",
+
+    # главные фиксы против капчи:
+    "X-Forwarded-For": "172.18.0.2",  # или динамический IP пользователя
+    "X-Real-IP": "172.18.0.2",
 }
 
 
@@ -185,22 +186,10 @@ async def search_web(query: str, num_results: int = 5) -> str:
         )
         response.raise_for_status()
         data = response.json()
-        results = data.get("results", [])
-
-        # фильтруем только Маркет
-        filtered = []
-        for r in results:
-            url = r.get("url") or ""
-            if not url:
-                continue
-            host = urlparse(url).netloc.lower()
-            if host in ALLOWED_DOMAINS:
-                filtered.append(r)
-
-        filtered = filtered[:num_results]
+        results = (data.get("results", []) or [])[:num_results]
 
         products: list[dict] = []
-        for i, item in enumerate(filtered, 1):
+        for i, item in enumerate(results, 1):
             url = item.get("url")
             if not url:
                 continue

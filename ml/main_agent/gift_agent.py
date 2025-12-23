@@ -1,4 +1,5 @@
-﻿from typing import Annotated
+﻿
+from typing import Annotated
 import os
 import re
 import orjson
@@ -50,7 +51,6 @@ MAIN_PROMPT = """
 название, цену, рейтинг и число отзывов (рейтинг на маркетплейсах обычно рядом со звёздочкой и отзывами),
 сортируй найденные товары по убыванию числа отзывов.
 """
-
 
 class State(TypedDict):
     messages: Annotated[list[BaseMessage], add_messages]
@@ -111,7 +111,7 @@ def create_gift_agent(model_name: str | None = None):
                     chosen = line.split(":", 1)[1].strip()
                     break
 
-        search_query = f"подарок {chosen}".strip()
+        search_query = f"купить {chosen} site:market.yandex.ru".strip()
 
         # вызываем инструмент поиска (он уже парсит Маркет и отдаёт JSON)
         raw = await search_web.ainvoke({"query": search_query, "num_results": 5})
@@ -143,8 +143,6 @@ def create_gift_agent(model_name: str | None = None):
         # всегда возвращаем JSON-массив товаров
         json_str = orjson.dumps(products, option=orjson.OPT_INDENT_2).decode()
         return {"messages": [AIMessage(content=json_str)]}
-
-
 
     # ---------- ROUTING ----------
     def route_from_dialog(state: State) -> str:

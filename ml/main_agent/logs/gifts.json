@@ -1,0 +1,1188 @@
+[
+  {
+    "id": 1,
+    "timestamp": "2025-12-12T00:59:32.225712",
+    "sender_id": "1",
+    "recipient_id": "312412114111",
+    "user_message": "2",
+    "ai_response": "Хорошо, тогда берём вариант №2.\n\nВыбранный подарок: Набор бильярдных шаров для домашнего стола\n[READY_TO_SEARCH]",
+    "gifts": [
+      {
+        "title": "Шар для бильярда Estafit Pool Standart №8 57,2 мм, черный",
+        "price": "595 ₽",
+        "rating": "4.8",
+        "purchases": 45,
+        "url": "https://market.yandex.ru/card/shar-dlya-bilyarda-estafit-pool-standart-8-572-mm-chernyy/102823007359?do-waremd5=-WEgMFiMbC49DqKNSlRVTg&cpc=sqkMTXDkVaVF7eU-S29nRGPsMwXv6zU6oS-zx-f75HAkRI9rpGN1ZY_KwW3rBzRgnb2g3sjY09oKN8SEuGSys042rM2JZgSkBB_L0lrah_3xjqd0J60f9mFda3ec5RQVoSi1zhjIem_RxOda5KRpJlFFO3C5MpQEGUeJyw5jcUVpSR-rkVD-L3AiOpEIlSLNAdRu9KWRTsXz_oCURDOGdnLNrJsGUahv3EIvauSHNRQigzHVfKcNdmMQNcSVovg-HMSiktRwC0EnSpuGcKCd_FYrCUMYU4x5sfHDjoq41Z6wMw3fMB_J8onjc0yI-pQXM-UpnOtelXvi14Go49dGGnnwuxaV9S4UVjjmEHH0oMj6oVmMT8yGnCDs0lyj1KYUD5RhaRuk5JdzcRnRTSAbbtvpVT6PcLym5B5_d8Aw_LSZ5QXVlV9qavKMd8wvLrDEqYjAQyU8KsedtUVkLgvZUBR3SpLN-es9Mr4aXRyWczkmZ6zG9194rMnTqZeuCS_tknwy2WSEX8Pq2Q8g0Qno5N-tPs_fYRSIzCnlcVWaobdRE_61jKKpu9pEx5oARcg3yHIRPY4LscmnB0VMbM8AKxZF1Qvz7Oj66tM_RXGFZp3FU_QePnZaKfk_MZWJWAZt4NIKAu1bP9U56iLfRVyZH1a8QFZlEpobXCAt3L4fQgici5IpUhQasAqoB9xxaLlZN0UP-GAWlcslIxFt7oJH67PgpiZtSHU0zRiyL_V6lXkyyc_lcHvbLhfMi8PGecooaldGlE96TMk%2C&cc=CiBkYjE4ZDA3MTE2Mjk1YTg5ZDExMGYzNTdjNzc0ZGFmZRAHgH3m7QY%2C&resale_goods=resale_new&hid=91569&nid=55932&show-uid=17655011660118407171006004&showUid=17655011660118407171006004&from-show-uid=17655011660118407171006004&cpa=%2F4JeUGYXSpZImecsn0Hh0vpJuiz4V%3A0&from=search"
+      },
+      {
+        "title": "Набор воздушных шаров на день рождения. Хром серебро 50 шт, 30 см.",
+        "price": "465 ₽",
+        "rating": "4.7",
+        "purchases": 257,
+        "url": "https://market.yandex.ru/card/nabor-vozdushnykh-sharov-na-den-rozhdeniya-khrom-serebro-50-sht-30-sm/103161799420?do-waremd5=m2__t3gnGD-itiA0n0ReWQ&sponsored=1&cpc=2t4T2tfsALmpvisbxqK2TLfQvUJTwWFU2HwgUrwtS-BLM6GaHnd0Tn0Aq3ki1gFzKhDrEW9ougb0_iFc8vELIeJZiOs4QNw4M2C5aTeMZBegbGV3fQMCWvpHCQuBhknOlWqGbFrJo--Vbk_T5OaxQzs7T02C22H5BZiB2NssQsEbzExXFkvOTg9EvQVAwVuafrfMcK_1k6QNCK_KEOngDIIfHGVOMwN73hZQQhB18Dn1pR6sjk6s5VH9j1DE1RekE6a0s2ftmjpcNCECo_1pbQdwpH8OAzMUgDsCyQhqFXwvS3yHc6KxpG9BMsYv1DCL67kpf1BidlxcIYIXT05J5Hxt08bdopjZv5VhWuy4NeG4i3-vBV6tYfjgF_Mt_r3Dwu5JM0EhxjW-rv1_I3oS47RH1QeITdH762K098mdn5a8AM2iq3QSU8LNP-hyMxVJvWn8WZLPZY4vpeWE-q0Ls8YvU2jfkfbAAx8vP29uTax65sjNz4Uc2dCEvbxWLA-YWwzEQQNxMEZb8q36utowQM835DIQE6jrIyEWSj89deWE4RUfX6wLqwgXUbWWrn9YFVEH97yTx_MF04Ny2NZQJqtPTjFXF4-PXzUjlQUx17Aaqok6yX9z5lBTOLmAB6f3og93VX8npSlYiGHr_jga16d2rMgQK5o7B_WSV0NJWn0htjQnkIdAwOUqvTwZNffVyBhJbzyIJjy6eMEcDZ4jdwvJ9qfPSiTmpxBmPAd9DqmFDQt7OeWuT8sDFq2JRJeWfYg-6P6l9VcIhL5HvbrBGGGAwaH_tLfBlN4wEtC3mbc%2C&cc=CiAyMzFlYmU3Zjk0MzRiMzFlNTQxYTY5NTY0OTFmODZlNRDnAYB95u0G&resale_goods=resale_new&hid=61876245&nid=61876246&show-uid=17655011689013345096206004&showUid=17655011689013345096206004&from-show-uid=17655011689013345096206004&cpa=%2FkWFbZ3Tsz7uq7GUKVSR6Yqy5heq2%3A0&from=search"
+      }
+    ]
+  },
+  {
+    "id": 2,
+    "timestamp": "2025-12-12T01:00:06.085307",
+    "sender_id": "12131233",
+    "recipient_id": "312412114111",
+    "user_message": "25 лет, мужчина, бильярд спорт, новый год, бюджет средний, думаю подойдет бильярдный набор",
+    "ai_response": "Хорошая идея! Бильярд - классический выбор для новогодних праздников!\n\nЧтобы убедиться, что наш выбор будет идеальным, скажи мне: как часто он играет в бильярд? Есть ли у него уже домашний стол или это первый опыт?",
+    "gifts": []
+  },
+  {
+    "id": 3,
+    "timestamp": "2025-12-12T01:00:21.684922",
+    "sender_id": "12131233",
+    "recipient_id": "312412114111",
+    "user_message": " думаю подойдет бильярдный набор",
+    "ai_response": "1) Набор бильярдных шаров для домашнего стола (8 шаров, включая 7 цветных и 1 белый)\n2) Бильярдная карта с правилами и стратегиями игры\n3) Сетка для бильярда с крючками для удержания шаров\n4) Упаковка для хранения бильярдных шаров\n\nКакой номер тебе нравится больше всего?",
+    "gifts": []
+  },
+  {
+    "id": 4,
+    "timestamp": "2025-12-12T01:00:56.119415",
+    "sender_id": "12131233",
+    "recipient_id": "312412114111",
+    "user_message": " 1",
+    "ai_response": "Отлично, тогда берём вариант №1.\nВыбранный подарок: Набор бильярдных шаров для домашнего стола\n\n[READY_TO_SEARCH]",
+    "gifts": [
+      {
+        "title": "Шар для бильярда Mr.Fox Pool Standart №8 57,2 мм бильярдный шар, черный",
+        "price": "600 ₽",
+        "rating": "4.9",
+        "purchases": 70,
+        "url": "https://market.yandex.ru/card/shar-dlya-bilyarda-mrfox-pool-standart-8-572-mm-bilyardnyy-shar-chernyy/102447571369?do-waremd5=SShkoauD3vcrHklP184wXQ&cpc=xZZ_LYDqG1xfBbiIz9TOYC2-qw1luNZwYGI-s_IgVCF8IP40PknbIx-qeH3mWoifwCRF5kAkhCMo8kPOxByVAcRVZavPqaWzn8KFRNKgjYXMTA46ifqaR2KYlO7kN2Ono_Taq3062_dxktx6O1P8oMYhQJQylP3u1DDre_-njCAb4xpCqks_wt2xWrut_l_a8HryG-4WcOokCGRO9LpxbBPhBtBl5amdzZoiFzXazI7GPRyePUMJpFIMu_IRoOXrtPsRq_k0Q7vzkFQt6rlJZJhrXGBL8H0QFYHUcL9-2KRRbkqINNSBWJ_QXqlj3376VvJYJXIWUO2Y57JK-5cP9wcU1v31jAieiyzHIB4wehyYqDZS9QrOzqg5vKrDBZbZxkfvIBb5-OX7lS_yfBx7gE9bJdjTkglNU8WtYYS8ufemEfqeRpTOjt6fXmGwREkqAZ9qpIBNAaArHAu_Pl_plc8yINoxjitLXDrNWfV5grpzSMkL3v_J93dgyNzTmbaIRVGew4hrY54NKd5mnHybgf3l8YNbTX91bmBuXPuvfb7CZ7-JKZ9Zc6TRKgH7FQzqbGyGbJhu2Q1NdfmsgZhRKs2IoKYHxG7UFA95kaWBVX_kfVSV9u0Wtbju-M9HpnJb6KHK1ZCsN8j_TI69FD2U95T8zgOoLTVtEvfK0IEtHffqPBpk1SYy44loXBd6fo9T_1O1TB-MdM091VpY31ZpB9BBZMlJ_F_pDGqkoyeZNU017WGD_kqZFWR-2ERlIcmWO27SI0yY1Du00hDBdfGwtg%2C%2C&cc=CiA5MmE1ZjZkNTY0YTI4M2Q1N2NiNmY4NDI5OGRmMGQzORAHgH3m7QY%2C&resale_goods=resale_new&hid=91569&nid=55932&show-uid=17655012513150025834106003&showUid=17655012513150025834106003&from-show-uid=17655012513150025834106003&cpa=%2FpH0gJ0Fc54L4OmtbDYm12nf3Lh5b%3A0&from=search"
+      },
+      {
+        "title": "Набор воздушных шаров на день рождения. Хром серебро 50 шт, 30 см.",
+        "price": "465 ₽",
+        "rating": "4.7",
+        "purchases": 257,
+        "url": "https://market.yandex.ru/card/nabor-vozdushnykh-sharov-na-den-rozhdeniya-khrom-serebro-50-sht-30-sm/103161799420?do-waremd5=m2__t3gnGD-itiA0n0ReWQ&sponsored=1&cpc=ldjreuEtovsFAsb29V1eDv-IA7Z8NNUUXyklbq56lfK7ZDpyyp0Z1wW45a0cmmHDi9UWODc6xH8JeX3BhiKJSPUn5_yPjFiUcqWkZzYDl8etonejcUkh84jWVIQmV2MmM1vHmx3ztTzLTzVTRhp1coaAjHT8iwt7-UJdq3D9Tn0ean1HhLFSwP9xWg4G6r_WQLyNwxUYPNKNWhSIoe18O-7mK-81M0hQE52VPDZYI9-6NNPhIC9ffL3vNqsvFmnwfrqB2x3p_heJ6kWYvBWmXXbabAKukSN6xu9Hb_6EU_bL-yuYYps1jGHFxhInuQ0C6_Fsb_YS6LhnSSuitxi6ngOEYQJSrFPqaeuFV3nUDhoGY-clyKjxPlWNk_L8ef1rE6j7b5VIQlLumL8CYApk-IQG4VEZ7KeUEWsqDVCMLPqeGd9DdNqoW6qPvMZKzpJDjfZBIcQDy2IoxAF_y3Gx9W4TvN1UpiPOBr0k_PahEDFf4cQjwhUuKZ3J7ahnflBnnF0eCQl3ayD2lzOExG6Vm_3xNkceo7CVvNkGZr_cNldp0uK8njEHJsowOkX__3BGUv9jGkVMk2LAp96sOtZ9L1Qv4sSLnf-lgRL2VxuwEImuLV5HBKncWf_ICuBYDIwrjyso7k323MrAP5iA4FWBx8tf6xSUmz2mbM29y6wR7MBVdElcsD-pDGEXc77bo4iCfjpDUMT0La6iMvg8wJfCIVKuQt7xYce7C9msyYkFiV2s6sArWNkoiRECxccJ2kGo3Ja1B2md_z8U6_la8dNHu3lEm_V3I9yufiX_yOM8OgFY5bDi_yHgEUAfue_9R3tugh4zQxTpVegngRq4EUVbq7lqAQxWwZMWtCCSyZLEMoY%2C&cc=CiA2OWVkMGRlNTlmNzU2ZjdmODJlNDM2NGM5M2VkNzljYhDnAYB95u0G&resale_goods=resale_new&hid=61876245&nid=61876246&show-uid=17655012529563278804306007&showUid=17655012529563278804306007&from-show-uid=17655012529563278804306007&cpa=%2F1JnYI7HpzayObQIDOrW23TyWe2Tp%3A0&from=search"
+      }
+    ]
+  },
+  {
+    "id": 5,
+    "timestamp": "2025-12-12T01:11:57.332408",
+    "sender_id": "1213235233423423233",
+    "recipient_id": "312412114111",
+    "history": [
+      {
+        "role": "human",
+        "content": "25 лет, мужчина, бильярд спорт, новый год, бюджет средний, думаю подойдет бильярдный набор"
+      },
+      {
+        "role": "ai",
+        "content": "Хорошая идея! Мужчина 25 лет и любит бильярд - это уже половина победы!\n\nЧтобы убедиться, что я не ошибусь, скажи мне: хочешь ли ты, чтобы подарок был как можно более профессиональным или он может быть немного игровым?"
+      }
+    ],
+    "ready_to_search_message": "",
+    "pre_ready_message": ""
+  },
+  {
+    "id": 6,
+    "timestamp": "2025-12-12T01:12:05.639069",
+    "sender_id": "1213235233423423233",
+    "recipient_id": "312412114111",
+    "history": [
+      {
+        "role": "human",
+        "content": "25 лет, мужчина, бильярд спорт, новый год, бюджет средний, думаю подойдет бильярдный набор"
+      },
+      {
+        "role": "ai",
+        "content": "Хорошая идея! Мужчина 25 лет и любит бильярд - это уже половина победы!\n\nЧтобы убедиться, что я не ошибусь, скажи мне: хочешь ли ты, чтобы подарок был как можно более профессиональным или он может быть немного игровым?"
+      },
+      {
+        "role": "human",
+        "content": "думаю подойдет бильярдный набор"
+      },
+      {
+        "role": "ai",
+        "content": "В этом случае идеальный вариант! \n\n1) Набор бильярдных шаров для домашнего стола - классический и необходимый предмет для любого бильярдного игрока.\n2) Бильярдная мебель (например, стол или кресло) - чтобы он мог по-настоящему почувствовать себя профессионалом на своей собственной площадке.\n3) Сетка для бильярда - чтобы он мог тренироваться и улучшать свои навыки в домашних условиях.\n4) Игрушки для бильярда (например, кегли или шары) - чтобы он мог весело провести время с друзьями.\n\nКакой номер тебе нравится больше всего?"
+      }
+    ],
+    "ready_to_search_message": "",
+    "pre_ready_message": ""
+  },
+  {
+    "id": 7,
+    "timestamp": "2025-12-12T01:12:20.444614",
+    "sender_id": "1213235233423423233",
+    "recipient_id": "312412114111",
+    "history": [
+      {
+        "role": "human",
+        "content": "25 лет, мужчина, бильярд спорт, новый год, бюджет средний, думаю подойдет бильярдный набор"
+      },
+      {
+        "role": "ai",
+        "content": "Хорошая идея! Мужчина 25 лет и любит бильярд - это уже половина победы!\n\nЧтобы убедиться, что я не ошибусь, скажи мне: хочешь ли ты, чтобы подарок был как можно более профессиональным или он может быть немного игровым?"
+      },
+      {
+        "role": "human",
+        "content": "думаю подойдет бильярдный набор"
+      },
+      {
+        "role": "ai",
+        "content": "В этом случае идеальный вариант! \n\n1) Набор бильярдных шаров для домашнего стола - классический и необходимый предмет для любого бильярдного игрока.\n2) Бильярдная мебель (например, стол или кресло) - чтобы он мог по-настоящему почувствовать себя профессионалом на своей собственной площадке.\n3) Сетка для бильярда - чтобы он мог тренироваться и улучшать свои навыки в домашних условиях.\n4) Игрушки для бильярда (например, кегли или шары) - чтобы он мог весело провести время с друзьями.\n\nКакой номер тебе нравится больше всего?"
+      },
+      {
+        "role": "human",
+        "content": "1"
+      },
+      {
+        "role": "ai",
+        "content": "Отлично, тогда берём вариант №1. \n\nВыбранный подарок: Набор бильярдных шаров для домашнего стола\n\n[READY_TO_SEARCH]"
+      },
+      {
+        "role": "ai",
+        "content": "[\n  {\n    \"title\": \"Шар для бильярда Mr.Fox Pool Standart №8 57,2 мм бильярдный шар, черный\",\n    \"price\": \"600 ₽\",\n    \"rating\": \"4.9\",\n    \"purchases\": 70,\n    \"url\": \"https://market.yandex.ru/card/shar-dlya-bilyarda-mrfox-pool-standart-8-572-mm-bilyardnyy-shar-chernyy/102447571369?do-waremd5=SShkoauD3vcrHklP184wXQ&cpc=hw27bg4K069DfNAG9Y3HYWI-xMknkWyYrJaEpK2OKeRWLxkByFT427rvqB9MjBq-4Ee1ZbKPpMwdXS_mjO3KMcnOfS9U6Zv_i6duX7buw2d-UQwrTdrzkLzTDvlDvOGITediwMr37Xv030N-EGKGlB799iWNqRNoTdZ5AfEPdwJ0wieRPvAzN_bsEiIdjlPj3ote8PhKyPr3SyjfwmkrGO2p0WiVcfV_hxAgc9k1mEyvq5msm7m3ql3ddHChu2UnMbRFwrMXHXja9dJcuiw6Z4B8nVKCJsVwvqx9fleP9dNM99wze9KhyzS0W15Zsj7j2Bhy1nn-WZq0YxDammpdQX7-S06Loq93nZPg2Y3wLbLlo_9STGuO7GsFR7RpAwsjnT5M5UAPuOkscoVi9mFIZirHbZQXXDwJThwGSitF8j7IN7sJU6Dq4XmoPMObYMG82rFuqXm_fwpc4tgMF69HkZbAYA-EJjdl9Pw8PUFq2fHposNrNsmJHVjnwBtCp7W6x7r2HtFTN6pYJ1RfpSm0TjJe6pHe0JwTZ6NLYRf5VwhXdMuDcDveDUed4qNmv3eGMu-uDM0Isz_c-cYOPxJadY32yXAocIuCUcS3T5AAGI4Q8ckmX-zdiw1ivYyd4cOdGzWLwfbVOApr5eWWVRXWd0zIjpWBzK5hy96fpwplc2H3of-5P4Od024XAwiDJF520ZitkFC_o3_PEJ6jGoStC282BLvmIGjilRwBxN8yP7F5yCgXBx_gMJKyuTZyQIrmgqGKpXKd9PM%2C&cc=CiBjMmRlMDFmNjljYzNlNDhkMDQ3NDk1NjZkZTA3YjAyNxAHgH3m7QY%2C&resale_goods=resale_new&hid=91569&nid=55932&show-uid=17655019344440625143306006&showUid=17655019344440625143306006&from-show-uid=17655019344440625143306006&cpa=%2Fm-EzeXqKRzL06Inq1XsGXFFH1C8g%3A0&from=search\"\n  },\n  {\n    \"title\": \"Воздушные шары \\\"Белая пастель/Серебро хром\\\" 20 шт. 30 см.\",\n    \"price\": \"294 ₽\",\n    \"rating\": \"4.6\",\n    \"purchases\": 153,\n    \"url\": \"https://market.yandex.ru/card/vozdushnyye-shary-belaya-pastelserebro-khrom-20-sht-30-sm/4705681188?do-waremd5=3sI7JSq6oLEB8h2YUI2_og&sponsored=1&cpc=U3V2Vy0YyS_Ce_nlyKn70_pZrfm5D5YIVwGcZtAMbmaQlHDGE0uywBtEHyDSSf3gM1TV9-4pGWViQ4enVBm0x9OJL6OLVXdLW38yQraug0X_Br-g-8G1Eg6m4iFDXpn9zevRbJF401GA32s3NVli_aNvM5B0R03_OyFPkqoEVpNIsS2NRDvxcA1vCcCykFur8yChG3pp2wT7AgBcoyPcL7XP80cxjmueU0nUSzQ6J2RjFww1y_H9CSiqrSOmYsLnzhqnH4OcKJCW-ByhOVciW1TxAze6AfQTHLiiHtrigPcsR3qdgDtgHLeUgSBQWtVwTv_wd0rXXtyoKbFUghwyIALJQI9UlVqru5ih_B7BKqeB-J2wB9PRzR62iYEM-i45axDh1kmPCrfJfEjrTd-9SLxN0GSP7sXaESjwwcGImDB2pxbBuhsKAGTwlvLthl6LwAGmQq2av3qe0ktw-a7whcmK7XkWy2OS6xi983PGLlIP90zlgl3S3rn6hUEWxn0BtcJGB3fMco-H7KffjwvfGLEA-IIk_knV8Eo9xK5hk1pQZAIE5h_z5TKuSZ_fDx2z-AAOdUMzqPCinVDNxf0yAPQQihus71D1x1oh0IsbYJ2hEPiJSpG72K1G0l-HpjnTB7-Dy0QPlSOvDcbtxiDxXGH71jxt9BP-u6-gvdntxm63acfRc_fZ23JE3whRzfOWYjn4AB0tOUVbmAfyXErpQ1byq3k-fuq31WzuxJiKLCXHbRhIM_BWvZmItJEQjnLUWYy5H9IxmZWMZw6MQhX5M3HgJCW3s8CAF-MU3v1LKuYgM8icstzLy8XIVh268EdsZTBF7LornJWh40x36JKUGUr0Ppqio6UI&cc=CiA1N2U2ZDFkNjUzNmUxNzJiZTljZjdlMDNhNDE4MDI2NxDnAYB95u0G&resale_goods=resale_new&hid=61876245&nid=61876246&show-uid=17655019372693058791206004&showUid=17655019372693058791206004&from-show-uid=17655019372693058791206004&cpa=%2FnfoVXHiuN454VKvVuSzDsHQZ1riA%3A0&from=search\"\n  }\n]"
+      }
+    ],
+    "ready_to_search_message": "Отлично, тогда берём вариант №1. \n\nВыбранный подарок: Набор бильярдных шаров для домашнего стола\n\n[READY_TO_SEARCH]",
+    "pre_ready_message": "В этом случае идеальный вариант! \n\n1) Набор бильярдных шаров для домашнего стола - классический и необходимый предмет для любого бильярдного игрока.\n2) Бильярдная мебель (например, стол или кресло) - чтобы он мог по-настоящему почувствовать себя профессионалом на своей собственной площадке.\n3) Сетка для бильярда - чтобы он мог тренироваться и улучшать свои навыки в домашних условиях.\n4) Игрушки для бильярда (например, кегли или шары) - чтобы он мог весело провести время с друзьями.\n\nКакой номер тебе нравится больше всего?"
+  },
+  {
+    "id": 8,
+    "timestamp": "2025-12-12T01:23:34.923974",
+    "sender_id": "1213235233423423233",
+    "recipient_id": "312412114111",
+    "history": [
+      {
+        "role": "human",
+        "content": "1"
+      },
+      {
+        "role": "ai",
+        "content": "Хорошо, давай начнем! Чтобы выбрать подходящий подарок, мне нужно знать больше о получателе. Какой возраст у этого человека?"
+      }
+    ],
+    "ready_to_search_message": "",
+    "pre_ready_message": ""
+  },
+  {
+    "id": 9,
+    "timestamp": "2025-12-12T01:23:36.802758",
+    "sender_id": "1213235233423423233",
+    "recipient_id": "312412114111",
+    "history": [
+      {
+        "role": "human",
+        "content": "1"
+      },
+      {
+        "role": "ai",
+        "content": "Хорошо, давай начнем! Чтобы выбрать подходящий подарок, мне нужно знать больше о получателе. Какой возраст у этого человека?"
+      },
+      {
+        "role": "human",
+        "content": "1"
+      },
+      {
+        "role": "ai",
+        "content": "Предположим, что получатель взрослый человек. Теперь вопрос: какой пол у него (мужской или женский)?"
+      }
+    ],
+    "ready_to_search_message": "",
+    "pre_ready_message": ""
+  },
+  {
+    "id": 10,
+    "timestamp": "2025-12-12T01:32:12.424146",
+    "sender_id": "1233423423233",
+    "recipient_id": "312412114111",
+    "history": [
+      {
+        "role": "human",
+        "content": "думаю подойдет бильярдный набор"
+      },
+      {
+        "role": "ai",
+        "content": "Хорошая идея! Чтобы точно подобрать подходящий набор, мне нужно знать несколько деталей. Какой возраст получателя? Мужчина или женщина? Имеет ли он опыт в игре на бильярде или это будет его первая попытка?"
+      }
+    ],
+    "ready_to_search_message": "",
+    "pre_ready_message": ""
+  },
+  {
+    "id": 11,
+    "timestamp": "2025-12-12T01:32:14.271893",
+    "sender_id": "1233423423233",
+    "recipient_id": "312412114111",
+    "history": [
+      {
+        "role": "human",
+        "content": "думаю подойдет бильярдный набор"
+      },
+      {
+        "role": "ai",
+        "content": "Хорошая идея! Чтобы точно подобрать подходящий набор, мне нужно знать несколько деталей. Какой возраст получателя? Мужчина или женщина? Имеет ли он опыт в игре на бильярде или это будет его первая попытка?"
+      },
+      {
+        "role": "human",
+        "content": "думаю подойдет бильярдный набор"
+      },
+      {
+        "role": "ai",
+        "content": "Хорошая идея! Чтобы точно подобрать подходящий набор, мне нужно знать несколько деталей. Какой возраст получателя? Мужчина или женщина? Имеет ли он опыт в игре на бильярде или это будет его первая попытка?"
+      }
+    ],
+    "ready_to_search_message": "",
+    "pre_ready_message": ""
+  },
+  {
+    "id": 12,
+    "timestamp": "2025-12-12T01:33:04.100951",
+    "sender_id": "1",
+    "recipient_id": "312412114111",
+    "history": [
+      {
+        "role": "human",
+        "content": "2"
+      },
+      {
+        "role": "ai",
+        "content": "Хорошо, тогда давай мы начнем! Чтобы выбрать подходящий подарок, мне нужно знать немного больше о получателе. Какой возраст у человека, которому ты хочешь подарить?"
+      }
+    ],
+    "ready_to_search_message": "",
+    "pre_ready_message": ""
+  },
+  {
+    "id": 13,
+    "timestamp": "2025-12-12T07:59:59.601569",
+    "sender_id": "1",
+    "recipient_id": "321",
+    "history": [
+      {
+        "role": "human",
+        "content": "25 лет, мужчина, бильярд спорт, новый год, бюджет средний, думаю подойдет бильярдный набор"
+      },
+      {
+        "role": "ai",
+        "content": "Бильярд - классное выбор! Чтобы точно подобрать подходящий набор, расскажи мне, как часто он будет использоваться: в домашних условиях или на вечеринках?"
+      }
+    ],
+    "ready_to_search_message": "",
+    "pre_ready_message": ""
+  },
+  {
+    "id": 14,
+    "timestamp": "2025-12-12T08:00:28.726598",
+    "sender_id": "1",
+    "recipient_id": "321",
+    "history": [
+      {
+        "role": "human",
+        "content": "25 лет, мужчина, бильярд спорт, новый год, бюджет средний, думаю подойдет бильярдный набор"
+      },
+      {
+        "role": "ai",
+        "content": "Бильярд - классное выбор! Чтобы точно подобрать подходящий набор, расскажи мне, как часто он будет использоваться: в домашних условиях или на вечеринках?"
+      },
+      {
+        "role": "human",
+        "content": "думаю подойдет бильярдный набор"
+      },
+      {
+        "role": "ai",
+        "content": "Хорошая идея! Тогда давай посмотрим на несколько вариантов:\n\n1) Набор бильярдных шаров для домашнего стола - классический выбор, с 16-18 шарами и кейсом для хранения.\n2) Биллиардный набор \"Премиум\" - более дорогой вариант, но с высококачественными шарами и дополнительными аксессуарами.\n3) Набор бильярдных мячей со специальными дизайнами или логотипом - что-то оригинальное для новогоднего подарка.\n\nКакой номер тебе нравится больше всего?"
+      }
+    ],
+    "ready_to_search_message": "",
+    "pre_ready_message": ""
+  },
+  {
+    "id": 15,
+    "timestamp": "2025-12-12T08:00:44.883592",
+    "sender_id": "1",
+    "recipient_id": "321",
+    "history": [
+      {
+        "role": "human",
+        "content": "25 лет, мужчина, бильярд спорт, новый год, бюджет средний, думаю подойдет бильярдный набор"
+      },
+      {
+        "role": "ai",
+        "content": "Бильярд - классное выбор! Чтобы точно подобрать подходящий набор, расскажи мне, как часто он будет использоваться: в домашних условиях или на вечеринках?"
+      },
+      {
+        "role": "human",
+        "content": "думаю подойдет бильярдный набор"
+      },
+      {
+        "role": "ai",
+        "content": "Хорошая идея! Тогда давай посмотрим на несколько вариантов:\n\n1) Набор бильярдных шаров для домашнего стола - классический выбор, с 16-18 шарами и кейсом для хранения.\n2) Биллиардный набор \"Премиум\" - более дорогой вариант, но с высококачественными шарами и дополнительными аксессуарами.\n3) Набор бильярдных мячей со специальными дизайнами или логотипом - что-то оригинальное для новогоднего подарка.\n\nКакой номер тебе нравится больше всего?"
+      },
+      {
+        "role": "human",
+        "content": "1"
+      },
+      {
+        "role": "ai",
+        "content": "Отлично, тогда берём вариант №1. Выбранный подарок: Набор бильярдных шаров для домашнего стола\n\n[READY_TO_SEARCH]"
+      },
+      {
+        "role": "ai",
+        "content": "[\n  {\n    \"title\": \"Подарочный набор «Счастья в Новом году!», гель для душа 250 мл, аромат газировки, мочалка, на подарок мужчине\",\n    \"price\": \"238 ₽\",\n    \"rating\": \"4.7\",\n    \"purchases\": 62,\n    \"url\": \"https://market.yandex.ru/card/podarochnyy-nabor-schastya-v-novom-godu-gel-dlya-dusha-aromat-gazirovki-250-ml-i-mochalka/103572420864?do-waremd5=WYOQ68pNj__yUnx49Gq_aQ&sponsored=1&cpc=aDbNZdN7UT_DTaIHjZv2_WPSms6kE0ZEhyzEEepKIdpTQA-yLPxGTyp7KbQfb2NjphLgNW5LMQ7l9CD69hFyBa9htpqZF-RxyG42Pp76jM2_JzhtBrD-WJEceBMbCsDJJx_tQBoNOi9L1wv0ehs4maBBjIVLMIHa1Xy3pCTt1YKPRQhGVGv-i9BNTfBdofFgwLV38CYjBjGGMlDaY5LcRrSI7tvF-4L38sYNo9bKg7mLdBHkRPcl58Ov9GWRgW7qwyuJOFWRNAjosgQx29HuJb4ZlVQBsY0Wp-TwbCw250d114HG-jIFLNr3l196HwpCi1QJuDAtkGvltLXNK5vKjiXblgYROikteXcGrP3JTBw7TsoV7kH2GCYQhGExrCeQKPCU87sfhw8Q2wVNkB1Gto4vToHdzHonIZb3KUhHeCzxgLN5lGstetati-oGOWPZTeLrPGoEa7OcLrZq39jHmTVjJ3EBkPcXKrAan5vKZxNViLGn07HPoyvgF4drWr4ivUfU3txxAiYmHzcTm8rc1a8U-j6SbvOI7eh-J5JC8WEOqAUyZrDkPk5TX3X-vV8bmbYP5-nZ2WsoxtQB7ShiOWLxQzMjBYdhnLxYtEduAGIx55ons5CMDsO6rrsaCshAyFd8Vo-TyYXz5gXVw26wwEEa_blwz85mzRjCkCU85ZGPLmQAKKcD-vbn6_hnEIFI3jym1egGoAiJHuJfIeblawd-rtKMKcB7XR-2TrxTM3oJ-Maj65NPFACGjNVQWS7DbEPHKECH5DFOMsy5kLCJ4wGjgUzfAUH9m1VrMf_orT4jo9NfXbGWD3OcfGRnhzndGc3hjbfoT2gFJXoXM06_4Jt4ZVpQh9uS&cc=CiA0N2E4ZWRmYmMxYmE2OGNkMDFiNDlkY2U2Njk5NDhiZRDnAYB95u0G&resale_goods=resale_new&hid=91302&nid=18071697&show-uid=17655264382985707307906003&showUid=17655264382985707307906003&from-show-uid=17655264382985707307906003&cpa=%2FPsbGeieh4--ieQLtQBwdMo_LFLB9%3A0&from=search\"\n  },\n  {\n    \"title\": \"Настольная игра \\\"Медолов\\\", для всей семьи, 1 игра, до 6 игроков\",\n    \"price\": \"663 ₽\",\n    \"rating\": \"5.0\",\n    \"purchases\": 569,\n    \"url\": \"https://market.yandex.ru/card/nastolnaya-igra-medolov-dlya-vsey-semi-i-detey/4540588815?do-waremd5=nnp3dGXRF5GFZxeNa6IqwQ&sponsored=1&cpc=3MP60ENkeuIur5xVnUdvcb6EDeZ-h6f0o6z9xATX4a7oiiS1puTT3gBUwaRr4XocDNJY820bnaMvUzwVSYSIKUEEAY-HQ_eUIKP_VOtCpIfDL6PIpkHDxoVmuFHOdreL6zZsBU9wZ91Ct2B96gfbFPGLBv_YxJh_pqjXv-xQl-s12gXhhQQpdrISopGK95uzgxH9ZWrU2va5iq38WdCp4NCQJl07bBiiRnYggm04rKsqcK6Sotqrcgd3-xtHQEDhQF9nw4RI9DU3xSEBwTBOkIDzjqsBm_oD65N14PSf5XuVCeAiuX_Lw7s9QyYNjFBXZ6Afz5I6GTbbPLtubVQJiWc-3C82DYeHy-37q0STT3DgttUtOaC6FR08cMsyMTomU8jxE1eI_ftZZgqrPu52-vmfeUad53nKQ6mKL-MGBhum4ZtFj4aptNcoCyVkDUI82a5Kz5V_o7XoI4go1A8rrkW3bpNe3E1QV1h2bofbzxVs2GDSdtU4qz4gZh4MWvtQJ-TSY3LOCR1t2KIGiu4ZGPr60zM1r65F6xjxZvWzJUV0uJHt-LfpaZsZiR5bjGuwfP35EJ9Spf2OWDbpKJgAeHSuy180U9IigtToWvE06byLa-ResY0zWEVWVJ2GZFO2x22bjSFqkr9YaIbWk6tmcreeAKpZWQwN9rhJrh066MDlNh4weIY5OemNq2slYffEoJ7HOBf4c6l0A-GWftzXwoYwT6KB9Zvq6YF_RdQE9Ia24dMfZMye0ZLrVSxwmbwJwgaTp7jksuYr3BjhKnBLocuyHGn1RdkyH11YjoyNutb1_3B4B2KT4nJgWi2O-V96KsYJwK6w7OjjAMyucv4jvykLrgmF7HMJYi-f7if_wrcPVio9WoyHQlYJp4P0KDi3cfSu9WHbrSa-eZXHGHthT9SPudQ3gQQTIt-hY2-jJn_pVA2DQ3J8O13fgRkjdB8hCsd9v7Qby4o%2C&cc=CiBiNDk3YzFkY2Q1Y2UyZjEzOGJjMjkzMWFhMWY2OGUxORDnAYB95u0G&resale_goods=resale_new&hid=64483693&nid=64483699&show-uid=17655264401662066520906005&showUid=17655264401662066520906005&from-show-uid=17655264401662066520906005&cpa=%2F0wOBzbKBEX9aBsME-iCZ4132Z-gd%3A0&from=search\"\n  },\n  {\n    \"title\": \"Подарочный спа набор Лаванда, соль и бомбочки для ванны. Косметический набор для ухода за кожей\",\n    \"price\": \"1086 ₽\",\n    \"rating\": \"5.0\",\n    \"purchases\": 742,\n    \"url\": \"https://market.yandex.ru/card/podarochnyy-spa-nabor-lavanda-sol-i-bombochki-dlya-vanny-kosmeticheskiy-nabor-dlya-ukhoda-za-kozhey/4430791892?do-waremd5=EKFqrcUoheQI8ezNswWXCg&sponsored=1&cpc=vsRmQB5UAv8Tbm0f6r-3vH-GIW7ilMionGZF10ykb2_W6_HLqgsm-hiwvxw3cWUGCJjJHWvEZjnLbQ-c9Y1nAm4YSrabsxMnLYRhdR7y2mQp_QXWTewztZRtf2zNTdSm-68YRZ-rUq5TtoeNd7rhyyMo2oJKKHN_v_jZsH97-6RlEH0I6mHVLAWqtughSDw9MhIt27I2b2KVBTmBltA88dvv7oGO0TNfjrkrHHKWqqcwH2TOmAJb7K5WXj9rYbfMIDFyN7mQTXScgKdqYFA-H8tmY-AJSliNTxuLsbraknhfqeM0d9-b_tQYL8aKZsJgqfICuGx6aNYkYJp_NRy49nmt69pWrypEDz6Mn8rEK0kLlz-G_Vc1ZwGPX6H4mGvN9bw64aIoC-bD42WJcse6MNa_unS8ldMv7fxuzm701rs56FM5QT2o7C11OA38_wtH3odPNky-yFOS1pabOJn-t36GOhc4zhly5HDlMYivSp7uysGTiucsat3SkFp_nFZUEA9O5jnuF5oS-9bSBE0CBsCLaJx70lDvGmikT-qeojRHMthOuapNWyAV8_-GVppv7pxya2r91E-4H_b2RzZ8aWamTAIVi8YSrsOMlGAPttR6hirvXVuG2mulcNSij4cwNmEh1-xQOfOaENdGO5Q7gUWWXI1dhO63hF5l4R1isJVVyhKSLhOYoxcQ8Nn-ouuJ6DiLC2qfZrySi_u4c3KTA-k19BDm_8GN62c8o95vzz6_k1FKJzx-TQxF9neeS7sFjJU7ddfQ44TFeKmNApMSWF8c46uOAmuUQTFG97c2TffnDgCRPhWrDaNNtFmedQRgQgNHJQ5x9yhfU7k9_5zyz542-nLE6N3xYYONbsZwlZ4MshTU7YNuL6k38_NQ5o8UNfGirz4IkWquzrdf7323xwmSWvmuzk_uRn07hcSE_u8PQ__cyMfwHnnGr9_hFqVyTWr7dMr7IXaMzLqqDxnKOw%2C%2C&cc=CiBhMGI2NGUzY2NlMGFjOGEzYzNhM2Y4Yjk3ZmZlZDk5ZBDnAYB95u0G&resale_goods=resale_new&hid=64218678&nid=64218684&show-uid=17655264417528987174406004&showUid=17655264417528987174406004&from-show-uid=17655264417528987174406004&cpa=%2Fd39zxx4Fj8U6hc-rCsE2HaIG_wkz%3A0&from=search\"\n  },\n  {\n    \"title\": \"Подарочный набор; Ассорти орехов сухофруктов; Подарок на Новый Год; женщине; мужчине; учителю; врачу; на день рождения;\",\n    \"price\": \"1490 ₽\",\n    \"rating\": \"4.8\",\n    \"purchases\": 720,\n    \"url\": \"https://market.yandex.ru/card/podarochnyy-boks-eco-fruits---sladkiy-podarok-s-orekhami-i-sukhofruktami-na-9-ye-maya/102727952765?do-waremd5=oz0heevlemkzL1Ku39xOLg&cpc=CNCX33HFKB-q0T-RGiQh_qD3uwZoZ34yNi7UXzJjIXdPki3qEH3WnCt1CaIG-7k2LjhfALvfHuMIg3Us_wPEu_Bk2dit1wtrIZzJ5ZmnNKu7PhwXiSPLM0c8QeMpDCR3L3DY1HZEm55_lWpGkAY4RM_2CPIzUnC0GQhIKy3sUGX_qkjGVdKMIP2KNnaH86Oov8Supza6rTNn-GKetV77Atm9_iCg6bPtUNzp7Lkjl3IswL8jGOb3jrHblrYeQ01uOQXfZ92IwXIMgmLyRGG9PQVPHHMDFKdgg6ZJl3_WotnWjS4Xr9pVmjzNr3pQSQcyR39En1iCiDtUKduXGwmOqu6q1KORAedfDKFNTVksXzXxoQvAsq7B31Zy63-52f34PqOw1kwxsWRnSlGPjUr4A9v5EbKdqa1OpW9ZamxlKP-P_v_htPe-sW9SDFWZa8PDZSDQSQXBRPQT3z_-I5nAJ02CIcqxwl6Kv3ieuOG_PQbh5pvNqFYZ0bg_-J4TFEl9QCCW3IiQTIHW2IUm4YFN0_UjWyB-99c_c0IG-pi9P6KkWuTJ8NI3t7tvuuk9UX682odxnWUvU_QkAH2Kud_JmLugUiNNAe5UAn_5MngnJ4E_lIz3FYXjQdRg1GZtuUvGox4RgFBpo6HTZ-d7LWw0aNc96ZyLpUrdjOiEm8YVGmRIfcdpaZD7DQ7T5fJ-nRleuthqr3IqZ6GvYjyCDanHVBNt8HH-pISPSzN2TaXizQV_9OxLPy4xwYPEsg4NqSs399YUYPQ4H7iWyrglVCl7yQ%2C%2C&cc=CiBiNzg1MTkwYmQ4ZWZjN2Q4ZTU5MGE5MThkMTFiYWUzYxAHgH3m7QY%2C&resale_goods=resale_new&hid=91302&nid=18071697&show-uid=17655264435153813248506001&showUid=17655264435153813248506001&from-show-uid=17655264435153813248506001&cpa=%2FTC6rxSnYCQdVfFKpkpfdsDH-o5s6%3A0&from=search\"\n  },\n  {\n    \"title\": \"Подарочный набор для сестры в деревянной коробке с крышкой на магните\",\n    \"price\": \"1831 ₽\",\n    \"rating\": \"4.9\",\n    \"purchases\": 391,\n    \"url\": \"https://market.yandex.ru/card/podarochnyy-nabor-dlya-sestry-v-derevyannoy-korobke-s-kryshkoy-na-magnite/102059313358?do-waremd5=PEKohsBuy1rP7i3uZm8hcw&cpc=ndhEJnw9ugQUB8HVGnXMMgyrmL_7kq6r7hdVokmSWHmhK4CFV6B8PPWAHPBLxI5wfx0QlDpCqwPo4KO7_BEYy2HohUOKrLVkzlDcqyuA2ACTAPqDU9FG3WUqans_uJ46wMSNQfUSJZVaSr2uyMoE0z1pxIZdjfCM0VmmmM_V5hBPJMN18SkcRf3-a9KtRiaWcSSg3oKYQ4PYg89tFAbmctlskedH7wV5ntA91CUcbnl9DrDodclMTph2vfDtBKLCUIKIQlNd1nWCzE9BjNWxmTbBPi0RYBdnb4H-cS9k8OBdhpGXioIlfB8YluxdHO54QN08DDfNd4zQCU18wpxcvR91ODt-lcxGOrH28QLaWP4SBgR_45YsgED3pf-y3rXOyJnHqMu40XCm0MqSINe-AGn-l47_Adli6qsHbO4n9K3Q72_wG6WcFj9fFZP22AC7EK90ePVvTQSy3VuX2EBGk_oMJ5arNiT2Sfntjpiq8LrN1wW6fA-Rh-TMqMM3A2xaXxxLwcbM392c2t7e5KxtjCW-l6r_Mhmb3X60nl35Kb34lr2sJIvMLx5V9X0aaMA3tBUK0wMrzNBLEaAcywuqet7jLV3JtvzT7mQJE43RV5yq1ztL8TunsJ4tR7S2CdmZqGeYuKGz7Nf7CJP_bH7Q_1yQhU9F9L4ovTTP6GDsyLQLqKbIqbbRuIG97DcVDCS_-w2Q3peL8-L2bbP2xWRMAouctHNbhmlViGqZqWvKiRlLtXoFbCcTjcOIyIlHCIJMb7ZucS6mFo0%2C&cc=CiA4NzJkYWMyNGRhMzZmYmJhM2JmNzJiYjg2NzM1Y2NlNxAHgH3m7QY%2C&resale_goods=resale_new&hid=91302&nid=18071697&show-uid=17655264450720044618006003&showUid=17655264450720044618006003&from-show-uid=17655264450720044618006003&cpa=%2FqkzOJEur7vZpi_w2fVPsAj1Z6Svp%3A0&from=search\"\n  }\n]"
+      }
+    ],
+    "ready_to_search_message": "Отлично, тогда берём вариант №1. Выбранный подарок: Набор бильярдных шаров для домашнего стола\n\n[READY_TO_SEARCH]",
+    "pre_ready_message": "Хорошая идея! Тогда давай посмотрим на несколько вариантов:\n\n1) Набор бильярдных шаров для домашнего стола - классический выбор, с 16-18 шарами и кейсом для хранения.\n2) Биллиардный набор \"Премиум\" - более дорогой вариант, но с высококачественными шарами и дополнительными аксессуарами.\n3) Набор бильярдных мячей со специальными дизайнами или логотипом - что-то оригинальное для новогоднего подарка.\n\nКакой номер тебе нравится больше всего?"
+  },
+  {
+    "id": 16,
+    "timestamp": "2025-12-12T08:04:40.233911",
+    "sender_id": "1",
+    "recipient_id": "321",
+    "history": [
+      {
+        "role": "human",
+        "content": "25 лет, мужчина, бильярд спорт, новый год, бюджет средний, думаю подойдет бильярдный набор"
+      },
+      {
+        "role": "ai",
+        "content": "Бильярд - классный выбор для любителя спорта!\n\nЧтобы выбрать подходящий набор, мне нужно знать немного больше. Какой тип бильярдного стола предпочитает получатель: профессиональный или домашний? А также, есть ли у него уже какой-то набор шаров или он будет использовать его в качестве подарка для новогодней вечеринки?\n\n1) Биллиардный набор для профессионалов с высококачественными шарами и стиками\n2) Набор бильярдных шаров для домашнего стола с разными цветами и дизайнами\n3) Упрощенный набор для начинающих с минимальным количеством шаров и стиков\n\nКакой номер тебе нравится больше всего?"
+      }
+    ],
+    "ready_to_search_message": "",
+    "pre_ready_message": ""
+  },
+  {
+    "id": 17,
+    "timestamp": "2025-12-12T08:05:15.451652",
+    "sender_id": "1",
+    "recipient_id": "321",
+    "history": [
+      {
+        "role": "human",
+        "content": "25 лет, мужчина, бильярд спорт, новый год, бюджет средний, думаю подойдет бильярдный набор"
+      },
+      {
+        "role": "ai",
+        "content": "Бильярд - классный выбор для любителя спорта!\n\nЧтобы выбрать подходящий набор, мне нужно знать немного больше. Какой тип бильярдного стола предпочитает получатель: профессиональный или домашний? А также, есть ли у него уже какой-то набор шаров или он будет использовать его в качестве подарка для новогодней вечеринки?\n\n1) Биллиардный набор для профессионалов с высококачественными шарами и стиками\n2) Набор бильярдных шаров для домашнего стола с разными цветами и дизайнами\n3) Упрощенный набор для начинающих с минимальным количеством шаров и стиков\n\nКакой номер тебе нравится больше всего?"
+      },
+      {
+        "role": "human",
+        "content": "думаю подойдет бильярдный набор"
+      },
+      {
+        "role": "ai",
+        "content": "Мне нужно знать, есть ли у получателя уже какой-то бильярдный стол или он будет использовать этот набор в качестве основного.\n\n1) Биллиардный набор для домашнего стола с 16 шарами и 2 стиками\n2) Набор бильярдных шаров для профессионалов с высококачественными материалами\n3) Упрощенный набор для начинающих с минимальным количеством шаров и стиков\n\nКакой номер тебе нравится больше всего?"
+      }
+    ],
+    "ready_to_search_message": "",
+    "pre_ready_message": ""
+  },
+  {
+    "id": 18,
+    "timestamp": "2025-12-12T08:05:32.310214",
+    "sender_id": "1",
+    "recipient_id": "321",
+    "history": [
+      {
+        "role": "human",
+        "content": "25 лет, мужчина, бильярд спорт, новый год, бюджет средний, думаю подойдет бильярдный набор"
+      },
+      {
+        "role": "ai",
+        "content": "Бильярд - классный выбор для любителя спорта!\n\nЧтобы выбрать подходящий набор, мне нужно знать немного больше. Какой тип бильярдного стола предпочитает получатель: профессиональный или домашний? А также, есть ли у него уже какой-то набор шаров или он будет использовать его в качестве подарка для новогодней вечеринки?\n\n1) Биллиардный набор для профессионалов с высококачественными шарами и стиками\n2) Набор бильярдных шаров для домашнего стола с разными цветами и дизайнами\n3) Упрощенный набор для начинающих с минимальным количеством шаров и стиков\n\nКакой номер тебе нравится больше всего?"
+      },
+      {
+        "role": "human",
+        "content": "думаю подойдет бильярдный набор"
+      },
+      {
+        "role": "ai",
+        "content": "Мне нужно знать, есть ли у получателя уже какой-то бильярдный стол или он будет использовать этот набор в качестве основного.\n\n1) Биллиардный набор для домашнего стола с 16 шарами и 2 стиками\n2) Набор бильярдных шаров для профессионалов с высококачественными материалами\n3) Упрощенный набор для начинающих с минимальным количеством шаров и стиков\n\nКакой номер тебе нравится больше всего?"
+      },
+      {
+        "role": "human",
+        "content": "1"
+      },
+      {
+        "role": "ai",
+        "content": "Отлично, тогда берём вариант №1. Выбранный подарок: Набор бильярдных шаров для домашнего стола с 16 шарами и 2 стиками\n\n[READY_TO_SEARCH]"
+      },
+      {
+        "role": "ai",
+        "content": "[\n  {\n    \"title\": \"M&M's & Friends Посылка на Новый Год, набор конфет M&M's, Snickers, Milky Way, Mars и Skittles с онлайн-игрой внутри\",\n    \"price\": \"208 ₽\",\n    \"rating\": \"3.8\",\n    \"purchases\": 741,\n    \"url\": \"https://market.yandex.ru/card/sladkiy-podarok-mms--friends-posylka-na-novyy-god-nabor-konfet-mms-snickers-milky-way-mars-i-skittles-s-onlayn-igroy-vnutri-99g/4738754305?do-waremd5=bUWIWedAiWuJZeAXyhnoDA&sponsored=1&cpc=TPxu30vMz-8p36V2KglRO3-ngSWMqVwfNWyDEHfkDNRgqgu4repPJpo7LPVx4XmFRYWRATRtonVRz2jC57HOtqfAu7xu7CsMdt7LfRQIivum6N60MexWX8HdDTyeEnzESBBQyX4fbwIizf7I5DHl8kdPHsNI42BIKaKO7gJLs_h8UWxfwkSLvNKm_ta5od9HR_LfrM6yYIsE5mhwBc-TR8z6hLP8h2yUmUEMZvGTinaqrcU1-wdbZiMYxxnYyh9jp2cHhMncl1jNrSkxqzO0C4bsShB8YiglDaGCtOemz6EDqmY_70amDVE6SPowUKdNNdYWEMC1FKuldy1oZY71UAMDip1-rFedE0se5-ld97U3wtF1f59xhhkNGX_Hjp9YdTrnoRjW_YUGTLhyrfjyaLr2e4Q81-5LwnB6hAhDn5Yz3302ZPxh5I4Of8Rrm6mIdNsqEvbGnDKz4hQ4FJB7DnXVncZ_zZlHg1m9YXjR-jHUrTIbIlkDafLFxuKRihQnp-QQZLGlLQK5zrsB6GLt1QxekoyotsgsJNa7DflXvkWUU5KWwnwCkQqWLfPNp2-8UGnj9T9vBgwyRFLi4F9prny4rh4pi9jGOtUwNQd71evfPUCUZJzMGvKvog5oS-cCeZk2kViQu1LTIk2NhJkU-zc9I1udYkaeE465GHRtiJK7V9Pf9yndgLx4Myy11LMBbITEZbkqbnXOKF6-ItL1BrsJpWjENwKu72R7xzHH00UWgDWW_i5guk29RDGbBUP5xru-r4OtQ7w8eGXOlEozvz31d0KoLo_u-SHLDAEDgQ9JEQfpN7QkfEruKQ4YKb9V&cc=CiBhY2U5ODc2Y2U0NWZhNGI4YWU4YzI2NGU1Y2IzY2RmMRDnAYB95u0G&resale_goods=resale_new&hid=63302583&nid=63302589&show-uid=17655267262095851740806006&showUid=17655267262095851740806006&from-show-uid=17655267262095851740806006&cpa=%2F8Q5EZZSU6CeZ6mGGj159mBDqw1Fv%3A0&cpm-adv=1&from=search\"\n  },\n  {\n    \"title\": \"Подарочная карта Mobile Legends: Bang Bang на 11 Diamonds | Все страны | Оригинальный код\",\n    \"price\": \"21 ₽\",\n    \"rating\": \"4.9\",\n    \"purchases\": 499,\n    \"url\": \"https://market.yandex.ru/card/podarochnaya-karta-mobile-legends-bang-bang-voucher-mobile-legends-11-diamonds/4385124214?do-waremd5=nfiwIxeMXbkUsqV7uDbuXQ&sponsored=1&cpc=AvgmSKXladh6J8cxMXYTuDZJIDVOQ6Y12LHIx_ranbWRa8ouBUxUXoAu7inPuMWHUL6YlYA4RIMev34W4M0G4L4yXLNLsnLyBzfXmiVKjplxHRrtCEvNm6waA2ycq6frRVd2VszUoIdb5vr6KEJ0RTXtYpeGzVpjEx4BAL7o4zP0pyepeMZJptZYtAgSGcSftWZ71UmuVEn1jxrn2uhrEHo9gIzoRVmzVUjZg1VjLBMthEmiENTuLyD1vLsFHPNNqvIMdv9Z70NcGa4ycvikd7iDMMSFU7tRITP8uAU8yOS4qJ3SGxjM4BMOL-XTcR5kCaY-rgiXqketZcqvr9nqaTlZFppMfjv9VUASxKVbomM5pvxc5nxJcbQ6DPu9qYBCj3UgSOeY1dClQP7glyyx4t-3IAa2_MwvAtCTg5miz8OO3os8I989mn2oXuqqCJWMsQUQ7SX0Z1nUEIx8yUqOk8BTTkfX73lDWpCI3oD8HW3j2LHm3I27_npXUofGAL3KLprXO_AmrgzWt5Yxmx0OimI4Xgny9K-YsNtbu2wVP9uqQrYsWehzgGW6fLn5gdOTPvCjgXGBW9ADxpSPNQJyaJLBCsItkzmM6jkm7QVToTUNb6O_NB1OdytIiHK31sj-Y2X7YQ1iWtWCHjipkV6jzGIFRdMmyMr2ftpXWxhYWmG4oggcCUd80MskWxxOOU1Y62NcHsFKkuXQ2DXBY8BzZfQ6fVV4mDomOSvix4gEBWt0QbCfA0vyED1ao5f3CeWgjdOMQle9msn18UfeDpS4LTVehIAJ2a-I&cc=CiAzMWExMDdjM2MyNzQ0ZmMzY2ZlNjk2NjU5NjBhY2U0MhDnAYB95u0G&resale_goods=resale_new&hid=17940630&nid=17940631&show-uid=17655267276817934033506002&showUid=17655267276817934033506002&from-show-uid=17655267276817934033506002&cpa=%2FSHC8kC131jnyB2r5gqUVxvXvwo-0%3A0&cpm-adv=1&from=search\"\n  },\n  {\n    \"title\": \"Подарочный набор; Ассорти орехов сухофруктов; Подарок на Новый Год; женщине; мужчине; учителю; врачу; на день рождения;\",\n    \"price\": \"1490 ₽\",\n    \"rating\": \"4.8\",\n    \"purchases\": 720,\n    \"url\": \"https://market.yandex.ru/card/podarochnyy-boks-eco-fruits---sladkiy-podarok-s-orekhami-i-sukhofruktami-na-9-ye-maya/102727952765?do-waremd5=oz0heevlemkzL1Ku39xOLg&cpc=A_y59S7_Wy9y37vpbkB8H-pnr-jQSLRRrpSeyLwSRyfErUWu-BDK4G7dfjaWHrje7O8nU68I6wAyT6wuzzukeUuY3CuzFx-zGp8owLfmg8n6AdbdfkUt1gp25UmjTLcnA55njz92kb8lt7ORF86cx4yBBI0OCflGStH3-NHbn1yuNpu3wJDRdbx_fzBWPtOvUTBPsFrt3UAVmMW1H3td_Um7q9RhvpBaGdqGNHpLv4m_mRXNVJAbgkU8l9pZTQEWKz-GtazrCZ_ZxzjPmyI6t7FRAE4E6CH6ThSXVattqp2ZqHKS4nqJNQO5v-CdUOKf0QIPog0SAGwoT-l-Z4jwz4XPfbKkb87h_5LRMLe20E4v_XOWY4Mf3UgaGSjoN1-mdiV5YpILvUKzHSL3zsxexuc7vjrp0CgQeDdkRClMsjYR0CBNTybdN_6SRCmN94KenpIddJ-_9sCqYdQHerNy1k_RblAd3UQfRC8Z4E7hQTv215boAWa_vUhoQCsFsyT515gsJQM5ok0F7eBOHyRw1VqHYOQdmtDGxAQ2tSg9lGnGwVaXbp23lZwXJ75_6fWRxX12YPN2sgq79u9dRgQldEhDV5d1pSej3I1_r_4_YC0c8xrX6BoBEvjvyzOMnWAFpzqhIwdCtVAqgOQL0lYN9WMUk9RsDVEoIgE-34R_-avHfbp8mAOKCk2mh_1QPsadlk9g6JEALgJvERP4YoxOHqw-ZRCXbNM0Zm3uaZhFiADyJ4gSX-YzHdxe7FaYvBGa&cc=CiAzZDM4YzYxMjIzY2U5YjExYmE5OWQ5MWYyMmQzODNhMRAHgH3m7QY%2C&resale_goods=resale_new&hid=91302&nid=18071697&show-uid=17655267287650679425906001&showUid=17655267287650679425906001&from-show-uid=17655267287650679425906001&cpa=%2Flnj9P3_aOq6-lu4AANAW65nYpW-w%3A0&from=search\"\n  },\n  {\n    \"title\": \"Подарочный спа набор Лаванда, соль и бомбочки для ванны. Косметический набор для ухода за кожей\",\n    \"price\": \"1086 ₽\",\n    \"rating\": \"5.0\",\n    \"purchases\": 742,\n    \"url\": \"https://market.yandex.ru/card/podarochnyy-spa-nabor-lavanda-sol-i-bombochki-dlya-vanny-kosmeticheskiy-nabor-dlya-ukhoda-za-kozhey/4430791892?do-waremd5=EKFqrcUoheQI8ezNswWXCg&sponsored=1&cpc=1k2u5mgqvEX0FaRLEi41HyUE80YHkNAv4DnQ0PG_bI-ORok-A4Foa5x9Cf13SDQa3kSTXRGycb57R7HlpJcajHe_TnFJZdKhgchRaRS7Cu7JB3iZfcPvO7K9extM-VfKT5MnLyoAFRGHgvYsUZlxjvpsD8Tqj2p7c3mkIEhWTpCXrsgbPdn9ZIxdI5OdWU5I-EZM0j7hPDUKnM7LaJ4xAW-31zx-tYrd1_qJ8Bf1R3W2HOHfD_D9pxq7tQAFpB-diVXYyAAn_RWiGeC0FySSer_4fNwWrE3p3NUVCHGe5YdOpNdWXAXh6AKpTUajCKLjYyMpu7F2oH_6WPMIodJ4FPPxrelcoFK4aj2MrVVqd9wLYxYYRVlCtJX19HgM5Je8MzpCyF_R6vAKleqnHe83ohJEd2Tz0NyWm8hU2fv9cOqfX5MbJdGQyXC3wVdHbR4Rz0UIC90hE2XZ__yyQUto8dy9KR6YQE5kk0Sk-mBOZTSc8vFIk-PiFITu4m96nBO_eQtOB1xqIoS2ccZkteqfu8QobpFJndsZM7OEqEapqwSW4c7Lr0W0rbup-6DOB_aiBDxf3tcSiqoKcB3F2Pn0Rpaem2lWCaPIHaN1qeOtX_3-1-U1T4nELbmNg6iefDJ_DtgJUEZsahix6Ws-9ZxHRp6oX1trtWx_aOz2mqv7mg3gCdDQx2gZrDP-9eHNwB8ymhITGKP3d2weC4IrRcV9s4OPzB6NqJjKwh48oT9F5ukzGPTV-vUuYkh3RqXXd52FjtfXNAp85Z950mmQFfcRl5o7hfQ4EpJVP3sgL7_6soD6WaenXF9fGdrWHNfX0Cf5Q-WCjk1BQFClXr7Wmist32sdWE8-YXYZ4gOV8p5AFjf0h8M5s-7bUGYwUikqihGybFwsBMzk2X26XXTP6K9U7A0JJadAqglfHf5mlE3F60g_w2pRZV_dy9FxZEQyL02n&cc=CiA2OGIwZjUxYTk3MjdlNzU3YzJhN2EyYzhkMDc3NTI2MxDnAYB95u0G&resale_goods=resale_new&hid=64218678&nid=64218684&show-uid=17655267300923468546206002&showUid=17655267300923468546206002&from-show-uid=17655267300923468546206002&cpa=%2Fugm9iFvK_vQUsNpNveoRks44yRHX%3A0&from=search\"\n  },\n  {\n    \"title\": \"Подарочный набор Organic Shop \\\"Cherry Escape\\\", скраб и крем для тела, антицеллюлитный сахарный соляной 300мл и 200мл\",\n    \"price\": \"371 ₽\",\n    \"rating\": \"4.6\",\n    \"purchases\": 903,\n    \"url\": \"https://market.yandex.ru/card/podarochnyy-nabor-dlya-tela-cherry-escape/103590818968?do-waremd5=2w5544Gd35fW0XH6eAeUnw&sponsored=1&cpc=-QTNRIRiH1t7m0vcdDEvXvmD7HRZCkpowDi-T7ye5Yr63fdVJjMVrM-OP_4yBLWfSqe32e4HVOXdO7HZo8YSZYCx_s6g-1fESrM6qlpFG7eqjFLZXKTQVDNKRsYsd6mToEutENLR8CE0z0uIuEYr-MLJ0TwjUMxmrdr0HsubKKzzk9NWfDPumYeEfxejZLi4UtVDBfUQu4_eFDvQhEs0CNJhmDmf31Fi3RoOdhqz0QbxvHDW2EnIbXrAfD9hE3Y5AjpqPfzNdc-dKg58F-tWoNX71m1Lz9JA02CWi6h028MFRgdsdZvOoO9XPs8IkGdjg8WzYEK_73PcSP6VopIr_ZtMbWNDuZiP8nA5ktaJarcFJ9npYXFL2iisT5yCWU5m1YMGM5gPY3cKqjoVsDbhAStGo-pVoTmwuUZ5HnUjZnyhSLF19Ix54p4i7kVo9tpjRCVWa7n5LpPcqrfUkz52OLMk1ekFMku000m8rehNgEFqLG63waxlfrLqFXwaU9G7hh08idgTfOumpds8vNIFx_WUB717HVR4DbxxIPBITUzkUloMMNXSwC-ww5OiIZqA0vjgIGOaOVjdsh8rPQjDIGGzJ95Ys8gooZ7Ce4txR4f4d55Kdv_AXytWe7dVZUtfFO2Ic4QnWhXcizhc-a23ilQmDfbFHOHGWeDuRGWfOs9IKXqI8dAb_v-Yi1Xjdy5Lmag0CKBmpU-jrZUaVITHiwE8hzmn4ZteuOZvdGguJlBfpc3AJqVnBe35gwq2FDpq8ebWNprdH2V4oGz1H-95uKx9jrB9a23xV-gal32fmRZjIqOJvd_kwuc88olNXM8Jxp8iBk7-LI8%2C&cc=CiBlYjE1YzVmZjExOTUxMWFmMGZhYjk1NmQ0MzlhYTBkORDnAYB95u0G&resale_goods=resale_new&hid=64218678&nid=64218684&show-uid=17655267321544206063506002&showUid=17655267321544206063506002&from-show-uid=17655267321544206063506002&cpa=%2Fd--Hyx703142aEeecMUOSwdrHYXg%3A0&from=search\"\n  }\n]"
+      }
+    ],
+    "ready_to_search_message": "Отлично, тогда берём вариант №1. Выбранный подарок: Набор бильярдных шаров для домашнего стола с 16 шарами и 2 стиками\n\n[READY_TO_SEARCH]",
+    "pre_ready_message": "Мне нужно знать, есть ли у получателя уже какой-то бильярдный стол или он будет использовать этот набор в качестве основного.\n\n1) Биллиардный набор для домашнего стола с 16 шарами и 2 стиками\n2) Набор бильярдных шаров для профессионалов с высококачественными материалами\n3) Упрощенный набор для начинающих с минимальным количеством шаров и стиков\n\nКакой номер тебе нравится больше всего?"
+  },
+  {
+    "id": 19,
+    "timestamp": "2025-12-12T08:10:04.313390",
+    "sender_id": "123123",
+    "recipient_id": "321",
+    "history": [
+      {
+        "role": "human",
+        "content": "1"
+      },
+      {
+        "role": "ai",
+        "content": "Хорошо, давай начнем! Чтобы выбрать подходящий подарок, мне нужно знать немного больше о получателе. Какой возраст у человека, которому ты хочешь подарить что-то?"
+      }
+    ],
+    "ready_to_search_message": "",
+    "pre_ready_message": ""
+  },
+  {
+    "id": 20,
+    "timestamp": "2025-12-12T08:10:16.322747",
+    "sender_id": "123123",
+    "recipient_id": "321",
+    "history": [
+      {
+        "role": "human",
+        "content": "1"
+      },
+      {
+        "role": "ai",
+        "content": "Хорошо, давай начнем! Чтобы выбрать подходящий подарок, мне нужно знать немного больше о получателе. Какой возраст у человека, которому ты хочешь подарить что-то?"
+      },
+      {
+        "role": "human",
+        "content": "34534"
+      },
+      {
+        "role": "ai",
+        "content": "Похоже, это не возраст... Мне нужен конкретный цифровой ответ: сколько лет человеку, которому ты хочешь подарок?"
+      }
+    ],
+    "ready_to_search_message": "",
+    "pre_ready_message": ""
+  },
+  {
+    "id": 21,
+    "timestamp": "2025-12-12T08:25:07.824704",
+    "sender_id": "u1",
+    "recipient_id": "r1",
+    "history": [
+      {
+        "role": "human",
+        "content": "привет"
+      },
+      {
+        "role": "ai",
+        "content": "Привет! Чтобы подобрать подарок, мне нужно знать немного о получателе. Какой возраст у человека?"
+      }
+    ],
+    "ready_to_search_message": "",
+    "pre_ready_message": ""
+  },
+  {
+    "id": 22,
+    "timestamp": "2025-12-12T08:25:08.178468",
+    "sender_id": "u2",
+    "recipient_id": "r1",
+    "history": [
+      {
+        "role": "human",
+        "content": "привет"
+      },
+      {
+        "role": "ai",
+        "content": "Привет! Чтобы помочь тебе подобрать подарок, мне нужно знать немного больше о получателе. Какой возраст у твоего друга?"
+      }
+    ],
+    "ready_to_search_message": "",
+    "pre_ready_message": ""
+  },
+  {
+    "id": 23,
+    "timestamp": "2025-12-12T08:25:08.528902",
+    "sender_id": "u9",
+    "recipient_id": "r1",
+    "history": [
+      {
+        "role": "human",
+        "content": "привет"
+      },
+      {
+        "role": "ai",
+        "content": "Привет! Ты хочешь подобрать подарок для кого-то? Начнем с вопроса: кому ты хочешь купить подарок?"
+      }
+    ],
+    "ready_to_search_message": "",
+    "pre_ready_message": ""
+  },
+  {
+    "id": 24,
+    "timestamp": "2025-12-12T08:25:09.018061",
+    "sender_id": "u3",
+    "recipient_id": "r1",
+    "history": [
+      {
+        "role": "human",
+        "content": "привет"
+      },
+      {
+        "role": "ai",
+        "content": "Привет! Чтобы помочь тебе подобрать подарок, мне нужно знать немного о получателе. Какого возраста он? Мужчина или женщина? И есть ли у него какие-то интересы или увлечения?"
+      }
+    ],
+    "ready_to_search_message": "",
+    "pre_ready_message": ""
+  },
+  {
+    "id": 25,
+    "timestamp": "2025-12-12T08:25:09.343912",
+    "sender_id": "u4",
+    "recipient_id": "r1",
+    "history": [
+      {
+        "role": "human",
+        "content": "привет"
+      },
+      {
+        "role": "ai",
+        "content": "Привет! Чтобы мне мог помочь подобрать подарок, мне нужно знать немного о получателе. Какой возраст у этого человека?"
+      }
+    ],
+    "ready_to_search_message": "",
+    "pre_ready_message": ""
+  },
+  {
+    "id": 26,
+    "timestamp": "2025-12-12T08:25:09.648878",
+    "sender_id": "u7",
+    "recipient_id": "r1",
+    "history": [
+      {
+        "role": "human",
+        "content": "привет"
+      },
+      {
+        "role": "ai",
+        "content": "Привет! Чтобы помочь выбрать подарок, мне нужно знать немного о получателе. Какой возраст у этого человека?"
+      }
+    ],
+    "ready_to_search_message": "",
+    "pre_ready_message": ""
+  },
+  {
+    "id": 27,
+    "timestamp": "2025-12-12T08:25:10.028547",
+    "sender_id": "u10",
+    "recipient_id": "r1",
+    "history": [
+      {
+        "role": "human",
+        "content": "привет"
+      },
+      {
+        "role": "ai",
+        "content": "Привет! Чтобы помочь выбрать подарок, мне нужно знать немного о получателе. Какой возраст у человека, которому ты хочешь подарить?"
+      }
+    ],
+    "ready_to_search_message": "",
+    "pre_ready_message": ""
+  },
+  {
+    "id": 28,
+    "timestamp": "2025-12-12T08:25:10.347913",
+    "sender_id": "u5",
+    "recipient_id": "r1",
+    "history": [
+      {
+        "role": "human",
+        "content": "привет"
+      },
+      {
+        "role": "ai",
+        "content": "Привет! Чтобы помочь тебе подобрать подарок, мне нужно знать немного о получателе. Какой возраст у этого человека?"
+      }
+    ],
+    "ready_to_search_message": "",
+    "pre_ready_message": ""
+  },
+  {
+    "id": 29,
+    "timestamp": "2025-12-12T08:25:10.653290",
+    "sender_id": "u15",
+    "recipient_id": "r1",
+    "history": [
+      {
+        "role": "human",
+        "content": "привет"
+      },
+      {
+        "role": "ai",
+        "content": "Привет! Чтобы помочь подобрать подарок, мне нужно знать немного о получателе. Какой возраст имеет получатель?"
+      }
+    ],
+    "ready_to_search_message": "",
+    "pre_ready_message": ""
+  },
+  {
+    "id": 30,
+    "timestamp": "2025-12-12T08:25:10.960626",
+    "sender_id": "u11",
+    "recipient_id": "r1",
+    "history": [
+      {
+        "role": "human",
+        "content": "привет"
+      },
+      {
+        "role": "ai",
+        "content": "Привет! Чтобы помочь выбрать подарок, мне нужно знать немного о получателе. Какой возраст у человека?"
+      }
+    ],
+    "ready_to_search_message": "",
+    "pre_ready_message": ""
+  },
+  {
+    "id": 31,
+    "timestamp": "2025-12-12T08:25:11.294675",
+    "sender_id": "u17",
+    "recipient_id": "r1",
+    "history": [
+      {
+        "role": "human",
+        "content": "привет"
+      },
+      {
+        "role": "ai",
+        "content": "Привет! Чтобы помочь тебе выбрать идеальный подарок, мне нужно знать немного о получателе. Какой возраст у этого человека?"
+      }
+    ],
+    "ready_to_search_message": "",
+    "pre_ready_message": ""
+  },
+  {
+    "id": 32,
+    "timestamp": "2025-12-12T08:25:11.602153",
+    "sender_id": "u13",
+    "recipient_id": "r1",
+    "history": [
+      {
+        "role": "human",
+        "content": "привет"
+      },
+      {
+        "role": "ai",
+        "content": "Привет! Чтобы помочь выбрать подарок, мне нужно знать немного о получателе. Какой возраст у этого человека?"
+      }
+    ],
+    "ready_to_search_message": "",
+    "pre_ready_message": ""
+  },
+  {
+    "id": 33,
+    "timestamp": "2025-12-12T08:25:11.948914",
+    "sender_id": "u12",
+    "recipient_id": "r1",
+    "history": [
+      {
+        "role": "human",
+        "content": "привет"
+      },
+      {
+        "role": "ai",
+        "content": "Привет! Чтобы помочь тебе подобрать подарок, мне нужно знать немного больше о получателе. Какой возраст у твоего друга?"
+      }
+    ],
+    "ready_to_search_message": "",
+    "pre_ready_message": ""
+  },
+  {
+    "id": 34,
+    "timestamp": "2025-12-12T08:25:12.234824",
+    "sender_id": "u16",
+    "recipient_id": "r1",
+    "history": [
+      {
+        "role": "human",
+        "content": "привет"
+      },
+      {
+        "role": "ai",
+        "content": "Привет! Чтобы помочь мне подобрать подарок, скажи, для кого он предназначен."
+      }
+    ],
+    "ready_to_search_message": "",
+    "pre_ready_message": ""
+  },
+  {
+    "id": 35,
+    "timestamp": "2025-12-12T08:25:12.533098",
+    "sender_id": "u14",
+    "recipient_id": "r1",
+    "history": [
+      {
+        "role": "human",
+        "content": "привет"
+      },
+      {
+        "role": "ai",
+        "content": "Здравствуй! Чтобы подобрать подарок, мне нужно знать больше о получателе. Какой возраст у человека?"
+      }
+    ],
+    "ready_to_search_message": "",
+    "pre_ready_message": ""
+  },
+  {
+    "id": 36,
+    "timestamp": "2025-12-12T08:25:12.866126",
+    "sender_id": "u18",
+    "recipient_id": "r1",
+    "history": [
+      {
+        "role": "human",
+        "content": "привет"
+      },
+      {
+        "role": "ai",
+        "content": "Привет! Чтобы помочь тебе подобрать подарок, мне нужно знать немного о получателе. Какой возраст у твоего друга?"
+      }
+    ],
+    "ready_to_search_message": "",
+    "pre_ready_message": ""
+  },
+  {
+    "id": 37,
+    "timestamp": "2025-12-12T08:25:13.208355",
+    "sender_id": "u19",
+    "recipient_id": "r1",
+    "history": [
+      {
+        "role": "human",
+        "content": "привет"
+      },
+      {
+        "role": "ai",
+        "content": "Привет! Чтобы помочь мне подобрать подарок, скажи, для кого он предназначен. Мужчина или женщина?"
+      }
+    ],
+    "ready_to_search_message": "",
+    "pre_ready_message": ""
+  },
+  {
+    "id": 38,
+    "timestamp": "2025-12-12T08:25:13.549968",
+    "sender_id": "u8",
+    "recipient_id": "r1",
+    "history": [
+      {
+        "role": "human",
+        "content": "привет"
+      },
+      {
+        "role": "ai",
+        "content": "Здравствуйте! Чтобы помочь мне подобрать подарок, я бы хотел узнать немного о получателе. Какой возраст у него?"
+      }
+    ],
+    "ready_to_search_message": "",
+    "pre_ready_message": ""
+  },
+  {
+    "id": 39,
+    "timestamp": "2025-12-12T08:25:13.759819",
+    "sender_id": "u20",
+    "recipient_id": "r1",
+    "history": [
+      {
+        "role": "human",
+        "content": "привет"
+      },
+      {
+        "role": "ai",
+        "content": "Здравствуй! Что случилось? Кто тебе нужен подарок?"
+      }
+    ],
+    "ready_to_search_message": "",
+    "pre_ready_message": ""
+  },
+  {
+    "id": 40,
+    "timestamp": "2025-12-12T08:25:14.103789",
+    "sender_id": "u6",
+    "recipient_id": "r1",
+    "history": [
+      {
+        "role": "human",
+        "content": "привет"
+      },
+      {
+        "role": "ai",
+        "content": "Здравствуй! Чтобы помочь тебе подобрать подарок, мне нужно знать немного больше о получателе. Какой возраст у этого человека?"
+      }
+    ],
+    "ready_to_search_message": "",
+    "pre_ready_message": ""
+  },
+  {
+    "id": 41,
+    "timestamp": "2025-12-12T08:26:39.584925",
+    "sender_id": "u7",
+    "recipient_id": "r1",
+    "history": [
+      {
+        "role": "human",
+        "content": "привет"
+      },
+      {
+        "role": "ai",
+        "content": "Привет! Чтобы помочь тебе подобрать подарок, мне нужно знать немного больше о получателе. Какой возраст у твоего друга?"
+      }
+    ],
+    "ready_to_search_message": "",
+    "pre_ready_message": ""
+  },
+  {
+    "id": 42,
+    "timestamp": "2025-12-12T08:26:39.928999",
+    "sender_id": "u2",
+    "recipient_id": "r1",
+    "history": [
+      {
+        "role": "human",
+        "content": "привет"
+      },
+      {
+        "role": "ai",
+        "content": "Здравствуй! Чего хочешь подарить? У получателя есть какие-то интересы или предпочтения, которые я должен учитывать?"
+      }
+    ],
+    "ready_to_search_message": "",
+    "pre_ready_message": ""
+  },
+  {
+    "id": 43,
+    "timestamp": "2025-12-12T08:26:40.384468",
+    "sender_id": "u4",
+    "recipient_id": "r1",
+    "history": [
+      {
+        "role": "human",
+        "content": "привет"
+      },
+      {
+        "role": "ai",
+        "content": "Привет! Чтобы помочь выбрать подарок, мне нужно знать немного о получателе. Какой возраст у человека, которому ты хочешь подарить что-то? Мужчина или женщина?"
+      }
+    ],
+    "ready_to_search_message": "",
+    "pre_ready_message": ""
+  },
+  {
+    "id": 44,
+    "timestamp": "2025-12-12T08:26:40.754131",
+    "sender_id": "u3",
+    "recipient_id": "r1",
+    "history": [
+      {
+        "role": "human",
+        "content": "привет"
+      },
+      {
+        "role": "ai",
+        "content": "Привет! Чтобы помочь тебе подобрать подходящий подарок, мне нужно знать немного больше о получателе. Какой возраст у твоего друга?"
+      }
+    ],
+    "ready_to_search_message": "",
+    "pre_ready_message": ""
+  },
+  {
+    "id": 45,
+    "timestamp": "2025-12-12T08:26:41.155192",
+    "sender_id": "u1",
+    "recipient_id": "r1",
+    "history": [
+      {
+        "role": "human",
+        "content": "привет"
+      },
+      {
+        "role": "ai",
+        "content": "Привет! Чтобы помочь выбрать подарок, мне нужно знать немного о получателе. Какой возраст у человека, которому ты хочешь подарить что-то?"
+      }
+    ],
+    "ready_to_search_message": "",
+    "pre_ready_message": ""
+  },
+  {
+    "id": 46,
+    "timestamp": "2025-12-12T08:26:41.658030",
+    "sender_id": "u5",
+    "recipient_id": "r1",
+    "history": [
+      {
+        "role": "human",
+        "content": "привет"
+      },
+      {
+        "role": "ai",
+        "content": "Привет! Давай начнем. Ты хочешь подарить что-то близкому человеку, да? Но у тебя пока не так много информации о получателе... Какой возраст у твоего любимого человека?"
+      }
+    ],
+    "ready_to_search_message": "",
+    "pre_ready_message": ""
+  },
+  {
+    "id": 47,
+    "timestamp": "2025-12-12T08:26:42.582095",
+    "sender_id": "u6",
+    "recipient_id": "r1",
+    "history": [
+      {
+        "role": "human",
+        "content": "привет"
+      },
+      {
+        "role": "ai",
+        "content": "Привет! Чтобы помочь тебе подобрать подарок, мне нужно знать немного о получателе. Какой возраст у человека?"
+      }
+    ],
+    "ready_to_search_message": "",
+    "pre_ready_message": ""
+  },
+  {
+    "id": 48,
+    "timestamp": "2025-12-12T08:26:42.957690",
+    "sender_id": "u13",
+    "recipient_id": "r1",
+    "history": [
+      {
+        "role": "human",
+        "content": "привет"
+      },
+      {
+        "role": "ai",
+        "content": "Здравствуй! Чтобы помочь тебе выбрать подарок, мне нужно знать немного больше о получателе. Какой возраст у твоего друга?"
+      }
+    ],
+    "ready_to_search_message": "",
+    "pre_ready_message": ""
+  },
+  {
+    "id": 49,
+    "timestamp": "2025-12-12T08:26:43.366366",
+    "sender_id": "u16",
+    "recipient_id": "r1",
+    "history": [
+      {
+        "role": "human",
+        "content": "привет"
+      },
+      {
+        "role": "ai",
+        "content": "Здравствуй! Чтобы помочь тебе выбрать идеальный подарок, мне нужно знать немного о получателе. Какой возраст у твоего друга?"
+      }
+    ],
+    "ready_to_search_message": "",
+    "pre_ready_message": ""
+  },
+  {
+    "id": 50,
+    "timestamp": "2025-12-12T08:26:43.837036",
+    "sender_id": "u17",
+    "recipient_id": "r1",
+    "history": [
+      {
+        "role": "human",
+        "content": "привет"
+      },
+      {
+        "role": "ai",
+        "content": "Здравствуй! Чтобы помочь тебе подобрать подарок, мне нужно знать немного о получателе. Какой возраст у человека, которому ты хочешь подарить что-то?"
+      }
+    ],
+    "ready_to_search_message": "",
+    "pre_ready_message": ""
+  },
+  {
+    "id": 51,
+    "timestamp": "2025-12-12T08:26:44.307861",
+    "sender_id": "u11",
+    "recipient_id": "r1",
+    "history": [
+      {
+        "role": "human",
+        "content": "привет"
+      },
+      {
+        "role": "ai",
+        "content": "Здравствуй! Чтобы помочь тебе подобрать подарок, мне нужно знать немного о получателе. Какой возраст у твоего друга?"
+      }
+    ],
+    "ready_to_search_message": "",
+    "pre_ready_message": ""
+  },
+  {
+    "id": 52,
+    "timestamp": "2025-12-12T08:26:44.640661",
+    "sender_id": "u10",
+    "recipient_id": "r1",
+    "history": [
+      {
+        "role": "human",
+        "content": "привет"
+      },
+      {
+        "role": "ai",
+        "content": "Здравствуй! Чтобы помочь подобрать подарок, мне нужно знать немного о получателе. Какой возраст у человека, которому хочешь подарить что-то?"
+      }
+    ],
+    "ready_to_search_message": "",
+    "pre_ready_message": ""
+  },
+  {
+    "id": 53,
+    "timestamp": "2025-12-12T08:26:44.935835",
+    "sender_id": "u20",
+    "recipient_id": "r1",
+    "history": [
+      {
+        "role": "human",
+        "content": "привет"
+      },
+      {
+        "role": "ai",
+        "content": "Привет! Чтобы помочь выбрать подарок, мне нужно знать немного о получателе. Какой возраст у человека?"
+      }
+    ],
+    "ready_to_search_message": "",
+    "pre_ready_message": ""
+  },
+  {
+    "id": 54,
+    "timestamp": "2025-12-12T08:26:45.255879",
+    "sender_id": "u9",
+    "recipient_id": "r1",
+    "history": [
+      {
+        "role": "human",
+        "content": "привет"
+      },
+      {
+        "role": "ai",
+        "content": "Привет! Чтобы помочь подобрать подарок, мне нужно знать немного о получателе. Какой возраст у этого человека?"
+      }
+    ],
+    "ready_to_search_message": "",
+    "pre_ready_message": ""
+  },
+  {
+    "id": 55,
+    "timestamp": "2025-12-12T08:26:45.761720",
+    "sender_id": "u12",
+    "recipient_id": "r1",
+    "history": [
+      {
+        "role": "human",
+        "content": "привет"
+      },
+      {
+        "role": "ai",
+        "content": "Привет! Чтобы помочь тебе подобрать подарок, мне нужно знать немного о получателе. Какой возраст у него/ей?"
+      }
+    ],
+    "ready_to_search_message": "",
+    "pre_ready_message": ""
+  },
+  {
+    "id": 56,
+    "timestamp": "2025-12-12T08:26:45.929167",
+    "sender_id": "u14",
+    "recipient_id": "r1",
+    "history": [
+      {
+        "role": "human",
+        "content": "привет"
+      },
+      {
+        "role": "ai",
+        "content": "Привет! Чтобы помочь выбрать подарок, мне нужно знать немного о получателе. Какой возраст у человека?"
+      }
+    ],
+    "ready_to_search_message": "",
+    "pre_ready_message": ""
+  },
+  {
+    "id": 57,
+    "timestamp": "2025-12-12T08:26:46.285379",
+    "sender_id": "u8",
+    "recipient_id": "r1",
+    "history": [
+      {
+        "role": "human",
+        "content": "привет"
+      },
+      {
+        "role": "ai",
+        "content": "Здравствуй! Чтобы помочь тебе подобрать подарок, мне нужно знать немного о получателе. Какой возраст у человека?"
+      }
+    ],
+    "ready_to_search_message": "",
+    "pre_ready_message": ""
+  },
+  {
+    "id": 58,
+    "timestamp": "2025-12-12T08:26:46.598287",
+    "sender_id": "u18",
+    "recipient_id": "r1",
+    "history": [
+      {
+        "role": "human",
+        "content": "привет"
+      },
+      {
+        "role": "ai",
+        "content": "Привет! Чтобы помочь подобрать подарок, мне нужно знать немного о получателе. Какой возраст у человека?"
+      }
+    ],
+    "ready_to_search_message": "",
+    "pre_ready_message": ""
+  },
+  {
+    "id": 59,
+    "timestamp": "2025-12-12T08:26:47.252834",
+    "sender_id": "u19",
+    "recipient_id": "r1",
+    "history": [
+      {
+        "role": "human",
+        "content": "привет"
+      },
+      {
+        "role": "ai",
+        "content": "Здравствуйте! Чтобы помочь вам подобрать подарок, мне нужно знать немного больше о получателе. Какой возраст у человека?"
+      }
+    ],
+    "ready_to_search_message": "",
+    "pre_ready_message": ""
+  },
+  {
+    "id": 60,
+    "timestamp": "2025-12-12T08:26:51.065006",
+    "sender_id": "u15",
+    "recipient_id": "r1",
+    "history": [
+      {
+        "role": "human",
+        "content": "привет"
+      },
+      {
+        "role": "ai",
+        "content": "Привет! Чтобы помочь мне подобрать подарок, расскажи, для кого он предназначен. Какой возраст получателя? Мужчина или женщина? И есть ли у тебя какие-то идеи о его интересах или увлечениях? [READY_TO_SEARCH]"
+      },
+      {
+        "role": "ai",
+        "content": "[\n  {\n    \"title\": \"Подарочный набор для девочек маникюрный, 17 предметов, лак на водной основе\",\n    \"price\": \"1622 ₽\",\n    \"rating\": \"4.4\",\n    \"purchases\": 834,\n    \"url\": \"https://market.yandex.ru/card/podarochnyy-nabor-dlya-devochek-manikyurnyy-17-predmetov-lak-na-vodnoy-osnove/103507087161?do-waremd5=PZIrY6w51K6PIkH2PAKNQg&sponsored=1&cpc=CbN4_iuFAJaY9H2xa4NIfcvdv_S5bnrJiFE_emjKUj7qWmLqGHqUuyjE8DxMDfvx7b5ijsM3dtmIMQ7oywIuDxYWrLesZCP2n9fNdHDabosnW43KmBEg09Zwx7GEd7JkcGFetC8mve2bmRSmsk5Dspp8dCPGpv3HLd_iTq1pCIf8yT1fvsVBYqOo3dk64PapdBz9ha1T_RYscn5CMP-_81HLtClMAj5kb-USnh7tHJp9xhqcAhQAyW7kLJ23CJEt0FOQyFYGh9StieYIobcarYaYxiDrN0TV0znBeZsq93ub7xhBN9iQbVQhEc7iuLGaQJfFtqgT_i6cPuWhylu__CzsRpzKRH0RdNINJcz0BrqNMlr6JnqhuJOj25_2mGFJwPZUVPy0XPGSHaXIGmYXc5GakTxqRVwE_Z-RyfinbrUcuQwTeVa_p82yKNVwfqnKeZRSHT_oAL9-s6mUWyyyOvyFwqGfSa4UA3S-mzg44uAeVO63i8NsbFBO5OLtdfsE2y6gc2M8HK9KBQxj_o7Gq7Nd-j2HYULvnoXvMBo11gwnq307MnAKbruLWOO4QUUoaT4Re8Gi6_Vr-6adtrPGv1I0SdcNO6yojsZZ7ZXcxRULdonqZq7a5Yu2GVLDu1LalT2USPl43qz1AIvpmo4pbMwadSYAYuXaMAPPHBkl1DzSurKEBrF7-bvP-DHMSJWsqb2xQhFJV1Ko_L-q7U9RMKkEPa0WgThjqHU_unKl4IWB1KozYeMCNPdWFV16gc3CJ0K3foKQFazVKMGCe2styldApNOQ5f0a1s9qcTvQrJ0kDUSlgw0SegXzHcvDMhDkb7Y_7C6fkmFaSpc656pmZT5JxYx-usqBI0cmFfDzTg2TIazL4NoTIoVSMqge2KfoScAKaJMiTFGBf4OcsRSz_yc1n8RFg7WHN82HxA_H0BrwPKROjGhoKsfNRR6266H_&cc=CiBjYmM1N2MzZTA1ODIxYzljNzc3Y2U3ZWFlZjZmN2I5YRDnAYB95u0G&resale_goods=resale_new&hid=8480736&nid=18071827&show-uid=17655280055649290563306003&showUid=17655280055649290563306003&from-show-uid=17655280055649290563306003&cpa=%2F5vWlAI9ovSrOaXGBn2FHHj4MQPk5%3A0&from=search\"\n  },\n  {\n    \"title\": \"Подарочный спа набор Лаванда, соль и бомбочки для ванны. Косметический набор для ухода за кожей\",\n    \"price\": \"1086 ₽\",\n    \"rating\": \"5.0\",\n    \"purchases\": 742,\n    \"url\": \"https://market.yandex.ru/card/podarochnyy-spa-nabor-lavanda-sol-i-bombochki-dlya-vanny-kosmeticheskiy-nabor-dlya-ukhoda-za-kozhey/4430791892?do-waremd5=EKFqrcUoheQI8ezNswWXCg&sponsored=1&cpc=uKUYDXuhHwU_hPeDvA2x5uvQ-ea3OVMzeVjXDJsCiTGEViCEF_xNdPEE_0DDv2Yr2rEGPh0F-iiNiXgZYCBGC9_EHWNN-njmEuMlf-BbjyKDkteFM9yV0_vFg-5syuPkbQGBuJOihSQINKBj817W-mldZJfE_ubADPPFQmqlOFOr4_zQpdNTbDMHGVAvB1sabZNQD2_XTi25LBRG2cTL-TQomeShAA7paePRqIUH0H984O_vlWKXXg3-eRSAQUQDvdCeN8SARKYKymtyZIpbHDn7KKwerihbrHSU5wrdKNdCUXiX8HqwXAN3EWkW4GDHLSNefDnZ2kug1mye_FzCf8AWjeLUzbSZHoAbQiJE3vBucZiMrtJ78p0uLesSWtQrf4Niug46lvEy2ls7ke_Ot-NyfYXbVpkzIYbUz2kjZTU89005LzXY5hP_pJ4mEegeZ9s3ysZYhiXSxXtyyYnO-_q33zGd3tzVO5uPRokw420Gxiz83EwfJ_iXEtuZhOFUaFXROhHHKYyRtcVw7gb7SO6FUA1wllxYlUH3ZYbrgFGoXvnHH2CwLuIDBJPG5sc-bv3Wa10N5WEfsLQPwTGlMWmO_ESS2ERmBJ-EMSRjEd8SL75AhJQhhaV3OxTNRugxpIq-kJW8b1fOUH9pfGbKfUWq1M19VwnTnaEoRsWJjTfpdcP_vW3XXwOfLY8DgitnTsNIWKRl5B-HdDyEIA4RpcYl_I51Fthc-YvgdcSfRkMZLCTeyQYWFioRGWZwFsAr03gWEdwnI9d4ucNhdwnsWlRJatVi3Yw0VmsyCNbawo1-ofjXAZ0eVkmYH21X-LU5xX_HdsHNFDVnv2tSeqnTobvoNgZA7Sj4HEUNXxGV7LxM1Uv5wFI_XtZkRTGgHN4XcP7i_T0rgDfkOL8YgBbDU0EA1cJZcHvhz1gN3gVpqcotpSCszaYXOs75qB2tTY1O8xPJnhzDANeLjZhUl3uqvg%2C%2C&cc=CiBiYTI5ZmY2YWM5MGNiZmRlYjczZTc5MmU0MTM5ODU1MhDnAYB95u0G&resale_goods=resale_new&hid=64218678&nid=64218684&show-uid=17655280069554061854706001&showUid=17655280069554061854706001&from-show-uid=17655280069554061854706001&cpa=%2Fgv1bcmM349sSXYtArGi4-COo3Ipq%3A0&from=search\"\n  },\n  {\n    \"title\": \"Подарочный набор; Ассорти орехов сухофруктов; Подарок на Новый Год; женщине; мужчине; учителю; врачу; на день рождения;\",\n    \"price\": \"1490 ₽\",\n    \"rating\": \"4.8\",\n    \"purchases\": 720,\n    \"url\": \"https://market.yandex.ru/card/podarochnyy-boks-eco-fruits---sladkiy-podarok-s-orekhami-i-sukhofruktami-na-9-ye-maya/102727952765?do-waremd5=oz0heevlemkzL1Ku39xOLg&cpc=W3fcmo5kKiIjXtcDjNpX1BVaWUaRmG-acqPNsk88Q-VDxz0yAAsl0w67DsvhrjyLu34uxvhTrTJyZoOnk6Vj6xCVDCSPvygEaiT7HEZlEE2eshUkSZuv0AUcTnuokVMqHZFzoMpp2jL5LDhfiXhOa6Gc1ncgqa8jZwClzLgevaDlzDcauEz4hf-vkzXTVQ919SG8_mnFVxTbvfzJ4pbF6T3XOM8LABm8SHIEzIulzTXdFNjYNMuS2CSvhOW0XocwR9yYUWlu9at8je049kF4oqzeX4uD-OWa-r0jdECTESHy_HjuZClXTcanTCP8tqjAtU6X7YKIV6Y-M_8ZkyK8DNhBnUQSDjB4dEMlvAfsUkICvKc70U22zApHhHdWyGrMdvva3YHDdyu5ZwNDWb1bxgery-eD_StaxuTIVwslU2MF8SJlrbj2xsN4F6fd7HBRFih5slGeTFulKnZBhFJiyAheziVP4IxAFkyszIkeahcpn7ZZpJ_QeA-i-o4FBzdnYth2im4J9zxMIwaXJp2p_yeJq8p8cIGrWvuOZR1z8mnJRojQYLpRrP2hxX1IHitJOgjcN-ZmX03S0mxr0wnTJQM0yDBKEhkFVKlUZcoT9aRyETJuQq65MIl_tcjg1heDfAV0FSdTFVRLhx0kv6s9CxCn0oo6tpkeM78YrJ2iZsL57XpxAquGXtsYCwYvBBvwlSfHS1hYOqk-8ixUrDWLF7hHbUyi8HduJqJlvhfyjNxvlGWUsYLxOFwu6MnFbbjxATvm-z_9Apg%2C&cc=CiBkNzRmOTdiMzdhZjZlNjVmMDQwMzU4ZjkzZjljZjBlNxAHgH3m7QY%2C&resale_goods=resale_new&hid=91302&nid=18071697&show-uid=17655280083001371406806001&showUid=17655280083001371406806001&from-show-uid=17655280083001371406806001&cpa=%2F4e_kEoSFGgQpUW9FjZXQW5_cAjA3%3A0&from=search\"\n  },\n  {\n    \"title\": \"Подарочный набор с джемом \\\"Ценно то, что внутри\\\" №4 /Сладкий подарок\",\n    \"price\": \"925 ₽\",\n    \"rating\": \"4.8\",\n    \"purchases\": 454,\n    \"url\": \"https://market.yandex.ru/card/podarochnyy-nabor-s-otkrytkami-tsenno-to-chto-vnutri-4-sladkiy-podarok/100892586965?do-waremd5=HtGPG0FFoW_tkzlB74I1Ww&sponsored=1&cpc=dw2CiL3gPLyZvm6OHz1op7vUkWKFTUDjyLG8LOTbhwG78_HW_wCo9cXDPqE6-uuueeTdNlrKL48za7fwyzDhkUIZ9ZG9h-uJQ6UR_SUTZW20YjuIpkYmUw1skn9oG3JQMQERFGQ8Zhfksfqc449QgsKH0ouYE1AasytWiQsttRBSkVzRH56qrbKYYJerR88cr42C5ywYqAP-JyNfXW6LhTDQqtANF7sLmkAtpH4HcR5Re362Gp7aHZC0UomBhlhEsDOQZ03gUOJijPJEvsD4UTrD23gxYKRonuhX7j-qRieElnofw3oIxnG7kWxBSoW7dA_JgMEyNn1SyDvh2w8asjW1PlI0q0LVL8N1yljxsZDQSiVc0YfStmuCAb3Ex4kkGrLzHO7SHnxnZcTgqBV61S04K7GZJY752yWRXGHryCYZFll83byr7TEkJnPRTKd4l9anrlBEuKCO-Dr3RlS-hxIB-ClStCEJx6cXdIflzhvR6hiUdxV1ITr2AvKz39pWj-wVkCErpZb1BJK0g5kMX3plgMQkCvHapB2LBCiYegSB44ieUeXEax4sFcUi62IsVCpGvnbwKnvSqasQNj_M8AdU98qjybgtb6dfmL-ckmD2sHSXiAVmWahk9z9CBG4FyQwRVptIpCpDH14E-KEfe9uQr4b9PY-sDeZz5-6X9VhFoygQwmywNaI_rYHdOivAHF7z5iZcAKPEwFi9qglgJoz5Q_NXkTrW-8zPzHL0-A6BDOW5ZtORoxspAQqhk9DX&cc=CiA2OWViZTBkZmU5M2Y5ZjZiMmJjMjJlODE1ZDlkNGIyZhDnAYB95u0G&resale_goods=resale_new&hid=91302&nid=18071697&show-uid=17655280095590433714806005&showUid=17655280095590433714806005&from-show-uid=17655280095590433714806005&cpa=%2FB3r1Uu78H_CpyLpBkxQYySgdvxfv%3A0&from=search\"\n  },\n  {\n    \"title\": \"M&M's & Friends Посылка на Новый Год, набор конфет M&M's, Snickers, Milky Way, Mars и Skittles с онлайн-игрой внутри\",\n    \"price\": \"208 ₽\",\n    \"rating\": \"3.8\",\n    \"purchases\": 741,\n    \"url\": \"https://market.yandex.ru/card/sladkiy-podarok-mms--friends-posylka-na-novyy-god-nabor-konfet-mms-snickers-milky-way-mars-i-skittles-s-onlayn-igroy-vnutri-99g/4738754305?do-waremd5=bUWIWedAiWuJZeAXyhnoDA&sponsored=1&cpc=3q_BGQlOQUT1ALddyLzhWbVk18qh0tzw7NsSqt25ZOiePtNpoiZ2Ej3lILT0QPir-pV9mnTXqM_F-4miKd9Q_ibx9G6oND23ffJJPRbykvlm_Tm_j3ACStpB0H_AX2hIVaubE7kSYp87It6_BatnUSSRSeKdF3-Nqk2WWzaBn9FFtq54ySxg83p_c34m8DIgk3zMqyZMDiaugAtYHZ8Iy2FhGKNdNS3Q-X856t1LZZoK5KVK3N3mTjwIqEbWJy0ZY9bY-jbKVV9s5Jr4RocuRD-8SbWYK1ta_zwgaoWu1ueTNYvsO21pg99pae245uk9VjaX9yPuloI4UK_9x4kEIN-01r3B4474vFvifUSg4sfiCn9WyQHtTw-nXZtJSfOMxssmlaPZK0c3BhVpJH3VgtfBVvjDuw1ccS_0GbJekvbdOHrvkqYc5VgsuRrSPoCZMVs0hcdtBcXLsrtTXwLwbXEV8TVnc56XDD5N5amuXDDFv9_R0FxdDjo-wfLzcY_6jCTgCCuF1pfX7pNS208Q7E7eq_lva-jXGm9nuQcYL3-fph8U7ZuhDb4sNeMEoesmUyn9WJ77cxF2xErNSMVcT16blsYmjN2s3j6YUdz-4vaTMo1IHu2CEkItnDWkSfkbe7n5VrpVtDAcEUradXVbFaXs3vBuye7_2-uT9gb1c_09x0iVPqwkN9gpX6pA7-jgCXKHrMTeDASRhWuRqbark4EIevxED75_4y4GrBaMBL6DGe8ZLLrQiBVBPmIEtfD58OeOe_3DIBO3Gg3RrAQRBJf3jnYStewD4tznoieZe4SEnOloeQztV-_Go-RPnpOuz3qEyOwwQXdbJtBPMNM6uCQ6wQYDF2BqlHeRwRDQ2YvJrMQNXUEHgQ%2C%2C&cc=CiA5ZWY0MDk4M2IyZDU4MTBjMTgzODNlMmM0ZjM4ZmNmNRDnAYB95u0G&resale_goods=resale_new&hid=63302583&nid=63302589&show-uid=17655280109463772256606003&showUid=17655280109463772256606003&from-show-uid=17655280109463772256606003&cpa=%2FAAnIn-WifgQDteAMr2LZ7PWTxpp8%3A0&from=search\"\n  }\n]"
+      }
+    ],
+    "ready_to_search_message": "Привет! Чтобы помочь мне подобрать подарок, расскажи, для кого он предназначен. Какой возраст получателя? Мужчина или женщина? И есть ли у тебя какие-то идеи о его интересах или увлечениях? [READY_TO_SEARCH]",
+    "pre_ready_message": ""
+  }
+]
